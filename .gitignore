@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+backend/faiss_index/
+backend/bm25_index.pkl
+.DS_Store

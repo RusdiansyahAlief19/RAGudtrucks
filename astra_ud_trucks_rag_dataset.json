@@ -1,0 +1,1462 @@
+{
+  "dataset_meta": {
+    "name": "Astra UD Trucks RAG Knowledge Base — Kategori 1 (Public Website)",
+    "source": "astraudtrucks.co.id",
+    "version": "2.0.0",
+    "scraped_date": "2026-06-05",
+    "language": "id",
+    "total_chunks": 60,
+    "categories": [
+      "company_profile",
+      "news_and_updates",
+      "operational_knowledge",
+      "product_specs",
+      "service_24h",
+      "service_agreement",
+      "service_driver_training",
+      "service_genuine",
+      "service_mobile_workshop",
+      "service_telematics",
+      "service_warranty",
+      "truck_knowledge"
+    ],
+    "embedding_model_recommendation": "multilingual-e5-large or text-embedding-3-small",
+    "chunk_strategy": "semantic_paragraph",
+    "notes": "Dataset ini dibangun dari scraping publik website resmi astraudtrucks.co.id. Setiap chunk dilengkapi metadata untuk filtered retrieval per model, kategori, dan user role."
+  },
+  "chunks": [
+    {
+      "chunk_id": "COMP_001",
+      "category": "company_profile",
+      "sub_category": "sejarah_perusahaan",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli",
+        "dealer",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/tentang-kami/",
+      "language": "id",
+      "text": "Astra UD Trucks adalah distributor resmi UD Trucks di Indonesia dan telah beroperasi selama lebih dari 40 tahun. Perusahaan ini merupakan bagian dari Astra International. Sejak 1984, Astra berperan sebagai distributor resmi Nissan Diesel di Indonesia, lalu berganti nama menjadi UD Trucks pada tahun 2010. Misi perusahaan adalah menyediakan solusi transportasi total secara berkesinambungan kepada pelanggan melalui inovasi produk dan layanan, serta pengembangan sumber daya manusia yang profesional.",
+      "keywords": [
+        "astra ud trucks",
+        "sejarah",
+        "distributor resmi",
+        "UD Trucks",
+        "40 tahun",
+        "Astra International",
+        "Nissan Diesel",
+        "2010"
+      ]
+    },
+    {
+      "chunk_id": "COMP_002",
+      "category": "company_profile",
+      "sub_category": "jaringan_dealer",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli"
+      ],
+      "source_url": "https://astraudtrucks.co.id/tentang-kami/",
+      "language": "id",
+      "text": "Jaringan dealer resmi Astra UD Trucks tersebar di seluruh Indonesia mencakup kota-kota utama: Medan, Pekanbaru, Padang, Jambi, Palembang, Jakarta, Bekasi, Bandung, Semarang, Surabaya, Malang, Banjarmasin, Balikpapan, Samarinda, dan Makassar. Jaringan ini memastikan dukungan servis dan suku cadang tersedia di seluruh wilayah operasional pelanggan.",
+      "keywords": [
+        "dealer",
+        "jaringan",
+        "Medan",
+        "Surabaya",
+        "Jakarta",
+        "Bandung",
+        "Semarang",
+        "Malang",
+        "Makassar",
+        "Balikpapan",
+        "Samarinda",
+        "Banjarmasin"
+      ]
+    },
+    {
+      "chunk_id": "COMP_003",
+      "category": "company_profile",
+      "sub_category": "visi_misi",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/tentang-kami/",
+      "language": "id",
+      "text": "Visi Astra UD Trucks adalah menjadi mitra bisnis terpercaya dalam industri truk di Indonesia. Tagline perusahaan adalah 'Drive For More' — menggambarkan komitmen untuk tidak mengabaikan peluang dan selalu melayani pelanggan dengan solusi optimal, melangkah lebih jauh demi memberikan lebih banyak nilai kepada pelanggan.",
+      "keywords": [
+        "visi",
+        "misi",
+        "Drive For More",
+        "mitra bisnis",
+        "terpercaya",
+        "solusi optimal"
+      ]
+    },
+    {
+      "chunk_id": "PROD_001",
+      "category": "product_specs",
+      "sub_category": "quester_gwe_410_escot",
+      "applies_to": "quester_gwe_410_escot",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/product/quester-gwe-410-euro-5-escot/",
+      "language": "id",
+      "text": "Quester GWE 410 Euro 5 ESCOT adalah truk Tractor Head 6x4 dengan teknologi transmisi otomatis ESCOT. Spesifikasi utama: konfigurasi sumbu 6x4 Tractor Head, wheelbase 3.4 meter, GVW/GCW 38 Ton | 46 Ton | 54 Ton (tergantung varian mesin), mesin GH8E atau GH11E, tenaga 280 HP | 350 HP | 410 HP, torsi 1.050 Nm | 1.200 Nm | 1.990 Nm, transmisi 9-speed atau 12-speed. Cocok digunakan untuk segmen: Konstruksi/Pertambangan, EMKL (Ekspedisi Muatan Kapal Laut), General Cargo & Industri, Petroleum & Chemical. Keunggulan ESCOT: transmisi otomatis yang membuat berkendara lebih mudah, nyaman, dan efisien bahan bakar.",
+      "keywords": [
+        "Quester GWE 410",
+        "ESCOT",
+        "tractor head",
+        "6x4",
+        "410 HP",
+        "GH11E",
+        "GCW 54 ton",
+        "transmisi otomatis",
+        "konstruksi",
+        "pertambangan",
+        "EMKL"
+      ]
+    },
+    {
+      "chunk_id": "PROD_002",
+      "category": "product_specs",
+      "sub_category": "quester_gwe_euro5",
+      "applies_to": "quester_gwe_euro5",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/product/quester-gwe-euro-5/",
+      "language": "id",
+      "text": "Quester GWE Euro 5 adalah truk Tractor Head 6x4 dengan pilihan tiga varian tenaga. Spesifikasi utama: konfigurasi sumbu 6x4 Tractor Head, wheelbase 3.4 meter, GVW/GCW 38 Ton | 46 Ton | 54 Ton, mesin GH8E (dua varian) atau GH11E, tenaga 280 HP | 350 HP | 410 HP, torsi 1.050 Nm | 1.200 Nm | 1.990 Nm, transmisi 9-speed atau 12-speed manual. Perbedaan dengan versi ESCOT: menggunakan transmisi manual konvensional. Cocok untuk segmen: EMKL, General Cargo & Industri, Petroleum & Chemical, Konstruksi/Pertambangan.",
+      "keywords": [
+        "Quester GWE",
+        "Euro 5",
+        "tractor head",
+        "6x4",
+        "280 HP",
+        "350 HP",
+        "410 HP",
+        "GH8E",
+        "GH11E",
+        "manual transmission",
+        "EMKL",
+        "general cargo"
+      ]
+    },
+    {
+      "chunk_id": "PROD_003",
+      "category": "product_specs",
+      "sub_category": "quester_gke_euro5",
+      "applies_to": "quester_gke_euro5",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/product/quester-gke-euro-5/",
+      "language": "id",
+      "text": "Quester GKE Euro 5 adalah truk Tractor Head 4x2 dengan satu varian tenaga. Spesifikasi utama: konfigurasi sumbu 4x2 Tractor Head, wheelbase 3.5 meter, GVW/GCW 38 Ton, mesin GH8E, tenaga 280 HP, torsi 1.050 Nm, transmisi 9 maju dan 1 mundur. Pilihan tepat untuk operasi tractor head ringan-menengah. Cocok untuk segmen: General Cargo & Industri, Petroleum & Chemical, EMKL. Dibandingkan GWE (6x4), GKE (4x2) lebih ringan dan lebih efisien bahan bakar untuk muatan yang tidak terlalu berat di rute datar.",
+      "keywords": [
+        "Quester GKE",
+        "Euro 5",
+        "4x2",
+        "tractor head",
+        "280 HP",
+        "GH8E",
+        "GCW 38 ton",
+        "EMKL",
+        "general cargo",
+        "petroleum"
+      ]
+    },
+    {
+      "chunk_id": "PROD_004",
+      "category": "product_specs",
+      "sub_category": "quester_cwe_euro5",
+      "applies_to": "quester_cwe_euro5",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/product/quester-cwe-euro-5/",
+      "language": "id",
+      "text": "Quester CWE Euro 5 adalah truk Rigid 6x4 yang dirancang khusus untuk segmen Konstruksi dan Pertambangan. Spesifikasi utama: konfigurasi sumbu 6x4 Rigid, pilihan wheelbase 3.7 | 4.3 | 5.6 | 6.1 meter, GVW 26 Ton, mesin GH8E, tenaga 280 HP, torsi 1.050 Nm, transmisi 9 maju dan 1 mundur. Truk rigid berarti muatan digendong langsung di atas sasis (berbeda dengan tractor head yang menarik trailer). Pilihan wheelbase yang beragam memungkinkan penyesuaian panjang bak untuk berbagai kebutuhan konstruksi.",
+      "keywords": [
+        "Quester CWE",
+        "Euro 5",
+        "6x4",
+        "rigid",
+        "konstruksi",
+        "pertambangan",
+        "280 HP",
+        "GH8E",
+        "GVW 26 ton",
+        "dump truck"
+      ]
+    },
+    {
+      "chunk_id": "PROD_005",
+      "category": "product_specs",
+      "sub_category": "quester_cde_euro5",
+      "applies_to": "quester_cde_euro5",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/product/quester-cde-euro-5/",
+      "language": "id",
+      "text": "Quester CDE Euro 5 adalah truk Rigid 6x2 untuk angkutan barang umum dan distribusi. Spesifikasi utama: konfigurasi sumbu 6x2 Rigid, pilihan wheelbase 4.3 | 5.6 | 6.1 meter, GVW 26 Ton, mesin GH8E, pilihan tenaga 250 HP atau 280 HP, torsi 950 Nm atau 1.050 Nm, transmisi 9 maju dan 1 mundur. Cocok untuk: General Cargo & Industri, Petroleum & Chemical. Konfigurasi 6x2 (satu sumbu penggerak belakang) memberikan efisiensi lebih tinggi dibanding 6x4 pada rute yang tidak membutuhkan traksi ekstra.",
+      "keywords": [
+        "Quester CDE",
+        "Euro 5",
+        "6x2",
+        "rigid",
+        "250 HP",
+        "280 HP",
+        "GH8E",
+        "GVW 26 ton",
+        "general cargo",
+        "petroleum",
+        "distribusi"
+      ]
+    },
+    {
+      "chunk_id": "PROD_006",
+      "category": "product_specs",
+      "sub_category": "quester_cke_euro5",
+      "applies_to": "quester_cke_euro5",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/product/quester-cke-euro-5/",
+      "language": "id",
+      "text": "Quester CKE Euro 5 adalah truk Rigid 4x2 kelas menengah untuk angkutan umum. Spesifikasi utama: konfigurasi sumbu 4x2 Rigid, pilihan wheelbase 4.6 | 5.2 | 6.0 meter, GVW 16 Ton, mesin GH8E, tenaga 250 HP, torsi 950 Nm, transmisi 6 maju dan 1 mundur. Cocok untuk segmen: General Cargo & Industri. GVW 16 ton menjadikannya pilihan medium truck yang ideal untuk distribusi dalam kota atau antar kota jarak pendek-menengah.",
+      "keywords": [
+        "Quester CKE",
+        "Euro 5",
+        "4x2",
+        "rigid",
+        "250 HP",
+        "GH8E",
+        "GVW 16 ton",
+        "medium truck",
+        "general cargo",
+        "distribusi",
+        "dalam kota"
+      ]
+    },
+    {
+      "chunk_id": "PROD_007",
+      "category": "product_specs",
+      "sub_category": "perbandingan_semua_produk",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/lini-product/",
+      "language": "id",
+      "text": "Rangkuman lini produk Astra UD Trucks Euro 5: (1) Quester GWE 410 ESCOT – 6x4 Tractor Head, 410 HP, ESCOT auto, GCW hingga 54 ton, untuk heavy duty & konstruksi; (2) Quester GWE – 6x4 Tractor Head, 280/350/410 HP, manual, GCW 38–54 ton, untuk EMKL & general cargo berat; (3) Quester GKE – 4x2 Tractor Head, 280 HP, GCW 38 ton, untuk EMKL & cargo ringan; (4) Quester CWE – 6x4 Rigid, 280 HP, GVW 26 ton, untuk konstruksi & pertambangan; (5) Quester CDE – 6x2 Rigid, 250/280 HP, GVW 26 ton, untuk cargo & petroleum; (6) Quester CKE – 4x2 Rigid, 250 HP, GVW 16 ton, untuk distribusi dalam kota.",
+      "keywords": [
+        "lini produk",
+        "perbandingan",
+        "semua model",
+        "GWE",
+        "GKE",
+        "CWE",
+        "CDE",
+        "CKE",
+        "tabel produk",
+        "pilih truk"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_001",
+      "category": "truck_knowledge",
+      "sub_category": "jenis_truk_rigid_vs_tractor",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/",
+      "language": "id",
+      "text": "Ada dua tipe utama truk berdasarkan cara membawa muatan: (1) Rigid: truk yang membawa muatan dengan cara digendong langsung pada sasisnya. Muatan menyatu dengan unit truk. Contoh: Quester CWE, CDE, CKE. (2) Tractor Head: truk yang membawa muatan dengan cara ditarik, menggunakan mekanisme fifth wheel dan kingpin yang menghubungkan tractor head dengan trailer atau semi-trailer. Contoh: Quester GWE, GKE. Tractor head lebih fleksibel karena satu unit kepala bisa berganti-ganti trailer sesuai muatan.",
+      "keywords": [
+        "rigid",
+        "tractor head",
+        "fifth wheel",
+        "kingpin",
+        "jenis truk",
+        "semi-trailer",
+        "perbedaan rigid tractor head"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_002",
+      "category": "truck_knowledge",
+      "sub_category": "konfigurasi_sumbu_roda",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/",
+      "language": "id",
+      "text": "Konfigurasi sumbu roda truk dinyatakan dalam format angka seperti 4x2, 6x2, 6x4. Angka pertama adalah total jumlah roda (termasuk roda kembar), angka kedua adalah jumlah roda penggerak. Contoh: 4x2 berarti 4 roda total, 2 roda penggerak (satu sumbu belakang penggerak). 6x4 berarti 6 roda total, 4 roda penggerak (dua sumbu belakang penggerak). 6x4 memberikan traksi lebih baik di medan berat (konstruksi, pertambangan, tanjakan) dibanding 6x2, namun konsumsi BBM lebih tinggi. 4x2 paling efisien untuk rute datar dan muatan ringan-menengah.",
+      "keywords": [
+        "konfigurasi sumbu",
+        "4x2",
+        "6x2",
+        "6x4",
+        "roda penggerak",
+        "traksi",
+        "medan berat",
+        "axle configuration"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_003",
+      "category": "truck_knowledge",
+      "sub_category": "dimensi_truk",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/",
+      "language": "id",
+      "text": "Dimensi utama truk yang perlu dipahami: OL (Overall Length) adalah panjang keseluruhan kendaraan. FOH (Front Overhang) adalah jarak dari sumbu depan ke ujung depan kabin. WB1 (Wheelbase 1) adalah jarak antar sumbu utama. WB2 (Wheelbase 2) adalah jarak sumbu tambahan, standar 1.370 mm. ROH (Rear Overhang) adalah jarak dari sumbu belakang ke ujung belakang sasis. BL (Body Length) adalah panjang bak/body yang diizinkan dipasang di atas sasis, dihitung dengan rumus: BL = WB1 + WB2 + ROH – 790 mm. Memahami dimensi ini penting untuk menyesuaikan panjang bak dengan kebutuhan muatan.",
+      "keywords": [
+        "dimensi",
+        "wheelbase",
+        "overall length",
+        "body length",
+        "FOH",
+        "ROH",
+        "WB1",
+        "WB2",
+        "rumus body length",
+        "panjang bak"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_004",
+      "category": "truck_knowledge",
+      "sub_category": "gvw_gcw_beban",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/",
+      "language": "id",
+      "text": "GVW (Gross Vehicle Weight) adalah beban maksimum yang diizinkan pada truk, meliputi berat sasis, pengemudi, penumpang, ban cadangan, tangki bahan bakar, alat-alat di truk, berat trailer, dan berat muatan (batubara, BBM, tanah, dll). GCW (Gross Combination Weight) adalah berat total kombinasi tractor head beserta trailer yang ditariknya, meliputi berat sasis, pengemudi dan penumpang, ban cadangan, tangki BBM, berat trailer, dan berat muatan (kontainer, tangki, semen, dll). GVW digunakan untuk truk rigid, GCW digunakan untuk konfigurasi tractor head + trailer. Melebihi batas GVW/GCW adalah pelanggaran hukum dan dapat merusak komponen truk secara serius.",
+      "keywords": [
+        "GVW",
+        "GCW",
+        "gross vehicle weight",
+        "gross combination weight",
+        "batas beban",
+        "muatan maksimum",
+        "overload",
+        "tonase"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_005",
+      "category": "truck_knowledge",
+      "sub_category": "teknologi_euro5",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/",
+      "language": "id",
+      "text": "Teknologi Euro 5 adalah standar emisi gas buang yang lebih ketat dibanding Euro 3. Truk Euro 5 menggunakan sistem SCR (Selective Catalytic Reduction) yang membutuhkan AdBlue (larutan urea) untuk mereduksi emisi NOx. Manfaat Euro 5: emisi lebih bersih, konsumsi bahan bakar lebih efisien, performa mesin lebih optimal. AdBlue tersedia dalam kemasan drum plastik 200 liter untuk kemudahan penyimpanan. Pengisian AdBlue perlu dilakukan rutin — jika AdBlue habis, sistem mesin akan membatasi performa otomatis sebagai perlindungan.",
+      "keywords": [
+        "Euro 5",
+        "emisi",
+        "AdBlue",
+        "SCR",
+        "urea",
+        "NOx",
+        "standar emisi",
+        "lingkungan",
+        "Euro 3"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_006",
+      "category": "truck_knowledge",
+      "sub_category": "transmisi_escot",
+      "applies_to": "quester_gwe_410_escot",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/",
+      "language": "id",
+      "text": "Transmisi ESCOT (Electronic Shift Control Transmission) adalah teknologi transmisi otomatis eksklusif UD Trucks. ESCOT membuat berkendara lebih mudah dan nyaman karena pengemudi tidak perlu memindahkan gigi secara manual. Manfaat ESCOT: mengurangi kelelahan pengemudi, mengoptimalkan perpindahan gigi untuk efisiensi BBM, melindungi mesin dari kesalahan operasi, dan mengurangi keausan komponen drivetrain. ESCOT tersedia sebagai fitur eksklusif pada varian Quester GWE 410 Euro 5 ESCOT. Cocok untuk rute jarak jauh dan kondisi medan yang bervariasi.",
+      "keywords": [
+        "ESCOT",
+        "transmisi otomatis",
+        "Electronic Shift Control",
+        "gigi otomatis",
+        "efisiensi BBM",
+        "kelelahan pengemudi",
+        "Quester 410"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_007",
+      "category": "truck_knowledge",
+      "sub_category": "panduan_pilih_truk",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/",
+      "language": "id",
+      "text": "Panduan memilih truk UD yang tepat berdasarkan kebutuhan bisnis: (1) Tentukan tipe operasi: apakah muatan dibawa langsung (pilih Rigid) atau ditarik dengan trailer (pilih Tractor Head). (2) Tentukan berat muatan: untuk muatan di bawah 16 ton pilih CKE, 26 ton pilih CDE atau CWE, 38–54 ton pilih GKE atau GWE. (3) Pertimbangkan medan: untuk konstruksi/pertambangan atau rute berat pilih konfigurasi 6x4 (CWE atau GWE); untuk rute datar dan distribusi pilih 4x2 atau 6x2. (4) Pertimbangkan faktor pengemudi: untuk rute panjang dan pengemudi yang sering berganti, ESCOT mengurangi risiko kerusakan akibat salah operasi.",
+      "keywords": [
+        "panduan memilih truk",
+        "cara pilih truk",
+        "truk yang tepat",
+        "rekomendasi truk",
+        "konstruksi",
+        "distribusi",
+        "logistik",
+        "tonase"
+      ]
+    },
+    {
+      "chunk_id": "SVC_GEN_001",
+      "category": "service_genuine",
+      "sub_category": "overview_ud_genuine",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-genuine/",
+      "language": "id",
+      "text": "UD Genuine Service adalah layanan servis resmi Astra UD Trucks yang dilakukan di bengkel resmi UD Trucks. Keunggulan utama: akses peralatan diagnostik khusus UD Trucks, penggunaan UD Genuine Parts (suku cadang asli), dikerjakan mekanik bersertifikat dan berpengalaman, rencana servis individual berdasarkan operasi aktual bisnis pelanggan. Layanan ini tersedia di seluruh bengkel resmi UD Trucks di Indonesia. Filosofi: merawat truk pelanggan seperti merawat diri sendiri.",
+      "keywords": [
+        "UD Genuine Service",
+        "servis resmi",
+        "bengkel resmi",
+        "mekanik bersertifikat",
+        "suku cadang asli",
+        "UD Genuine Parts",
+        "diagnostik"
+      ]
+    },
+    {
+      "chunk_id": "SVC_GEN_002",
+      "category": "service_genuine",
+      "sub_category": "interval_servis_filter",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-genuine/",
+      "language": "id",
+      "text": "Jadwal penggantian filter untuk mesin GH8 dan GH11 (interval dalam km): Penyaring Udara Primer: setiap 60.000 km. Penyaring Udara Sekunder: setiap 120.000 km. Penyaring Ventilasi Tangki Bahan Bakar: setiap 60.000 km. Penyaring Bahan Bakar Primer: setiap 20.000 km. Kartrid Penyaring Udara: setiap 60.000 km. Catatan: GH8 adalah mesin kapasitas 8 liter, GH11 adalah mesin kapasitas 11 liter. Interval servis yang panjang ini adalah keunggulan Quester dibanding kompetitor — mengurangi downtime dan biaya perawatan.",
+      "keywords": [
+        "interval servis",
+        "penggantian filter",
+        "penyaring udara",
+        "penyaring bahan bakar",
+        "60000 km",
+        "120000 km",
+        "20000 km",
+        "GH8",
+        "GH11"
+      ]
+    },
+    {
+      "chunk_id": "SVC_GEN_003",
+      "category": "service_genuine",
+      "sub_category": "interval_servis_oli",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-genuine/",
+      "language": "id",
+      "text": "Jadwal penggantian oli dan pelumasan untuk truk UD Trucks Quester: Oli Mesin: setiap 20.000 km. Oli As Roda Belakang (differential oil): setiap 40.000 km. Oli Gearbox: setiap 60.000 km. Pemberian Gemuk (grease/pelumas): setiap 20.000 km. Air Aki Baterai (isi ulang): sesuai kebutuhan. Interval oli mesin 20.000 km adalah 2x lebih panjang dari standar industri umum, menghasilkan penghematan biaya perawatan yang signifikan dalam jangka panjang.",
+      "keywords": [
+        "ganti oli",
+        "oli mesin",
+        "oli diferensial",
+        "oli gearbox",
+        "gemuk",
+        "pelumasan",
+        "20000 km",
+        "40000 km",
+        "60000 km",
+        "jadwal perawatan"
+      ]
+    },
+    {
+      "chunk_id": "SVC_GEN_004",
+      "category": "service_genuine",
+      "sub_category": "keunggulan_interval_panjang",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-genuine/",
+      "language": "id",
+      "text": "Quester dirancang dengan interval servis internal yang lebih lama, menghemat waktu downtime truk di bengkel. Dampak bisnis: lebih sedikit hari truk berhenti di bengkel, biaya perawatan dan biaya per kilometer berkurang drastis, masa pakai komponen lebih maksimal dengan UD Genuine Parts. Truk lebih sering berada di jalan raya — ini berarti peningkatan profit dan produktivitas armada secara langsung. Interval servis panjang ini membedakan Quester dari kompetitor yang umumnya memerlukan servis lebih sering.",
+      "keywords": [
+        "downtime",
+        "interval servis panjang",
+        "biaya per km",
+        "produktivitas",
+        "profit armada",
+        "keunggulan kompetitif",
+        "TCO",
+        "total cost of ownership"
+      ]
+    },
+    {
+      "chunk_id": "SVC_TELE_001",
+      "category": "service_telematics",
+      "sub_category": "overview_my_ud_fleet",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-telematics/",
+      "language": "id",
+      "text": "My UD Fleet (UD Telematics Services) adalah solusi fleet management berbasis sistem komunikasi nirkabel berteknologi tinggi dari UD Trucks. Sistem ini dirancang untuk membantu operasi transportasi lebih menguntungkan dan efisien. Kegunaan utama: mengendalikan biaya bahan bakar, meningkatkan produktivitas driver, memantau armada dan driver secara real-time, mengurangi pekerjaan administratif, dan mendukung peningkatan kualitas pengemudi. Fitur utama: Track & Trace, Full Utilizations, Fuel Loss Alert, UD Proactive Support, dan Geofencing.",
+      "keywords": [
+        "My UD Fleet",
+        "UD Telematics",
+        "fleet management",
+        "monitoring armada",
+        "real-time",
+        "Track & Trace",
+        "GPS",
+        "efisiensi BBM"
+      ]
+    },
+    {
+      "chunk_id": "SVC_TELE_002",
+      "category": "service_telematics",
+      "sub_category": "fitur_track_trace",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-telematics/",
+      "language": "id",
+      "text": "Fitur Track & Trace pada My UD Fleet memastikan informasi lokasi armada dengan presisi tinggi secara real-time. Kemampuan fitur ini: melacak dan menelusuri posisi armada pada periode tertentu, mendapatkan ringkasan perjalanan (trip summary) per periode tertentu, dan mengetahui status kendaraan (misal: jalan, idle, parkir). Berguna untuk fleet manager yang perlu memastikan truk berada di rute yang benar dan tiba tepat waktu di tujuan.",
+      "keywords": [
+        "Track & Trace",
+        "lacak armada",
+        "lokasi real-time",
+        "trip summary",
+        "status kendaraan",
+        "GPS tracking",
+        "rute truk"
+      ]
+    },
+    {
+      "chunk_id": "SVC_TELE_003",
+      "category": "service_telematics",
+      "sub_category": "fitur_full_utilizations",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-telematics/",
+      "language": "id",
+      "text": "Fitur Full Utilizations pada My UD Fleet melakukan analisis gaya berkendara pengemudi dan menghasilkan laporan yang mudah dipahami. Sistem ini langsung terkoneksi ke IECU (In-vehicle ECU) sehingga dapat membedakan konsumsi bahan bakar saat drive, idle, dan PTO secara akurat. Fitur Driver ID memungkinkan pelacakan efisiensi bahan bakar per pengemudi secara individual. Data ini membantu fleet manager mengidentifikasi pengemudi yang perlu pelatihan dan mengukur dampak program training.",
+      "keywords": [
+        "Full Utilizations",
+        "driver behavior",
+        "gaya berkendara",
+        "IECU",
+        "konsumsi BBM",
+        "Driver ID",
+        "idle",
+        "PTO",
+        "driver score",
+        "pelatihan pengemudi"
+      ]
+    },
+    {
+      "chunk_id": "SVC_TELE_004",
+      "category": "service_telematics",
+      "sub_category": "fitur_fuel_loss_alert",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-telematics/",
+      "language": "id",
+      "text": "Fitur Fuel Loss Alert pada My UD Fleet memberikan notifikasi otomatis jika bahan bakar berkurang secara tidak wajar (indikasi pencurian BBM atau kebocoran). Informasi yang tersedia: tempat dan waktu terjadinya pengurangan BBM yang mencurigakan, jumlah BBM yang berkurang, dan sisa BBM setelah kejadian. Fitur ini penting untuk armada besar yang rentan terhadap praktik pencurian BBM di lapangan, membantu mengurangi kerugian operasional secara signifikan.",
+      "keywords": [
+        "Fuel Loss Alert",
+        "pencurian BBM",
+        "fuel theft",
+        "kehilangan bahan bakar",
+        "notifikasi BBM",
+        "monitoring fuel",
+        "sisa bahan bakar"
+      ]
+    },
+    {
+      "chunk_id": "SVC_TELE_005",
+      "category": "service_telematics",
+      "sub_category": "fitur_proactive_support",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-telematics/",
+      "language": "id",
+      "text": "Fitur UD Proactive Support pada My UD Fleet memastikan rencana servis selalu diperbarui dan truk mendapat perawatan terbaik pada waktu yang tepat. Dealer UD Trucks mengidentifikasi kode kerusakan (DTC/fault code) yang muncul dari sistem IECU truk dan memberikan peringatan dini ketika potensi masalah terdeteksi sebelum menjadi kerusakan serius. Dealer juga dapat membantu meningkatkan keterampilan berkendara untuk efisiensi bahan bakar. Sistem ini memungkinkan maintenance prediktif (bukan reaktif) yang mengurangi risiko breakdown di jalan.",
+      "keywords": [
+        "UD Proactive Support",
+        "fault code",
+        "DTC",
+        "kode kerusakan",
+        "IECU",
+        "maintenance prediktif",
+        "peringatan dini",
+        "breakdown",
+        "jadwal servis otomatis"
+      ]
+    },
+    {
+      "chunk_id": "SVC_TELE_006",
+      "category": "service_telematics",
+      "sub_category": "fitur_geofencing",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-telematics/",
+      "language": "id",
+      "text": "Fitur Geofencing pada My UD Fleet adalah sistem pagar geografis virtual. Pengguna dapat menentukan area operasional tertentu, dan sistem akan memberikan notifikasi otomatis ketika ada kendaraan yang keluar atau masuk area tersebut. Kegunaan: memonitor keluar-masuk armada pada area yang ditentukan (misal: depo, kawasan pelanggan, area terlarang). Cocok untuk memastikan truk tidak menyimpang dari rute yang ditentukan dan meningkatkan keamanan operasional armada.",
+      "keywords": [
+        "Geofencing",
+        "pagar geografis",
+        "area operasional",
+        "notifikasi keluar masuk",
+        "keamanan armada",
+        "monitoring rute",
+        "depo"
+      ]
+    },
+    {
+      "chunk_id": "SVC_AGREE_001",
+      "category": "service_agreement",
+      "sub_category": "overview_ud_trust",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-trust/",
+      "language": "id",
+      "text": "UD Service Agreement adalah program perjanjian perawatan Astra UD Trucks yang hadir dalam tiga paket: (1) UD Pro-Care: paket purna jual menyeluruh meliputi service & parts dengan potongan harga khusus dan layanan prioritas. (2) UD Trust: jaminan perawatan terpercaya oleh mekanik bersertifikat dengan suku cadang dan pelumas asli, memaksimalkan jam kerja, efisiensi, dan umur truk. (3) UD Ultimate: kontrak servis paling komprehensif mencakup perawatan dan perbaikan luas dengan biaya yang disepakati di awal melalui sistem Cost Per Km (CPK). Cara kerja: pelanggan dikunjungi sales representatif, memilih paket sesuai kebutuhan, kontrak berlaku langsung setelah ditandatangani, satu invoice bulanan untuk semua transaksi.",
+      "keywords": [
+        "UD Service Agreement",
+        "UD Trust",
+        "UD Pro-Care",
+        "UD Ultimate",
+        "kontrak servis",
+        "Cost Per Km",
+        "CPK",
+        "paket perawatan",
+        "invoice bulanan"
+      ]
+    },
+    {
+      "chunk_id": "SVC_DRIVER_001",
+      "category": "service_driver_training",
+      "sub_category": "overview_driver_training",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-driver/",
+      "language": "id",
+      "text": "UD Driver Training adalah program pelatihan pengemudi dan mekanik yang disediakan Astra UD Trucks sebagai layanan purna jual. Program ini menggabungkan pelatihan teknis berkendara dengan pelatihan pengelolaan bahan bakar untuk mengurangi biaya operasional armada secara signifikan. Manfaat terukur dari program ini: meningkatkan produktivitas pengemudi, mengurangi risiko downtime, mengurangi biaya perawatan, mengurangi konsumsi BBM, meningkatkan nilai jual kembali truk, meningkatkan keamanan pengemudi, dan meningkatkan kepuasan serta loyalitas pegawai.",
+      "keywords": [
+        "UD Driver Training",
+        "pelatihan pengemudi",
+        "pelatihan mekanik",
+        "efisiensi BBM",
+        "produktivitas driver",
+        "downtime",
+        "biaya perawatan",
+        "fuel efficiency training"
+      ]
+    },
+    {
+      "chunk_id": "SVC_DRIVER_002",
+      "category": "service_driver_training",
+      "sub_category": "manfaat_bisnis_training",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-driver/",
+      "language": "id",
+      "text": "Biaya bahan bakar adalah komponen terbesar dalam biaya operasional armada truk. Training pengemudi yang tepat dikombinasikan dengan pelatihan pengelolaan bahan bakar adalah cara paling efektif untuk mengurangi pengeluaran. Trainer terlatih UD Trucks dapat memberikan pengalaman dan perspektif baru bahkan untuk pengemudi paling berpengalaman sekalipun — tentang cara mengemudi yang lebih efisien dan hemat BBM. Meningkatkan performa pengemudi secara konsisten dengan follow-up berkelanjutan memberikan kontribusi besar dalam mengurangi Total Cost of Ownership (TCO) armada.",
+      "keywords": [
+        "biaya BBM",
+        "training pengemudi",
+        "fuel management",
+        "TCO",
+        "total cost of ownership",
+        "pengeluaran armada",
+        "cost reduction",
+        "efisiensi operasional"
+      ]
+    },
+    {
+      "chunk_id": "SVC_WARRANTY_001",
+      "category": "service_warranty",
+      "sub_category": "garansi_pekerjaan",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pelayanan/",
+      "language": "id",
+      "text": "Astra UD Trucks memberikan garansi pekerjaan servis sebagai jaminan kualitas layanan. Garansi pekerjaan ringan: berlaku selama 5.000 km atau 2 minggu (mana yang lebih dahulu tercapai). Garansi pekerjaan berat: berlaku selama 30.000 km atau 3 bulan (mana yang lebih dahulu tercapai). Garansi ini mencerminkan kepercayaan diri Astra UD Trucks terhadap kualitas mekanik dan suku cadang yang digunakan. Jika ada masalah dalam periode garansi setelah pekerjaan servis, pelanggan berhak mendapat perbaikan tanpa biaya tambahan.",
+      "keywords": [
+        "garansi servis",
+        "garansi pekerjaan",
+        "5000 km",
+        "30000 km",
+        "2 minggu",
+        "3 bulan",
+        "jaminan kualitas servis",
+        "after sales"
+      ]
+    },
+    {
+      "chunk_id": "SVC_MOBILE_001",
+      "category": "service_mobile_workshop",
+      "sub_category": "layanan_kunjung",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pelayanan/",
+      "language": "id",
+      "text": "UD Mobile Workshop (Layanan Kunjung) adalah solusi servis langsung di lokasi pelanggan, menghilangkan kebutuhan membawa truk ke bengkel. Layanan yang tersedia: perawatan rutin, perbaikan ringan, dan diagnosa kendaraan. Didukung oleh peralatan dan perlengkapan lengkap, UD Genuine Parts (suku cadang asli), dan UD Certified Mechanics (mekanik bersertifikat). Ideal untuk armada besar yang tidak bisa menghentikan operasional hanya untuk servis rutin, atau truk yang beroperasi di lokasi terpencil.",
+      "keywords": [
+        "mobile workshop",
+        "layanan kunjung",
+        "servis di tempat",
+        "servis on-site",
+        "perawatan rutin",
+        "perbaikan ringan",
+        "diagnosa kendaraan",
+        "bengkel keliling"
+      ]
+    },
+    {
+      "chunk_id": "SVC_24H_001",
+      "category": "service_24h",
+      "sub_category": "24h_technical_assistance",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pelayanan/",
+      "language": "id",
+      "text": "ASTRA UD 24H Technical Assistance adalah layanan dukungan teknis yang tersedia 24 jam sehari, 7 hari seminggu. Layanan ini memastikan pengemudi dan fleet manager mendapat bantuan teknis kapanpun dan dimanapun truk mengalami masalah di jalan. Didukung mekanik terlatih Astra UD Trucks dan suku cadang asli UD Trucks yang tersedia di seluruh Indonesia. Untuk menghubungi layanan 24H Technical Assistance, kunjungi halaman resmi atau hubungi nomor layanan yang tertera di website astraudtrucks.co.id.",
+      "keywords": [
+        "24H Technical Assistance",
+        "bantuan darurat",
+        "darurat di jalan",
+        "breakdown",
+        "mogok",
+        "24 jam",
+        "7 hari",
+        "kontak darurat",
+        "emergency service"
+      ]
+    },
+    {
+      "chunk_id": "SVC_FAQ_001",
+      "category": "service_genuine",
+      "sub_category": "faq_servis",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-genuine/",
+      "language": "id",
+      "text": "Pertanyaan umum tentang servis UD Trucks: Q: Apakah saya bisa servis di bengkel umum? A: Bisa, namun untuk menjaga garansi dan kualitas optimal, disarankan servis di bengkel resmi UD Trucks yang menggunakan UD Genuine Parts dan mekanik bersertifikat. Q: Berapa lama waktu tunggu servis rutin? A: Dengan perencanaan servis UD Trucks, jadwal servis diketahui jauh hari sehingga dapat direncanakan untuk meminimalkan downtime. Q: Di mana saya bisa booking servis? A: Melalui website astraudtrucks.co.id menu Book A Service, atau hubungi dealer resmi terdekat.",
+      "keywords": [
+        "FAQ servis",
+        "booking servis",
+        "bengkel umum",
+        "garansi",
+        "waktu tunggu",
+        "perencanaan servis",
+        "downtime"
+      ]
+    },
+    {
+      "chunk_id": "PROD_FAQ_001",
+      "category": "product_specs",
+      "sub_category": "faq_produk",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/",
+      "language": "id",
+      "text": "Pertanyaan umum dari calon pembeli: Q: Apa perbedaan Quester GWE dan GKE? A: GWE adalah 6x4 (dua sumbu penggerak belakang) cocok untuk beban berat dan medan berat, GKE adalah 4x2 (satu sumbu penggerak) lebih ringan dan efisien untuk beban menengah di rute datar. Q: Apakah truk UD tersedia untuk pertambangan? A: Ya, Quester CWE 6x4 Rigid dan Quester GWE 6x4 Tractor Head adalah pilihan yang tepat untuk operasi konstruksi dan pertambangan. Q: Bagaimana cara test drive? A: Hubungi dealer resmi terdekat atau ajukan Presentation Request melalui website.",
+      "keywords": [
+        "FAQ produk",
+        "perbedaan GWE GKE",
+        "truk pertambangan",
+        "test drive",
+        "presentation request",
+        "konsultasi produk"
+      ]
+    },
+    {
+      "chunk_id": "PROD_FAQ_002",
+      "category": "product_specs",
+      "sub_category": "faq_spesifikasi",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/",
+      "language": "id",
+      "text": "Pertanyaan teknis umum tentang spesifikasi: Q: Apa itu GH8E dan GH11E? A: GH8E adalah mesin UD Trucks berkapasitas 8 liter dengan pilihan tenaga 250–350 HP, sedangkan GH11E adalah mesin 11 liter dengan tenaga 410 HP dan torsi 1.990 Nm — cocok untuk aplikasi paling berat. Q: Apa artinya 9 speed dan 12 speed? A: Mengacu pada jumlah percepatan transmisi. 12-speed pada mesin GH11E memberikan kontrol lebih halus terutama untuk tanjakan berat dan muatan penuh. Q: Berapa kapasitas tangki BBM Quester? A: Informasi kapasitas tangki BBM dapat ditemukan di brosur masing-masing model — silakan unduh di halaman Brosur website.",
+      "keywords": [
+        "GH8E",
+        "GH11E",
+        "mesin 8 liter",
+        "mesin 11 liter",
+        "9 speed",
+        "12 speed",
+        "kapasitas tangki",
+        "transmisi",
+        "spesifikasi teknis"
+      ]
+    },
+    {
+      "chunk_id": "CUST_001",
+      "category": "company_profile",
+      "sub_category": "testimonial_pelanggan",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli"
+      ],
+      "source_url": "https://astraudtrucks.co.id/",
+      "language": "id",
+      "text": "Rudi Irawan, President Director PT Bangun Perkasa Express: 'Kami yang pertama menggunakan truk Quester Euro 5. Kami menggunakan truk Quester Euro 5 ini karena kami selalu ingin berinovasi dengan teknologi terbaru dan terbaik. Selama ini kami sudah menggunakan Quester Euro 3 yang sudah membantu pekerjaan kami dan ke depannya kami berharap Quester Euro 5 ini dapat membantu kami dalam mensukseskan pekerjaan-pekerjaan kami.' Ini menunjukkan loyalitas pelanggan yang beralih dari Euro 3 ke Euro 5 karena kepercayaan pada kualitas produk.",
+      "keywords": [
+        "testimonial",
+        "Bangun Perkasa Express",
+        "Quester Euro 5",
+        "loyalitas pelanggan",
+        "inovasi",
+        "Euro 3 ke Euro 5"
+      ]
+    },
+    {
+      "chunk_id": "CUST_002",
+      "category": "company_profile",
+      "sub_category": "testimonial_pelanggan",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli"
+      ],
+      "source_url": "https://astraudtrucks.co.id/",
+      "language": "id",
+      "text": "Andijaya Chandra, Director Puninar Logistic: 'Karena Puninar adalah perusahaan logistik terintegrasi yang salah satu pelayanannya adalah transportasi, hubungan kami dengan UD Trucks sudah sangat dekat dan sudah seperti kerabat sendiri. Kami di Puninar memutuskan untuk berinvestasi sebagian besar truk kami di Quester, selain nyaman Quester juga punya teknologi yang canggih. UD Telematics-nya membantu kami dalam membuat analisa, salah satunya mengenai fuel efficiency.' Testimoni ini secara khusus menyebut nilai UD Telematics untuk analitik bisnis armada besar.",
+      "keywords": [
+        "testimonial",
+        "Puninar Logistic",
+        "Quester",
+        "UD Telematics",
+        "fuel efficiency",
+        "perusahaan logistik",
+        "armada besar"
+      ]
+    },
+    {
+      "chunk_id": "CONTACT_001",
+      "category": "company_profile",
+      "sub_category": "kontak_dan_layanan",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/",
+      "language": "id",
+      "text": "Cara menghubungi dan menggunakan layanan Astra UD Trucks: (1) Temukan Dealer: kunjungi astraudtrucks.co.id/temukan-dealer untuk dealer terdekat. (2) Presentation Request (kunjungan tim sales): melalui halaman Hubungi Kami atau langsung ke URL dengan parameter tab_type=Kebutuhan+Unit+%26+Kunjungan. (3) Book A Service (booking servis): melalui halaman Hubungi Kami dengan parameter tab_type=Booking+Service. (4) 24H Technical Assistance: astraudtrucks.co.id/24h-technical-assistance untuk darurat teknis kapanpun.",
+      "keywords": [
+        "kontak",
+        "hubungi kami",
+        "book a service",
+        "booking servis",
+        "temukan dealer",
+        "24H",
+        "technical assistance",
+        "presentation request",
+        "kunjungan sales"
+      ]
+    },
+    {
+      "chunk_id": "PARTS_001",
+      "category": "service_genuine",
+      "sub_category": "suku_cadang",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pelayanan/",
+      "language": "id",
+      "text": "UD Genuine Parts adalah suku cadang asli UD Trucks yang tersedia melalui jaringan dealer resmi di seluruh Indonesia. Menggunakan suku cadang asli penting untuk: menjaga performa mesin sesuai standar pabrik, memastikan keselamatan berkendara, menjaga garansi kendaraan tetap berlaku, dan memaksimalkan masa pakai komponen. Suku cadang dan pelumas UD Trucks tersedia di bengkel resmi dari Medan hingga Makassar. Penggunaan suku cadang non-genuine berisiko merusak komponen lain dan menggugurkan garansi.",
+      "keywords": [
+        "UD Genuine Parts",
+        "suku cadang asli",
+        "spare parts",
+        "pelumas",
+        "garansi",
+        "bengkel resmi",
+        "keaslian parts",
+        "original parts"
+      ]
+    },
+    {
+      "chunk_id": "PARTS_002",
+      "category": "service_genuine",
+      "sub_category": "adblue_pengisian",
+      "applies_to": "all",
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/",
+      "language": "id",
+      "text": "AdBlue adalah cairan urea yang digunakan sistem SCR (Selective Catalytic Reduction) pada truk Euro 5 untuk mengurangi emisi gas NOx. AdBlue Astra UD Trucks kini hadir dalam kemasan drum plastik berkapasitas 200 liter untuk kemudahan penyimpanan di depo atau armada besar. Penting: truk Euro 5 tidak akan bisa beroperasi normal jika AdBlue habis — sistem akan membatasi tenaga mesin secara otomatis. Driver dan fleet manager perlu memantau level AdBlue secara rutin dan mengisi sebelum habis.",
+      "keywords": [
+        "AdBlue",
+        "urea",
+        "SCR",
+        "emisi NOx",
+        "Euro 5",
+        "drum 200 liter",
+        "pengisian AdBlue",
+        "level AdBlue",
+        "batas tenaga mesin"
+      ]
+    },
+    {
+      "chunk_id": "PROD_008",
+      "category": "product_specs",
+      "sub_category": "new_kuzer_ske_150",
+      "applies_to": "new_kuzer_ske_150",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "dealer"
+      ],
+      "source_url": "https://astraudtrucks.co.id/product/new-kuzer-ske-150/",
+      "language": "id",
+      "text": "New Kuzer SKE 150 adalah truk ringan terbaru Astra UD Trucks dalam segmen medium-light truck untuk distribusi perkotaan. Spesifikasi utama: konfigurasi sumbu 4x2 Rigid, pilihan wheelbase 3.3 atau 4.1 meter, GVW 8.25 Ton, mesin 4HL1-TCS, tenaga 150 HP, torsi 402 Nm, transmisi 6-speed Over Drive. Cocok untuk segmen: General Cargo & Industri. New Kuzer SKE 150 dirancang untuk pengiriman barang di perkotaan: kompak, lincah di tikungan tajam, dan efisien bahan bakar. Tagline: Smarter. Stronger. More Profitable.",
+      "keywords": [
+        "New Kuzer",
+        "SKE 150",
+        "4x2",
+        "rigid",
+        "150 HP",
+        "GVW 8.25 ton",
+        "medium truck",
+        "distribusi perkotaan",
+        "4HL1-TCS",
+        "6-speed",
+        "light truck"
+      ]
+    },
+    {
+      "chunk_id": "PROD_009",
+      "category": "product_specs",
+      "sub_category": "kuzer_overview",
+      "applies_to": "kuzer",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/lini-product/",
+      "language": "id",
+      "text": "Lini Kuzer dari UD Trucks adalah truk medium-light yang dirancang untuk pengiriman barang perkotaan. Filosofi: 'Made to Deliver Extra'. Keunggulan utama Kuzer: fleksibilitas di jalan kota yang padat dan sempit, mesin CRS (Common Rail System) generasi baru yang tahan lama dengan OBD (On-Board Diagnostics) dan komunikasi berbasis CAN (Controller Area Network), kabin ergonomis yang nyaman untuk kerja sehari-hari, efisiensi bahan bakar unggul berkat rasio persneling dan desain kabin aerodinamis yang optimal. Dibandingkan Quester (heavy-duty), Kuzer lebih cocok untuk distribusi last-mile, pengiriman dalam kota, dan area dengan keterbatasan akses jalan.",
+      "keywords": [
+        "Kuzer",
+        "Made to Deliver Extra",
+        "CRS",
+        "Common Rail System",
+        "OBD",
+        "CAN",
+        "medium truck",
+        "distribusi",
+        "last mile",
+        "perkotaan",
+        "aerodinamis",
+        "efisiensi BBM"
+      ]
+    },
+    {
+      "chunk_id": "PROD_010",
+      "category": "product_specs",
+      "sub_category": "perbandingan_quester_vs_kuzer",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/lini-product/",
+      "language": "id",
+      "text": "Panduan memilih antara lini Quester dan Kuzer: Pilih Quester jika: muatan berat (16–54 ton), rute antar kota atau antar pulau, medan berat (konstruksi, pertambangan, tanjakan), butuh teknologi ESCOT atau telematis canggih, segmen EMKL/petroleum/kimia. Pilih Kuzer jika: muatan ringan-menengah (hingga 8.25 ton), distribusi dalam kota atau area terbatas, rute dengan akses jalan sempit, butuh kelincahan dan kemudahan parkir, bisnis pengiriman retail atau FMCG last-mile. Keduanya didukung UD Genuine Service, UD Genuine Parts, dan jaringan dealer nasional.",
+      "keywords": [
+        "Quester vs Kuzer",
+        "perbandingan produk",
+        "pilih truk",
+        "heavy duty vs medium",
+        "FMCG",
+        "last mile",
+        "distribusi dalam kota",
+        "rekomendasi truk"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_008",
+      "category": "truck_knowledge",
+      "sub_category": "escot_spesifikasi_teknis",
+      "applies_to": "quester_gwe_410_escot",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/lini-product/",
+      "language": "id",
+      "text": "ESCOT (Easy & Safety Controlled Transmission) pada Quester GWE 410 menggunakan unit transmisi AT2612F atau ATO2612F — transmisi elektronik 12 kecepatan yang dirancang untuk perpindahan gigi otomatis dengan opsi perpindahan manual. Spesifikasi teknis: dirancang menerima torsi mesin hingga 2.600 Nm. Kontrol elektronik dengan pemindah gigi terintegrasi di kursi pengemudi untuk kenyamanan dan keamanan ergonomis. ESCOT mempertahankan keandalan transmisi manual namun dengan kontrol elektronik untuk pergantian gigi yang lebih presisi. Manfaat operasional: mengoptimalkan efisiensi operasional, menurunkan konsumsi bahan bakar, dan mengurangi emisi.",
+      "keywords": [
+        "ESCOT",
+        "AT2612F",
+        "ATO2612F",
+        "12 speed",
+        "torsi 2600 Nm",
+        "transmisi elektronik",
+        "perpindahan gigi otomatis",
+        "ergonomis",
+        "efisiensi BBM",
+        "emisi rendah"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_009",
+      "category": "truck_knowledge",
+      "sub_category": "scr_cara_kerja",
+      "applies_to": "all",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/lini-product/",
+      "language": "id",
+      "text": "Sistem SCR (Selective Catalytic Reduction) pada truk Quester Euro 5 bekerja sebagai berikut: cairan AdBlue disemprotkan ke aliran gas buang mesin sebelum dilepas ke atmosfer. Reaksi kimia mengubah nitrogen oksida (NOx) yang berbahaya menjadi nitrogen (N2) dan uap air (H2O) yang tidak berbahaya. Hasilnya: emisi gas buang jauh lebih bersih, performa mesin tidak berkurang, dan mesin lebih tahan lama karena beban termal lebih rendah. Sistem SCR tidak membutuhkan EGR (Exhaust Gas Recirculation) sehingga mesin lebih efisien dan lebih mudah dirawat.",
+      "keywords": [
+        "SCR",
+        "Selective Catalytic Reduction",
+        "cara kerja",
+        "AdBlue",
+        "NOx",
+        "nitrogen oksida",
+        "emisi bersih",
+        "Euro 5",
+        "gas buang",
+        "EGR"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_010",
+      "category": "truck_knowledge",
+      "sub_category": "desain_mesin_quester",
+      "applies_to": "quester_gwe_euro5,quester_gke_euro5,quester_cwe_euro5,quester_cde_euro5,quester_cke_euro5",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/lini-product/",
+      "language": "id",
+      "text": "Mesin UD Trucks Quester dikembangkan sendiri oleh UD Trucks dalam dua varian kapasitas: GH8E (8 liter) dan GH11E (11 liter). Fitur desain mesin: sistem injeksi bahan bakar elektronik (electronic fuel injection) untuk presisi dan efisiensi optimal, dilengkapi turbocharger dan intercooler efisiensi tinggi yang mempertahankan pendinginan udara masuk untuk performa konsisten, modern Engine Management System untuk diagnosa dan pemaksimalan waktu operasional. Filosofi desain: Ultimate Dependability — truk yang lebih andal, lebih efisien, dan lebih tahan lama untuk tugas berat sehari-hari.",
+      "keywords": [
+        "mesin GH8E",
+        "mesin GH11E",
+        "electronic fuel injection",
+        "turbocharger",
+        "intercooler",
+        "Engine Management System",
+        "8 liter",
+        "11 liter",
+        "Ultimate Dependability",
+        "desain mesin Quester"
+      ]
+    },
+    {
+      "chunk_id": "TRUCK_011",
+      "category": "truck_knowledge",
+      "sub_category": "rangka_dan_ketahanan",
+      "applies_to": "quester_gwe_euro5,quester_cwe_euro5",
+      "user_role": [
+        "calon_pembeli",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pemahaman-truk/lini-product/",
+      "language": "id",
+      "text": "Rangka sasis Quester dirancang kuat dan tahan lama untuk menahan tekanan vertikal (beban muatan) dan tekanan torsi (torsi mesin dan drivetrain). Desain rangka yang tangguh ini menjamin umur panjang sasis dan komponen, bahkan dalam kondisi operasional berat seperti konstruksi dan pertambangan. Ketahanan rangka berkontribusi langsung pada nilai jual kembali truk yang lebih tinggi dibanding kompetitor, karena kondisi sasis tetap prima setelah bertahun-tahun penggunaan intensif.",
+      "keywords": [
+        "rangka sasis",
+        "ketahanan",
+        "tekanan vertikal",
+        "torsi",
+        "umur panjang",
+        "nilai jual kembali",
+        "konstruksi",
+        "pertambangan",
+        "durabilitas Quester"
+      ]
+    },
+    {
+      "chunk_id": "OPS_001",
+      "category": "operational_knowledge",
+      "sub_category": "inspeksi_harian_pre_trip",
+      "applies_to": "all",
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/pentingnya-inspeksi-harian-truk-sebelum-memulai-tugas-operasional/",
+      "language": "id",
+      "text": "Inspeksi harian (Pre-Trip Inspection) sebelum operasional truk adalah langkah preventif paling krusial namun sering diabaikan. Lebih dari 30% kendala teknis di perjalanan dapat dihindari jika pengemudi meluangkan 10–15 menit untuk memeriksa kendaraan sebelum meninggalkan pool. Metode inspeksi yang dianjurkan adalah metode sirkular: berjalan mengitari truk secara sistematis memeriksa semua poin utama. Manfaat inspeksi harian: mendeteksi potensi kerusakan dini, menekan biaya perbaikan akibat kerusakan fatal di jalan, dan memastikan keselamatan pengemudi serta pengguna jalan lain.",
+      "keywords": [
+        "inspeksi harian",
+        "pre-trip inspection",
+        "pemeriksaan harian",
+        "metode sirkular",
+        "30% kendala teknis",
+        "pool",
+        "preventif",
+        "keselamatan pengemudi"
+      ]
+    },
+    {
+      "chunk_id": "OPS_002",
+      "category": "operational_knowledge",
+      "sub_category": "checklist_inspeksi_cairan",
+      "applies_to": "all",
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/pentingnya-inspeksi-harian-truk-sebelum-memulai-tugas-operasional/",
+      "language": "id",
+      "text": "Poin 1 inspeksi harian — Pemeriksaan Cairan dan Fluida: Sebelum menyalakan mesin, buka kap depan dan periksa: (a) volume oli mesin — pastikan di atas batas minimum, (b) air radiator/coolant — pastikan tidak kurang dan tidak ada kebocoran, (c) minyak rem — cek level di reservoir, (d) cairan pembersih kaca/wiper. Pastikan tidak ada indikasi kebocoran di bawah area mesin. Mengoperasikan truk dengan fluida di bawah batas minimum dapat memicu overheat dan kerusakan fatal pada komponen internal mesin.",
+      "keywords": [
+        "checklist inspeksi",
+        "oli mesin",
+        "air radiator",
+        "coolant",
+        "minyak rem",
+        "wiper fluid",
+        "kebocoran",
+        "overheat",
+        "level fluida",
+        "buka kap mesin"
+      ]
+    },
+    {
+      "chunk_id": "OPS_003",
+      "category": "operational_knowledge",
+      "sub_category": "checklist_inspeksi_ban",
+      "applies_to": "all",
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/pentingnya-inspeksi-harian-truk-sebelum-memulai-tugas-operasional/",
+      "language": "id",
+      "text": "Poin 2 inspeksi harian — Kondisi Ban dan Roda: Ban adalah satu-satunya titik kontak kendaraan dengan jalan, sehingga kondisinya sangat krusial. Yang harus diperiksa: (a) tekanan angin setiap roda — pastikan tidak kurang dan tidak berlebih, (b) kedalaman alur ban — pastikan masih dalam batas aman, (c) benda tajam yang terselip (paku, batu) — periksa visual seluruh permukaan ban, (d) baut roda — pastikan semua terpasang kencang tanpa longgar, (e) kondisi velg — pastikan tidak ada retak atau deformasi. Ban dengan tekanan tidak tepat meningkatkan konsumsi BBM dan risiko pecah ban di jalan.",
+      "keywords": [
+        "kondisi ban",
+        "tekanan ban",
+        "alur ban",
+        "baut roda",
+        "velg",
+        "paku ban",
+        "pecah ban",
+        "kedalaman alur",
+        "inspeksi ban"
+      ]
+    },
+    {
+      "chunk_id": "OPS_004",
+      "category": "operational_knowledge",
+      "sub_category": "checklist_inspeksi_rem",
+      "applies_to": "all",
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/pentingnya-inspeksi-harian-truk-sebelum-memulai-tugas-operasional/",
+      "language": "id",
+      "text": "Poin 3 inspeksi harian — Komponen Rem dan Tekanan Udara: Quester dan Kuzer menggunakan sistem rem udara (air brake). Yang harus diperiksa: (a) pastikan kompresor bekerja dengan baik untuk membangun tekanan udara hingga batas aman operasional, (b) dengarkan apakah ada suara mendesis yang mengindikasikan kebocoran udara pada selang rem saat pedal ditekan. Kebocoran pada sistem rem udara adalah kondisi darurat yang harus ditangani sebelum truk dioperasikan. Jangan operasikan truk jika tekanan udara rem tidak mencapai batas aman.",
+      "keywords": [
+        "rem udara",
+        "air brake",
+        "tekanan udara",
+        "kompresor",
+        "kebocoran rem",
+        "selang rem",
+        "mendesis",
+        "sistem rem",
+        "batas aman rem",
+        "darurat rem"
+      ]
+    },
+    {
+      "chunk_id": "OPS_005",
+      "category": "operational_knowledge",
+      "sub_category": "checklist_inspeksi_lampu_dashboard",
+      "applies_to": "all",
+      "user_role": [
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/pentingnya-inspeksi-harian-truk-sebelum-memulai-tugas-operasional/",
+      "language": "id",
+      "text": "Poin 4 inspeksi harian — Lampu dan Dashboard: (a) Lampu eksterior: nyalakan kunci kontak dan periksa lampu utama (high/low beam), lampu sein, lampu rem, lampu mundur, dan lampu hazard. (b) Dashboard warning light: setelah mesin menyala, perhatikan panel instrumen — pastikan tidak ada lampu peringatan yang tetap menyala. Pada truk modern Astra UD Trucks, sistem on-board diagnostics canggih akan langsung memberikan informasi jika ada anomali pada transmisi, tekanan oli, atau komponen elektrikal. Lampu peringatan yang menyala saat mesin hidup normal harus segera diinvestigasi sebelum truk dioperasikan.",
+      "keywords": [
+        "lampu peringatan",
+        "warning light",
+        "dashboard",
+        "lampu utama",
+        "lampu rem",
+        "lampu sein",
+        "on-board diagnostics",
+        "OBD",
+        "panel instrumen",
+        "anomali mesin"
+      ]
+    },
+    {
+      "chunk_id": "OPS_006",
+      "category": "operational_knowledge",
+      "sub_category": "angkut_bahan_kimia_keselamatan",
+      "applies_to": "quester_gwe_euro5,quester_cde_euro5,quester_cwe_euro5",
+      "user_role": [
+        "fleet_manager",
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/mengapa-ud-trucks-menjadi-pilihan-utama-bisnis-angkut-bahan-kimia-dan-cairan/",
+      "language": "id",
+      "text": "Untuk operasi angkutan bahan kimia cair (petroleum, kimia industri, cairan berbahaya), truk yang direkomendasikan adalah lini Quester dengan konfigurasi tractor head (GWE) atau rigid (CDE/CWE). Faktor keselamatan utama: (1) Sasis Quester dirancang dengan distribusi beban seimbang untuk menjaga stabilitas meski tangki cairan mengalami sloshing effect (gerakan cairan di dalam tangki saat bermanuver). (2) Sistem pengereman pakem dan responsif untuk antisipasi kondisi darurat. (3) Kendali kemudi presisi di berbagai kondisi jalan Indonesia. Selalu pastikan pengemudi yang menangani muatan B3 (Bahan Berbahaya dan Beracun) telah mendapat pelatihan UD Driver Training modul khusus.",
+      "keywords": [
+        "angkut bahan kimia",
+        "B3",
+        "berbahaya beracun",
+        "petroleum",
+        "tangki cairan",
+        "sloshing effect",
+        "stabilitas truk",
+        "keselamatan muatan berbahaya",
+        "distribusi beban"
+      ]
+    },
+    {
+      "chunk_id": "OPS_007",
+      "category": "operational_knowledge",
+      "sub_category": "logistik_emisi_global",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "calon_pembeli"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/persiapan-bisnis-logistik-menghadapi-standar-emisi-global-bersama-astra-ud-trucks/",
+      "language": "id",
+      "text": "Bisnis logistik saat ini memasuki era standar emisi global yang semakin ketat. Astra UD Trucks membantu perusahaan logistik mempersiapkan transisi ini melalui lini produk Euro 5 yang sudah memenuhi standar emisi terkini. Investasi di truk Euro 5 saat ini memberikan keunggulan kompetitif jangka panjang: kepatuhan regulasi emisi yang akan semakin diperketat, penghematan BBM yang mengurangi biaya operasional, dan citra perusahaan yang lebih hijau di mata klien. Perusahaan yang masih menggunakan armada Euro 3 perlu merencanakan migrasi bertahap ke Euro 5 untuk mengantisipasi regulasi yang akan datang.",
+      "keywords": [
+        "standar emisi global",
+        "Euro 5",
+        "logistik hijau",
+        "regulasi emisi",
+        "transisi armada",
+        "Euro 3 ke Euro 5",
+        "emisi karbon",
+        "green logistics",
+        "kepatuhan regulasi"
+      ]
+    },
+    {
+      "chunk_id": "PARTS_003",
+      "category": "service_genuine",
+      "sub_category": "pelumas_genuine",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pelayanan/suku-cadang-pelumas/",
+      "language": "id",
+      "text": "Pelumas Asli UD Trucks (UD Genuine Lubricants) adalah pelumas resmi yang diformulasikan khusus untuk mesin, transmisi, dan drivetrain UD Trucks. Menggunakan pelumas genuine terbukti meningkatkan efisiensi bisnis melalui: performa mesin yang optimal sesuai spesifikasi pabrik, masa pakai komponen yang lebih panjang, perlindungan mesin lebih baik di berbagai kondisi iklim tropis Indonesia, dan garansi tetap berlaku. Tersedia di seluruh bengkel dan dealer resmi Astra UD Trucks di Indonesia.",
+      "keywords": [
+        "pelumas asli",
+        "UD Genuine Lubricants",
+        "pelumas resmi",
+        "oli UD Trucks",
+        "efisiensi bisnis",
+        "garansi pelumas",
+        "iklim tropis",
+        "mesin terlindungi"
+      ]
+    },
+    {
+      "chunk_id": "PARTS_004",
+      "category": "service_genuine",
+      "sub_category": "ud_genuine_parts_detail",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager",
+        "mekanik"
+      ],
+      "source_url": "https://astraudtrucks.co.id/pelayanan/suku-cadang-pelumas/",
+      "language": "id",
+      "text": "UD Genuine Parts adalah suku cadang asli UD Trucks yang merupakan 'mitra sejati' truk Anda. Setiap part genuine diproduksi sesuai spesifikasi ketat pabrik UD Trucks di Jepang, memastikan: kecocokan sempurna dengan komponen asli kendaraan, performa yang konsisten dan dapat diprediksi, ketahanan dan masa pakai yang optimal. Risiko menggunakan suku cadang non-genuine (palsu atau KW): komponen bisa tidak pas sehingga merusak part lain, garansi kendaraan gugur, performa menurun, dan risiko keselamatan meningkat. UD Genuine Parts tersedia di seluruh dealer dan bengkel resmi Astra UD Trucks.",
+      "keywords": [
+        "UD Genuine Parts",
+        "suku cadang asli",
+        "spesifikasi pabrik",
+        "Jepang",
+        "suku cadang palsu",
+        "KW",
+        "garansi gugur",
+        "mitra sejati",
+        "original parts"
+      ]
+    },
+    {
+      "chunk_id": "FAQ_001",
+      "category": "operational_knowledge",
+      "sub_category": "faq_driver_operasional",
+      "applies_to": "all",
+      "user_role": [
+        "driver"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/",
+      "language": "id",
+      "text": "Pertanyaan umum dari pengemudi: Q: Lampu kuning di dashboard menyala, apa yang harus dilakukan? A: Lampu kuning (warning) umumnya menandakan ada anomali yang perlu diperhatikan tapi truk masih bisa berjalan dengan aman. Catat kode atau simbol lampunya, segera hubungi fleet manager, dan jadwalkan pemeriksaan di bengkel resmi. Jangan tunda lebih dari satu hari. Q: Lampu merah di dashboard menyala saat jalan, harus bagaimana? A: Lampu merah (critical warning) berarti ada masalah serius — berhenti di tempat aman segera, matikan mesin, dan hubungi 24H Technical Assistance Astra UD Trucks. Q: Berapa tekanan ban yang benar untuk Quester? A: Tekanan ban bervariasi per model dan beban — selalu rujuk ke stiker spesifikasi ban di dalam pintu pengemudi atau hubungi dealer resmi.",
+      "keywords": [
+        "lampu dashboard",
+        "warning light",
+        "lampu merah",
+        "lampu kuning",
+        "critical warning",
+        "tekanan ban",
+        "darurat",
+        "24H",
+        "berhenti aman",
+        "FAQ driver"
+      ]
+    },
+    {
+      "chunk_id": "FAQ_002",
+      "category": "operational_knowledge",
+      "sub_category": "faq_fleet_manager",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/service/ud-telematics/",
+      "language": "id",
+      "text": "Pertanyaan umum dari fleet manager: Q: Apakah My UD Fleet bisa dipasang di truk UD lama (non-Euro 5)? A: Fitur telematis lengkap paling optimal pada Quester Euro 5 karena langsung terintegrasi ke IECU. Untuk unit lama, hubungi dealer untuk opsi retrofit. Q: Berapa biaya berlangganan My UD Fleet? A: Hubungi dealer resmi untuk informasi paket dan harga terkini. Q: Bagaimana cara memaksimalkan data My UD Fleet untuk mengurangi biaya BBM armada? A: Gunakan data Full Utilizations untuk identifikasi pengemudi dengan idle time tinggi atau kecepatan berlebih, lalu masukkan mereka ke program UD Driver Training. Potensi penghematan BBM bisa mencapai 10–20% setelah training.",
+      "keywords": [
+        "FAQ fleet manager",
+        "My UD Fleet biaya",
+        "berlangganan telematis",
+        "retrofit telematis",
+        "potensi hemat BBM",
+        "10-20 persen",
+        "driver training",
+        "optimasi armada"
+      ]
+    },
+    {
+      "chunk_id": "NEWS_001",
+      "category": "news_and_updates",
+      "sub_category": "mobile_service_update",
+      "applies_to": "all",
+      "user_role": [
+        "fleet_manager"
+      ],
+      "source_url": "https://astraudtrucks.co.id/berita/mengenal-layanan-mobile-service-astra-ud-trucks-solusi-perbaikan-yang-efisien/",
+      "language": "id",
+      "text": "Layanan Mobile Service Astra UD Trucks adalah solusi perbaikan langsung di lokasi pelanggan tanpa perlu mendatangi bengkel resmi. Layanan ini menjadi solusi efisien bagi armada besar yang tidak bisa sering-sering membawa unit ke bengkel, atau truk yang beroperasi di lokasi terpencil jauh dari jaringan dealer. Tim Mobile Service datang ke lokasi pelanggan dengan peralatan lengkap dan UD Genuine Parts, memberikan servis dengan standar kualitas bengkel resmi di lokasi operasional pelanggan.",
+      "keywords": [
+        "Mobile Service",
+        "servis di lokasi",
+        "bengkel keliling",
+        "solusi perbaikan",
+        "efisien",
+        "armada besar",
+        "lokasi terpencil",
+        "on-site service"
+      ]
+    }
+  ]
+}

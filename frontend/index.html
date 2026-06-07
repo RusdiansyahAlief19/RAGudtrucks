@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Intelligence Platform | Astra UD Trucks</title>
+    <!-- Modern Typography: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for modern icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="chat-container">
+        <header class="chat-header">
+            <div class="header-branding">
+                <div class="logo-wrapper">
+                    <ion-icon name="hardware-chip-outline" class="logo-icon"></ion-icon>
+                </div>
+                <div class="header-text">
+                    <h1>Fleet Intelligence</h1>
+                    <p>Astra UD Trucks AI Assistant</p>
+                </div>
+            </div>
+            <div class="header-status">
+                <button id="tco-btn" class="tco-btn"><ion-icon name="calculator-outline"></ion-icon> TCO Calc</button>
+                <div class="status-indicator">
+                    <span class="status-dot"></span> Online
+                </div>
+            </div>
+        </header>
+
+        <section class="chat-window" id="chat-window">
+            <div class="message system-message">
+                <div class="message-bubble">
+                    Selamat datang di Fleet Intelligence Platform Astra UD Trucks. Saya dapat membantu Anda dengan informasi spesifikasi produk, jadwal servis, telematics (My UD Fleet), hingga prosedur operasional harian. Apa yang ingin Anda tanyakan hari ini?
+                </div>
+            </div>
+        </section>
+
+        <footer class="chat-input-area">
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Ketik pertanyaan Anda tentang Astra UD Trucks..." autocomplete="off" required>
+                <button type="submit" id="send-btn" aria-label="Kirim Pesan">
+                    <ion-icon name="send"></ion-icon>
+                </button>
+            </form>
+        </footer>
+    </main>
+
+    <!-- TCO Calculator Modal -->
+    <div class="tco-modal-overlay" id="tco-modal">
+        <div class="tco-modal-content">
+            <header class="tco-header">
+                <h2><ion-icon name="calculator"></ion-icon> TCO Calculator</h2>
+                <button class="tco-close-btn" id="tco-close-btn"><ion-icon name="close"></ion-icon></button>
+            </header>
+            <div class="tco-body">
+                <div class="tco-input-group">
+                    <label>Tipe Truk</label>
+                    <select id="tco-truck-type">
+                        <option value="quester">Quester Euro 5 (Rp 1.100.000.000)</option>
+                        <option value="kuzer">Kuzer Euro 4 (Rp 600.000.000)</option>
+                    </select>
+                </div>
+                <div class="tco-input-group">
+                    <label>Jarak Tempuh / Tahun: <span id="tco-distance-val" class="highlight-val">60.000</span> km</label>
+                    <input type="range" id="tco-distance" min="10000" max="150000" step="5000" value="60000">
+                </div>
+                <div class="tco-input-group">
+                    <label>Harga Solar/Dexlite / Liter: Rp <span id="tco-fuel-price-val" class="highlight-val">6.800</span></label>
+                    <input type="range" id="tco-fuel-price" min="6800" max="18000" step="100" value="6800">
+                </div>
+                
+                <div class="tco-results">
+                    <div class="result-card">
+                        <span>Estimasi BBM / Tahun</span>
+                        <h3 id="res-fuel">Rp 0</h3>
+                    </div>
+                    <div class="result-card">
+                        <span>Servis & Ban / Tahun</span>
+                        <h3 id="res-maintenance">Rp 0</h3>
+                    </div>
+                    <div class="result-card highlight-card">
+                        <span>Total Biaya Operasional / Thn</span>
+                        <h3 id="res-total">Rp 0</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
