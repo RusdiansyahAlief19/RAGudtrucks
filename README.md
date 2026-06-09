@@ -35,14 +35,14 @@ Fleet Intelligence Platform adalah asisten kecerdasan buatan (AI Assistant) ting
 
 ## 🛠️ Cara Instalasi dan Menjalankan (Local)
 
-### 1. Persiapan Environment
-Pastikan Anda sudah menginstal **Python 3.10+**. Buka terminal di folder proyek ini dan jalankan:
-```bash
+### 1. Instalasi Awal (Hanya dilakukan sekali)
+Pastikan Anda sudah menginstal **Python 3.10+**. Buka terminal di folder proyek ini (Gunakan PowerShell di VS Code) dan jalankan:
+```powershell
 # Buat Virtual Environment
 python -m venv venv
 
-# Aktifkan Virtual Environment (Windows)
-.\venv\Scripts\activate
+# Aktifkan Virtual Environment
+.\venv\Scripts\Activate.ps1
 
 # Install dependensi
 pip install -r requirements.txt
