@@ -38,8 +38,8 @@ def chat_endpoint(request: ChatRequest):
         return {"error": "Sistem RAG Engine belum siap atau indeks belum di-generate."}
         
     try:
-        answer = engine.generate_answer(request.query)
-        return {"answer": answer}
+        result = engine.generate_answer(request.query)
+        return result
     except Exception as e:
         return {"error": str(e)}
 

@@ -72,9 +72,11 @@ uvicorn main:app --reload
 Server akan berjalan di `http://127.0.0.1:8000`.
 
 ### 5. Mengakses Antarmuka (Frontend)
-1. Buka folder `frontend`.
-2. Buka (klik ganda) file `index.html` di browser Anda.
-3. Chatbot siap digunakan! Jangan lupa mencoba fitur **TCO Calc** di sudut kanan atas layar.
+Karena UI terbaru (*Virtual Mechanic*) menggunakan React.js dan Babel secara dinamis, file HTML harus dijalankan melalui *local server* (tidak bisa sekadar klik ganda/`file:///`):
+1. Buka folder proyek ini di **Visual Studio Code**.
+2. Cari dan klik kanan pada file `UD TRUCKS/UD FleetSight.html`.
+3. Pilih **"Open with Live Server"** (Pastikan Anda sudah menginstal ekstensi Live Server di VS Code).
+4. Browser akan otomatis terbuka dan Anda bisa langsung mencoba fitur *Virtual Mechanic* di menu sebelah kiri.
 
 ---
 *Proyek ini dikembangkan dalam rangka presentasi inovasi AI (Pre-sales & Post-sales Assistant).*

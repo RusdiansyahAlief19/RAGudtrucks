@@ -67,10 +67,18 @@ class RAGEngine:
                 
         return top_docs
 
-    def generate_answer(self, query: str) -> str:
+    def generate_answer(self, query: str) -> dict:
         # Retrieve relevant contexts using hybrid search
         top_docs = self.hybrid_search(query, top_k=4)
         context = "\n\n".join([f"Konteks {i+1}:\n{doc.page_content}" for i, doc in enumerate(top_docs)])
+        
+        # Build sources list
+        sources = []
+        for doc in top_docs:
+            sources.append({
+                "doc": doc.metadata.get("category", "UD Trucks Dataset"),
+                "loc": doc.metadata.get("source_url", "Internal Database")
+            })
         
         # Create prompt grounded in the retrieved contexts
         prompt = f"""Anda adalah AI Assistant Resmi Astra UD Trucks ('Fleet Intelligence Platform').
@@ -82,6 +90,7 @@ PERATURAN UTAMA:
 3. Berikan jawaban yang terstruktur, mudah dibaca (gunakan format list/bullet points jika perlu), dan langsung pada intinya.
 4. Anda dapat menyesuaikan bahasa yang digunakan sesuai dengan persona yang bertanya (calon pembeli, fleet manager, mekanik, pengemudi), asalkan tetap sopan dan profesional.
 5. JIKA pengguna bertanya tentang REKOMENDASI TRUK atau HARGA/BIAYA, Anda HARUS menyertakan estimasi kasar TCO (Total Cost of Ownership). Gunakan referensi harga berikut HANYA JIKA diminta: Quester Euro 5 (Harga unit mulai Rp 1,1 Miliar), Kuzer Euro 4 (Harga unit mulai Rp 600 Juta). Anda WAJIB mengakhiri rekomendasi tersebut dengan kalimat: *"Untuk perhitungan investasi yang lebih presisi, silakan gunakan fitur interaktif TCO Calculator yang tersedia di menu navigasi layar Anda."*
+6. Saring dan terjemahkan teks teknis! JIKA di dalam KONTEKS terdapat parameter URL atau kode website (seperti `tab_type=Booking+Service`), JANGAN pernah menyalinnya mentah-mentah. Ubah menjadi bahasa natural seperti "melalui menu Booking Service di website kami".
 
 KONTEKS REFERENSI:
 {context}
@@ -90,4 +99,7 @@ PERTANYAAN PENGGUNA: {query}
 JAWABAN AI:"""
 
         response = self.llm.invoke(prompt)
-        return response.content
+        return {
+            "answer": response.content,
+            "sources": sources
+        }
