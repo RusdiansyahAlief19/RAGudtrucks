@@ -64,12 +64,14 @@ python ingest.py
 ```
 *(Proses ini membutuhkan waktu beberapa detik. Jika berhasil, folder `faiss_index` dan file `bm25_index.pkl` akan muncul di dalam folder `backend`)*.
 
-### 4. Menjalankan Server Backend
-Masih di dalam folder `backend`, jalankan server FastAPI:
-```bash
+### 4. Menjalankan Server Backend (Terminal 1)
+Buka terminal baru di VS Code, lalu jalankan perintah berikut secara berurutan untuk menyalakan "Otak AI" Anda:
+```powershell
+cd backend
+..\venv\Scripts\Activate.ps1
 uvicorn main:app --reload
 ```
-Server akan berjalan di `http://127.0.0.1:8000`.
+*(Biarkan terminal ini tetap menyala. Server AI akan berjalan di `http://127.0.0.1:8000`)*.
 
 ### 5. Mengakses Antarmuka (Frontend)
 Karena UI terbaru (*Virtual Mechanic*) menggunakan React.js dan Babel secara dinamis, file HTML harus dijalankan melalui *local server* (tidak bisa sekadar klik ganda/`file:///`):
