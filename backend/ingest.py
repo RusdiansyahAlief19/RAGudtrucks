@@ -20,8 +20,21 @@ def ingest_data():
     print("Mempersiapkan data chunk...")
     for chunk in data["chunks"]:
         # Build text representation combining metadata and text
-        text = f"[{chunk['category']} - {chunk['sub_category']}]\n{chunk['text']}\nKeywords: {', '.join(chunk['keywords'])}"
-        doc = Document(page_content=text, metadata={"chunk_id": chunk["chunk_id"], "category": chunk["category"]})
+        text = f"[{chunk.get('category', '')} - {chunk.get('sub_category', '')}]\n{chunk.get('text', '')}\nKeywords: {', '.join(chunk.get('keywords', []))}"
+        
+        meta = {
+            "chunk_id": chunk.get("chunk_id"),
+            "category": chunk.get("category"),
+            "series": chunk.get("series"),
+            "applies_to": chunk.get("applies_to"),
+            "source_type": chunk.get("source_type"),
+            "source_doc": chunk.get("source_doc"),
+            "chapter": chunk.get("chapter"),
+            "page": chunk.get("page"),
+            "fault_code": chunk.get("fault_code")
+        }
+        
+        doc = Document(page_content=text, metadata=meta)
         documents.append(doc)
     
     # 1. FAISS Vector Database
