@@ -75,9 +75,14 @@ class RAGEngine:
         # Build sources list
         sources = []
         for doc in top_docs:
+            loc_str = doc.metadata.get("source_doc", "Internal Database")
+            page = doc.metadata.get("page")
+            if page:
+                loc_str += f" (Hal. {page})"
+            
             sources.append({
                 "doc": doc.metadata.get("category", "UD Trucks Dataset"),
-                "loc": doc.metadata.get("source_url", "Internal Database")
+                "loc": loc_str
             })
         
         # Create prompt grounded in the retrieved contexts

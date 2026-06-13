@@ -1,0 +1,1933 @@
+{
+  "dataset_meta": {
+    "name": "UD Trucks RAG KB — Quester Series",
+    "series": "quester",
+    "source_type": "owner_manual",
+    "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+    "source_ref": "ManualsLib (manual 1525764) / astraudtrucks.co.id",
+    "version": "1.0.0",
+    "processed_date": "2026-06-13",
+    "language": "id",
+    "total_chunks": 68,
+    "schema_version": "1.0"
+  },
+  "chunks": [
+    {
+      "chunk_id": "QST_MAINTENANCE_001",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "pemeriksaan_oli_mesin",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "cek oli",
+        "oli mesin",
+        "dipstick",
+        "level oli",
+        "pemeriksaan harian",
+        "sebelum jalan",
+        "tanda MIN MAX"
+      ],
+      "text": "Pemeriksaan oli mesin harus dilakukan setiap hari sebelum menghidupkan mesin. Parkir truk di permukaan yang rata. Cabut dipstick, bersihkan, lalu masukkan kembali dan cabut untuk melihat level oli. Level oli harus berada di antara tanda 'MIN' dan 'MAX'. Jika di bawah 'MIN', tambahkan oli yang sesuai (UD Genuine Oil). Jangan mengisi melebihi tanda 'MAX' karena dapat merusak seal mesin dan menyebabkan kebocoran."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_002",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "pemeriksaan_coolant",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "cairan pendingin",
+        "coolant",
+        "air radiator",
+        "tangki reservoir",
+        "mesin dingin",
+        "luka bakar",
+        "pemeriksaan harian"
+      ],
+      "text": "Periksa level cairan pendingin (coolant) di tangki reservoir transparan. Level coolant harus berada di antara garis MIN dan MAX pada saat mesin dingin. PERINGATAN: Jangan pernah membuka tutup radiator atau tutup tangki reservoir saat mesin masih panas, karena air panas bertekanan dapat menyembur dan menyebabkan luka bakar. Selalu gunakan UD Genuine Coolant yang sudah dicampur (pre-mixed)."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_003",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "pemeriksaan_sistem_udara",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "rem udara",
+        "air brake",
+        "kebocoran udara",
+        "tabung udara",
+        "air tank",
+        "drain valve",
+        "buang air",
+        "pemeriksaan harian"
+      ],
+      "text": "Sistem rem udara memerlukan pemeriksaan kebocoran setiap hari. Setelah mesin dihidupkan dan tekanan udara mencapai maksimum (compressor cut-out), matikan mesin. Dengarkan apakah ada suara desisan udara dari katup, selang, atau tabung udara (air tank). Tarik katup pembuang (drain valve) di bawah tabung udara untuk membuang embun air. Air yang menumpuk di tabung udara dapat masuk ke sistem pengereman dan menyebabkan rem blong atau membeku di cuaca dingin."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_004",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "pemeriksaan_roda_dan_ban",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "tekanan ban",
+        "tire gauge",
+        "ban dingin",
+        "mur roda",
+        "wheel nut",
+        "baut velg",
+        "pemeriksaan harian"
+      ],
+      "text": "Periksa tekanan ban menggunakan alat pengukur tekanan (tire gauge) setiap pagi saat ban dalam keadaan dingin. Memukul ban dengan besi tidak memberikan indikasi tekanan yang akurat. Periksa keausan telapak ban dan pastikan tidak ada benda tajam yang tertancap. Periksa juga mur roda (wheel nut), pastikan tidak ada yang longgar atau hilang. Mur roda yang kendur biasanya ditandai dengan adanya garis karat di sekitar lubang baut velg."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_005",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "pemeriksaan_lampu",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "cek lampu",
+        "lampu utama",
+        "lampu sein",
+        "lampu hazard",
+        "lampu rem",
+        "walk-around",
+        "pemeriksaan harian"
+      ],
+      "text": "Sebelum beroperasi, hidupkan semua saklar lampu: lampu utama (headlight), lampu kota, lampu sein (turn signal), lampu hazard, lampu rem, dan lampu mundur. Lakukan pemeriksaan visual dengan mengelilingi truk (walk-around inspection) untuk memastikan semua lampu menyala dan mika lampu tidak pecah. Lampu yang mati dapat membahayakan pengemudi dan pengguna jalan lain serta melanggar peraturan lalu lintas."
+    },
+    {
+      "chunk_id": "QST_DRIVING_001",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "menghidupkan_mesin",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "menghidupkan mesin",
+        "start mesin",
+        "kunci kontak",
+        "glow plug",
+        "dinamo starter",
+        "idle",
+        "pemanasan"
+      ],
+      "text": "Prosedur menghidupkan mesin: Pastikan rem parkir (parking brake) aktif dan tuas transmisi di posisi Netral. Putar kunci kontak ke posisi ON. Tunggu hingga lampu indikator pemanas (glow plug) mati dan jarum instrumen kembali ke posisi awal. Putar kunci ke posisi START (maksimal 15 detik). Jika mesin tidak hidup, tunggu 1 menit sebelum mencoba lagi agar dinamo starter tidak terbakar. Biarkan mesin idle selama 1-2 menit sebelum mulai berjalan."
+    },
+    {
+      "chunk_id": "QST_DRIVING_002",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "penggunaan_escot",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "ESCOT",
+        "cara pakai ESCOT",
+        "transmisi otomatis",
+        "tuas transmisi",
+        "gigi awal",
+        "green band"
+      ],
+      "text": "Untuk menjalankan truk dengan transmisi ESCOT: Injak pedal rem, geser tuas transmisi dari N (Neutral) ke D (Drive). Transmisi akan otomatis memilih gigi awal yang tepat berdasarkan beban dan kemiringan jalan. Lepaskan rem parkir, lepaskan pedal rem perlahan, lalu injak pedal gas. ESCOT akan otomatis memindahkan gigi (shifting) pada putaran mesin yang paling efisien (Green Band). Pengemudi dapat melakukan intervensi manual dengan menggeser tuas ke arah +/-."
+    },
+    {
+      "chunk_id": "QST_DRIVING_003",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "penggunaan_rem_engine",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "engine brake",
+        "exhaust brake",
+        "rem mesin",
+        "turunan panjang",
+        "rem blong",
+        "brake fade"
+      ],
+      "text": "Gunakan Engine Brake (Exhaust Brake) untuk mengurangi kecepatan di jalan menurun panjang, bukan mengandalkan rem kaki (service brake). Penggunaan rem kaki terus-menerus akan menyebabkan rem panas dan blong (brake fade). Tarik tuas engine brake di sisi setir. Engine brake paling efektif pada putaran mesin tinggi (RPM tinggi, tapi jangan sampai masuk zona merah/redline). Jika menggunakan ESCOT, transmisi akan otomatis menurunkan gigi untuk memaksimalkan daya pengereman mesin."
+    },
+    {
+      "chunk_id": "QST_DRIVING_004",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "green_band_driving",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "green band",
+        "zona hijau",
+        "RPM",
+        "efisiensi BBM",
+        "hemat bahan bakar",
+        "over revving",
+        "lugging"
+      ],
+      "text": "Untuk mendapatkan efisiensi bahan bakar maksimal, selalu pertahankan jarum tachometer (RPM) berada di zona hijau (Green Band) pada instrumen panel saat melaju di jalan datar. Memutar mesin melebihi zona hijau (over-revving) hanya akan membuang bahan bakar tanpa menambah kecepatan signifikan. Mengemudi di bawah zona hijau (lugging) dapat merusak mesin karena kurang pelumasan dan tenaga lambat merespon."
+    },
+    {
+      "chunk_id": "QST_DRIVING_005",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "penguncian_diferensial",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "diff lock",
+        "differential lock",
+        "pengunci gardan",
+        "jalan licin",
+        "selip",
+        "lumpur",
+        "gardan rusak"
+      ],
+      "text": "Penguncian Diferensial (Differential Lock) digunakan SAAT truk terjebak di lumpur atau jalan licin di mana salah satu roda berputar selip. Cara pakai: Hentikan truk sepenuhnya, tekan saklar diff-lock. Indikator di dashboard akan menyala. Jalankan truk perlahan. PERINGATAN: Matikan diff-lock SEGERA setelah melewati jalan licin. Menggunakan diff-lock di jalan keras/aspal akan merusak gardan (axle) dan membuat truk sulit dibelokkan."
+    },
+    {
+      "chunk_id": "QST_EMERGENCY_001",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "emergency",
+      "sub_category": "tekanan_udara_rendah",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "tekanan udara rendah",
+        "low air pressure",
+        "buzzer bunyi",
+        "rem blong",
+        "berhenti darurat"
+      ],
+      "text": "Jika buzzer peringatan tekanan udara berbunyi dan lampu peringatan tekanan udara menyala merah saat mengemudi: SEGERA menepi ke tempat yang aman dan hentikan kendaraan. Jangan lanjutkan perjalanan karena rem tidak akan berfungsi jika tekanan udara habis. Tunggu hingga kompresor mengisi tabung udara. Jika tekanan tetap tidak naik, berarti ada kebocoran besar. Hubungi UD Mobile Service atau mekanik terdekat."
+    },
+    {
+      "chunk_id": "QST_EMERGENCY_002",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "emergency",
+      "sub_category": "mesin_overheat",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "overheat",
+        "mesin panas",
+        "temperatur naik",
+        "zona merah",
+        "jangan matikan mesin",
+        "jangan buka radiator"
+      ],
+      "text": "Jika jarum temperatur coolant mendekati zona merah atau lampu peringatan overheat menyala: Menepi dengan aman, biarkan mesin tetap hidup di putaran idle agar kipas dan pompa air terus mendinginkan mesin secara perlahan. JANGAN langsung mematikan mesin saat sangat panas (kecuali kipas putus/radiator bocor parah) karena panas akan terjebak dan membengkokkan kepala silinder. JANGAN pernah membuka tutup radiator saat mesin overheat."
+    },
+    {
+      "chunk_id": "QST_EMERGENCY_003",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "emergency",
+      "sub_category": "lampu_tekanan_oli_menyala",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "tekanan oli",
+        "oil pressure",
+        "lampu oli menyala",
+        "matikan mesin segera",
+        "mesin jebol"
+      ],
+      "text": "Jika lampu indikator tekanan oli (Oil Pressure Warning Light) menyala merah saat mengemudi: MATIKAN MESIN SEGERA secepat yang aman dilakukan. Menjalankan mesin tanpa tekanan oli akan menyebabkan kerusakan total (mesin jebol/nge-jam) dalam hitungan menit. Periksa level oli. Jika level oli normal tetapi lampu tetap menyala, jangan hidupkan mesin. Hubungi ASTRA UD 24H Technical Assistance."
+    },
+    {
+      "chunk_id": "QST_EMERGENCY_004",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "emergency",
+      "sub_category": "kabina_dimiringkan",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "jungkit kabin",
+        "cabin tilt",
+        "pompa kabin",
+        "miringkan kabin",
+        "prosedur aman"
+      ],
+      "text": "Prosedur memiringkan kabin (Cabin Tilt) untuk perbaikan: Pastikan truk di tanah rata, rem parkir aktif, tuas transmisi Netral, dan mesin mati. Singkirkan barang-barang lepas di dalam kabin. Pastikan tidak ada orang di depan kabin. Putar katup hidrolik pompa tilt ke posisi 'TILT'. Pompa tuas hidrolik secara penuh hingga kabin miring sempurna dan mekanisme pengunci keamanan terkunci. Jangan pernah bekerja di bawah kabin yang tidak dimiringkan penuh."
+    },
+    {
+      "chunk_id": "QST_EMERGENCY_005",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "emergency",
+      "sub_category": "cara_towing",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "derek truk",
+        "towing",
+        "propeller shaft",
+        "lepas kopel",
+        "transmisi rusak",
+        "mogok"
+      ],
+      "text": "Saat truk harus diderek (towing) karena mogok: JIKA mesin tidak bisa hidup, as roda penggerak (propeller shaft) HARUS dilepas sebelum truk diderek. Jika as roda tidak dilepas, perputaran roda belakang akan memutar gigi transmisi dalam keadaan tanpa pelumasan (karena pompa oli transmisi mati), menyebabkan gearbox hancur. Untuk truk towing transmisi otomatis ESCOT, keharusan melepas propeller shaft adalah mutlak."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_001",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P0087",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P0087",
+      "user_role": [
+        "mekanik",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "P0087",
+        "DTC P0087",
+        "fuel rail pressure",
+        "tekanan BBM rendah",
+        "filter BBM mampet",
+        "hilang tenaga"
+      ],
+      "text": "DTC P0087: Fuel Rail/System Pressure - Too Low. Penyebab kemungkinan: Filter bahan bakar tersumbat parah, pompa bahan bakar (fuel pump) lemah, kebocoran pada injektor, atau sensor tekanan rail rusak. Efek pada truk: Mesin kehilangan tenaga drastis, susah dihidupkan (hard start), lampu MIL menyala. Solusi: Ganti filter BBM primer dan sekunder, cek kebocoran saluran bahan bakar dari tangki."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_002",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P228F",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P228F",
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "P228F",
+        "DTC P228F",
+        "MPROP",
+        "supply pump",
+        "gas naik turun",
+        "kualitas BBM buruk"
+      ],
+      "text": "DTC P228F: Fuel Pressure Regulator 1 Exceeded Learning Limits - Too High. Penyebab: Kualitas bahan bakar sangat buruk (kotoran/air) merusak Supply Pump MPROP (Metering Unit), atau Supply pump mulai aus. Truk dapat mengalami surging (gas naik turun sendiri). Solusi: Kurasi tangki bahan bakar, bersihkan atau ganti MPROP, jika berlanjut ganti Supply Pump Assy."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_003",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P20EE",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P20EE",
+      "user_role": [
+        "mekanik",
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "P20EE",
+        "DTC P20EE",
+        "SCR",
+        "NOx",
+        "AdBlue mampet",
+        "Euro 5",
+        "derate tenaga"
+      ],
+      "text": "DTC P20EE: SCR NOx Catalyst Efficiency Below Threshold (Bank 1). Ini spesifik untuk truk Euro 5. Penyebab: Kualitas AdBlue/Urea di bawah standar, injektor AdBlue tersumbat kristal urea, atau sensor NOx rusak. Efek: Sistem ECU akan membatasi tenaga mesin (Derate) setelah beberapa waktu. Solusi: Kuras tangki AdBlue dan isi dengan UD Genuine AdBlue baru, bersihkan injektor dosing AdBlue menggunakan air panas."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_004",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P203F",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P203F",
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "P203F",
+        "AdBlue habis",
+        "reductant level",
+        "engine derate",
+        "truk lambat"
+      ],
+      "text": "DTC P203F: Reductant Level Too Low. Penyebab: Cairan AdBlue di dalam tangki sudah habis atau level sensor macet. Peringatan di dashboard akan muncul. Jika diabaikan, tenaga mesin akan dibatasi menjadi 50-70% (Engine Derate). Solusi segera: Isi ulang tangki AdBlue. Sistem akan memulihkan tenaga mesin secara otomatis setelah mendeteksi AdBlue terisi."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_005",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P0234",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P0234",
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "P0234",
+        "overboost",
+        "turbocharger",
+        "wastegate macet",
+        "tenaga potong"
+      ],
+      "text": "DTC P0234: Turbocharger/Supercharger Overboost Condition. Penyebab: Wastegate pada turbo macet dalam posisi tertutup, VGT actuator bermasalah, atau sensor MAP rusak. Efek: Tenaga mesin dipotong untuk melindungi dari over-pressure yang bisa merusak komponen internal mesin. Solusi: Periksa pergerakan tuas aktuator turbo, pastikan selang vakum/udara kontrol tidak bocor."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_006",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P0108",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P0108",
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "P0108",
+        "MAP sensor",
+        "manifold pressure",
+        "sensor rusak",
+        "short to Vbat"
+      ],
+      "text": "DTC P0108: Manifold Absolute Pressure/Barometric Pressure Circuit High. Penyebab: Sensor MAP di intake manifold rusak, kabel korslet ke tegangan positif (short to Vbat), atau kotoran menyumbat sensor. Solusi: Periksa kabel dari ECU ke sensor MAP. Jika voltase dari sensor selalu mentok 5V meskipun mesin mati, ganti sensor MAP."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_007",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P0335",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P0335",
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "P0335",
+        "CKP",
+        "crankshaft sensor",
+        "mesin susah hidup",
+        "sensor putaran"
+      ],
+      "text": "DTC P0335: Crankshaft Position Sensor 'A' Circuit. Penyebab: Sensor putaran mesin (CKP) mati, kabel terputus, atau jarak sensor dengan flywheel terlalu jauh. Efek: Mesin sulit hidup (cranking panjang) karena ECU mengandalkan sensor Camshaft (CMP) sebagai cadangan (limp-home mode). Solusi: Cek resistansi sensor CKP, pastikan soket tidak kemasukan air atau oli."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_008",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "U0101",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "U0101",
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "U0101",
+        "TCM",
+        "komunikasi putus",
+        "CAN bus",
+        "ESCOT error",
+        "tidak bisa masuk gigi"
+      ],
+      "text": "DTC U0101: Lost Communication with TCM (Transmission Control Module). Penyebab: ECU mesin tidak menerima data CAN bus dari ECU transmisi ESCOT. Biasanya karena konektor transmisi kemasukan air, kabel CAN bus putus, atau relay TCM rusak. Efek: Transmisi ESCOT tidak bisa masuk gigi, huruf indikator gigi di dashboard berubah jadi strip (-). Solusi: Cek wiring harness transmisi dan bersihkan konektor."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_009",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P0650",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P0650",
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "P0650",
+        "MIL",
+        "lampu check engine mati",
+        "indikator rusak",
+        "meter cluster"
+      ],
+      "text": "DTC P0650: Malfunction Indicator Lamp (MIL) Control Circuit. Penyebab: Bohlam atau LED lampu Check Engine di dashboard putus, atau sirkuit dari ECU ke meter cluster terputus. Kode ini memastikan pengemudi bisa melihat peringatan jika ada kerusakan lain. Solusi: Cek panel instrumen dan jalur kabel dari ECU pin ke dashboard."
+    },
+    {
+      "chunk_id": "ERR_DIAGNOSTICS_010",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "diagnostics",
+      "sub_category": "P0502",
+      "source_type": "error_code_list",
+      "source_doc": "UD-HDE Quester Error Code List",
+      "chapter": null,
+      "page": null,
+      "fault_code": "P0502",
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "P0502",
+        "VSS",
+        "speedometer mati",
+        "sensor kecepatan",
+        "cruise control mati"
+      ],
+      "text": "DTC P0502: Vehicle Speed Sensor Circuit Low Input. Penyebab: Sensor kecepatan kendaraan (VSS) di output transmisi rusak, gigi speedometer rontok, atau kabel putus/short ke massa. Efek: Speedometer mati, cruise control tidak berfungsi, dan konsumsi BBM bisa lebih boros. Solusi: Ganti VSS dan pastikan kabel tidak terjepit sasis."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_006",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "pemeriksaan_10000km",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "servis 10000 km",
+        "servis pertama",
+        "inreyen",
+        "ganti oli pertama",
+        "kencangkan baut",
+        "U-bolt"
+      ],
+      "text": "Inspeksi Berkala Pertama (10.000 KM): Ini adalah servis kritis untuk truk baru. Meliputi: Penggantian oli mesin, filter oli, dan filter bahan bakar untuk membersihkan gram/serpihan logam dari masa inreyen. Pengencangan ulang mur roda, baut U-bolt per (spring), dan baut mounting mesin. Pengecekan celah klep (valve clearance). Servis 10.000 km pertama gratis jasa sesuai buku garansi."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_007",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "penyetelan_klep",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "stel klep",
+        "valve clearance",
+        "120000 km",
+        "suara mesin kasar",
+        "celah klep"
+      ],
+      "text": "Jadwal Penyetelan Celah Klep (Valve Clearance Adjustment): Untuk mesin GH8E dan GH11E, celah klep harus diperiksa dan disetel ulang setiap 120.000 KM atau 12 bulan. Celah yang terlalu rapat menyebabkan klep terbakar dan idle tidak rata. Celah yang terlalu longgar menyebabkan suara mesin kasar (ngelitik) dan performa turun. Lakukan penyetelan pada saat mesin benar-benar dingin (di bawah 40 derajat celcius)."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_008",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "penggantian_air_dryer",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "air dryer",
+        "cartridge pengering udara",
+        "100000 km",
+        "rem macet",
+        "udara kompresor"
+      ],
+      "text": "Jadwal Penggantian Cartridge Air Dryer (Pengering Udara): Wajib diganti setiap 100.000 KM atau 1 tahun. Fungsi air dryer adalah menyerap kelembaban dari udara yang dihasilkan kompresor sebelum masuk ke tabung rem. Jika cartridge jenuh, air akan masuk ke sistem rem pneumatik dan memicu karat pada katup-katup rem, yang berujung pada rem macet atau blong."
+    },
+    {
+      "chunk_id": "QST_SERVICE_DATA_001",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "service_data",
+      "sub_category": "kapasitas_oli",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "kapasitas oli",
+        "berapa liter oli",
+        "GH8E",
+        "GH11E",
+        "VDS-4",
+        "oli gardan",
+        "oli transmisi"
+      ],
+      "text": "Data Kapasitas Oli Mesin (Termasuk Filter): Mesin GH8E (Quester CKE, CWE, CDE, GKE) membutuhkan sekitar 25 Liter oli (spesifikasi VDS-4 atau API CJ-4). Mesin GH11E (Quester GWE 410) membutuhkan sekitar 33 Liter oli. Kapasitas transmisi manual: 14-16 liter tergantung tipe. Kapasitas oli gardan (Differential) tandem 6x4: 21 liter gardan depan, 21 liter gardan belakang. Selalu gunakan dipstick/lubang kontrol sebagai acuan final saat mengisi oli."
+    },
+    {
+      "chunk_id": "QST_SERVICE_DATA_002",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "service_data",
+      "sub_category": "torsi_pengencangan_roda",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "torsi roda",
+        "baut roda",
+        "mur roda",
+        "600 Nm",
+        "kunci momen",
+        "retorque",
+        "roda lepas"
+      ],
+      "text": "Data Torsi Pengencangan Baut/Mur Roda: Untuk velg roda ISO 10-baut, torsi pengencangan standar adalah 600 Nm (Newton Meter). Kencangkan mur roda menggunakan kunci momen (torque wrench) secara menyilang (bintang) agar velg terpasang rata. Setelah ban dilepas pasang, mur roda WAJIB dikencangkan ulang (retorque) setelah truk berjalan sejauh 100 KM - 200 KM untuk mencegah roda terlepas di jalan."
+    },
+    {
+      "chunk_id": "QST_SERVICE_DATA_003",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "service_data",
+      "sub_category": "celah_klep_standar",
+      "source_type": "synthesized",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": null,
+      "page": null,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "celah klep",
+        "intake",
+        "exhaust",
+        "ukuran klep",
+        "feeler gauge",
+        "0.30 mm",
+        "0.60 mm"
+      ],
+      "text": "Spesifikasi Celah Klep (Valve Clearance) Mesin GH8E dan GH11E saat Mesin Dingin: Celah Klep Masuk (Intake): 0.30 mm. Celah Klep Buang (Exhaust): 0.60 mm. Unit injektor bahan bakar tidak memiliki penyetelan mekanis mandiri karena dikontrol secara elektronik (Electronic Unit Injector/Common Rail). Pastikan menggunakan feeler gauge yang presisi dan dikerjakan oleh mekanik bersertifikat UD."
+    },
+    {
+      "chunk_id": "QST_PRODUCT_001",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "product",
+      "sub_category": "vin_plate_lokasi",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "1 Introduction and Safety",
+      "page": 14,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "fleet_manager",
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "VIN",
+        "Vehicle Identification Number",
+        "plat identifikasi",
+        "nomor rangka",
+        "engine identification",
+        "axle identification",
+        "battery plate",
+        "garansi",
+        "suku cadang",
+        "lokasi VIN Quester"
+      ],
+      "text": "Lokasi plat identifikasi kendaraan (VIN Plate) pada Quester Series: (1) VIN Plate utama terletak di sisi kanan kabin bagian depan; (2) Engine Identification Plate terletak pada blok mesin; (3) Transmission Gearbox Identification Plate terletak pada housing transmisi; (4) Axle Identification Plate terletak pada masing-masing axle; (5) Battery Plate terletak di dekat kompartemen baterai. Nomor VIN (Vehicle Identification Number) berisi informasi: kode pabrik, model, tahun produksi, dan nomor seri unik. VIN wajib dicatat untuk keperluan klaim garansi, pemesanan suku cadang, dan administrasi kendaraan. Format VIN Quester mengikuti standar SEA (South East Asia) dan EMEA."
+    },
+    {
+      "chunk_id": "QST_DRIVING_006",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "prosedur_start_mesin",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "1 Introduction and Safety",
+      "page": 20,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "start mesin",
+        "menghidupkan mesin",
+        "kunci kontak",
+        "pre-heat",
+        "glow plug",
+        "posisi netral",
+        "rem parkir",
+        "starter",
+        "idle sebelum jalan",
+        "prosedur start Quester"
+      ],
+      "text": "Prosedur menghidupkan mesin Quester yang benar sesuai manual resmi: (1) Pastikan rem parkir dalam posisi aktif (tertarik) sebelum start; (2) Pastikan gigi transmisi dalam posisi netral (N); (3) Masukkan kunci kontak dan putar ke posisi ON — perhatikan semua warning lamp menyala sebentar lalu mati (self-check); (4) Tunggu pre-heat indicator mati (terutama pada kondisi mesin dingin) — ini proses pemanasan glow plug; (5) Putar kunci ke posisi START hingga mesin menyala, lalu lepaskan segera; (6) Jangan putar starter lebih dari 10–15 detik terus-menerus — jika tidak start, tunggu 30 detik sebelum mencoba lagi; (7) Setelah mesin menyala, biarkan idle sebentar (2–3 menit) sebelum menambah beban. Jangan biarkan mesin idle terlalu lama saat muatan penuh di kondisi panas."
+    },
+    {
+      "chunk_id": "QST_DRIVING_007",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "prosedur_parkir_matikan_mesin",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "1 Introduction and Safety",
+      "page": 24,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "parkir",
+        "matikan mesin",
+        "rem parkir",
+        "spring brake",
+        "wheel chock",
+        "baji roda",
+        "pendinginan turbo",
+        "kunci OFF",
+        "prosedur parkir",
+        "tanjakan parkir"
+      ],
+      "text": "Prosedur parkir dan mematikan mesin Quester yang benar: PARKIR: (1) Berhenti di permukaan datar bila memungkinkan; (2) Masukkan gigi rendah atau gigi mundur (R) sebelum matikan mesin di tanjakan; (3) Tarik tuas rem parkir SEPENUHNYA hingga bunyi klik — rem parkir Quester adalah spring brake yang mengunci otomatis saat tekanan udara turun; (4) Gunakan baji roda (wheel chock) tambahan saat parkir di tanjakan atau waktu lama. MATIKAN MESIN: (1) Biarkan mesin idle 3–5 menit setelah operasi berat (tanjakan, muatan penuh) untuk mendinginkan turbocharger; (2) Putar kunci kontak ke OFF; (3) Pastikan semua lampu eksterior mati. Jangan matikan mesin secara tiba-tiba setelah operasi berat — turbo masih berputar cepat dan butuh waktu pelumasan tambahan."
+    },
+    {
+      "chunk_id": "QST_OPERATION_001",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "gauges_dan_indikator",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 55,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "tachometer",
+        "RPM",
+        "speedometer",
+        "coolant temperature gauge",
+        "fuel level gauge",
+        "zona economy",
+        "pita hijau",
+        "gauge analog",
+        "overheat",
+        "instrument cluster Quester"
+      ],
+      "text": "Instrument gauge utama pada Quester Series yang harus dipahami pengemudi: (1) Tachometer — menampilkan RPM mesin; area pita hijau = zona economy (efisiensi optimal), area kuning = RPM tinggi (hati-hati), area merah = RPM bahaya (jangan dipertahankan). (2) Speedometer — menampilkan kecepatan kendaraan dalam km/jam. (3) Coolant Temperature Gauge — zona normal di tengah; zona H (merah) = overheat kritis, segera tindak lanjuti. (4) Fuel Level Gauge — menampilkan level BBM di tangki; segera isi saat mendekati E. Semua gauge ini adalah indikator analog real-time yang memberikan informasi kondisi mesin kepada pengemudi. Perhatikan selalu keempat gauge ini selama berkendara."
+    },
+    {
+      "chunk_id": "QST_OPERATION_002",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "warning_lamps_lengkap",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 57,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "warning lamp merah",
+        "warning lamp kuning",
+        "critical warning",
+        "oil pressure warning",
+        "battery warning",
+        "air pressure low",
+        "MIL",
+        "malfunction indicator lamp",
+        "engine check",
+        "AdBlue low",
+        "prosedur warning lamp"
+      ],
+      "text": "Kategori warning lamp pada Quester berdasarkan warna dan tingkat urgensi: MERAH (Critical — Stop segera): Oil Pressure Warning (tekanan oli rendah kritis), Coolant Temperature High (suhu mesin kritis), Battery Charge Warning (sistem pengisian gagal), Air Pressure Low Warning (tekanan rem udara kritis), ABS Warning aktif saat jalan. KUNING/AMBER (Warning — Perhatikan segera): Engine Check/MIL (Malfunction Indicator Lamp — ada fault code), AdBlue Level Low, NOx System Warning, Air Filter Clogged (filter udara kotor), Exhaust System Warning. HIJAU/BIRU (Informasi): High Beam indicator, Turn Signal indicator, Cruise Control aktif. Prinsip: lampu merah = berhenti segera dan matikan mesin; lampu kuning = selesaikan perjalanan dengan aman lalu ke bengkel; lampu hijau/biru = informasi status normal."
+    },
+    {
+      "chunk_id": "QST_OPERATION_003",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "display_menu_driving",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 62,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "driving menu",
+        "display menu",
+        "trip computer",
+        "konsumsi BBM real-time",
+        "fuel coaching display",
+        "sweet spot indicator",
+        "maintenance reminder",
+        "fault code display",
+        "DTC aktif",
+        "tombol navigasi"
+      ],
+      "text": "Display menu Quester saat berkendara (Driving Menu) menampilkan informasi real-time yang dapat dipilih pengemudi: (1) Trip Computer — konsumsi BBM saat ini (L/100km), konsumsi BBM rata-rata, jarak tempuh trip; (2) Fuel Coaching — simbol panduan gaya berkendara hemat BBM (akselerasi optimal, RPM ideal, kapan shift up/down); (3) Sweet Spot Indicator — menunjukkan apakah mesin beroperasi di zona efisiensi optimal; (4) Maintenance Reminder — notifikasi jadwal servis berikutnya; (5) Fault Code Display — menampilkan kode DTC aktif jika ada anomali. Cara navigasi: gunakan tombol navigasi di steering wheel atau tombol di instrument cluster. Display bisa disesuaikan preferensi pengemudi."
+    },
+    {
+      "chunk_id": "QST_DRIVING_008",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "cruise_control_operasi",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 77,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "cruise control",
+        "kecepatan konstan",
+        "aktivasi cruise",
+        "tombol SET",
+        "cancel cruise",
+        "50 km/jam minimum",
+        "combination switch",
+        "indikator cruise",
+        "keamanan cruise control",
+        "larangan cruise control"
+      ],
+      "text": "Cara menggunakan Cruise Control pada Quester: Syarat aktifasi: kecepatan kendaraan minimal 50 km/jam, transmisi bukan di posisi netral, pedal kopling tidak ditekan (manual), rem tidak aktif. Prosedur aktifkan: (1) Capai kecepatan yang diinginkan; (2) Tekan tombol CRUISE/SET di combination switch; (3) Indikator cruise control menyala di instrument cluster; (4) Kendaraan mempertahankan kecepatan secara otomatis. Penyesuaian kecepatan: tombol + untuk tambah kecepatan, tombol - untuk kurangi kecepatan. Matikan cruise control: tekan pedal rem ATAU pedal kopling ATAU tekan tombol CANCEL. Penting: Jangan gunakan cruise control di jalan berliku, turun bukit panjang, kondisi hujan/licin, atau lalu lintas padat — cruise control tidak menggantikan perhatian pengemudi."
+    },
+    {
+      "chunk_id": "QST_DRIVING_009",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "differential_lock_operasi",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 95,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "differential lock",
+        "diff lock",
+        "interaxle lock",
+        "rear wheel lock",
+        "traksi lumpur",
+        "medan sulit",
+        "switch diff lock",
+        "25 km/jam",
+        "keausan ban",
+        "drivetrain",
+        "konstruksi pertambangan"
+      ],
+      "text": "Differential Lock (Diff Lock) pada Quester 6x4 berfungsi mengunci diferensial agar semua roda penggerak berputar dengan kecepatan yang sama — memaksimalkan traksi di medan lumpur, pasir, atau permukaan licin. Tipe diff lock yang tersedia: (1) Interaxle Diff Lock — mengunci diferensial antar axle belakang; (2) Interaxle + Rear Wheel Diff Lock — mengunci diferensial antar axle DAN antar roda pada satu axle (traksi maksimal). Cara mengaktifkan: tekan switch diff lock di dashboard — lampu indikator menyala saat terkunci. Syarat penggunaan: kecepatan rendah (maksimal 25 km/jam), jalan lurus. LARANGAN: Jangan aktifkan diff lock di jalan aspal normal/kering — menyebabkan keausan ban berlebihan dan kerusakan drivetrain; Jangan berbelok tajam saat diff lock aktif; Matikan diff lock setelah keluar dari medan sulit."
+    },
+    {
+      "chunk_id": "QST_DRIVING_010",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "pto_power_take_off",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 81,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "PTO",
+        "power take off",
+        "engine PTO",
+        "transmission PTO",
+        "pompa hidrolik",
+        "crane",
+        "mixer beton",
+        "winch",
+        "switch PTO",
+        "RPM kontrol PTO",
+        "aktivasi PTO",
+        "aplikasi PTO"
+      ],
+      "text": "PTO (Power Take Off) pada Quester memungkinkan tenaga mesin disalurkan untuk menggerakkan peralatan tambahan selain drivetrain — contoh: pompa hidrolik, crane, mixer beton, pompa BBM, winch. Tersedia dua jenis: (1) Engine PTO — terhubung langsung ke mesin, beroperasi saat kendaraan diam; diaktifkan via switch Engine PTO di dashboard; RPM engine bisa dikontrol dengan combination switch saat PTO aktif. (2) Transmission PTO — terhubung ke transmisi, bisa beroperasi saat kendaraan bergerak perlahan (sesuai desain aplikasi). Prosedur umum aktivasi Engine PTO: berhenti sempurna → netral → tarik rem parkir → tekan switch PTO → perhatikan indikator PTO menyala. PENTING: Jangan aktifkan PTO saat kendaraan berjalan kecepatan tinggi; Jangan melebihi batas RPM yang ditentukan untuk peralatan PTO."
+    },
+    {
+      "chunk_id": "QST_DRIVING_011",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "fifth_wheel_coupling_prosedur",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 91,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "fifth wheel",
+        "coupling",
+        "kingpin",
+        "tractor head",
+        "trailer",
+        "proses coupling",
+        "bunyi klik",
+        "selang udara rem",
+        "kabel listrik trailer",
+        "verifikasi coupling",
+        "pelumasan fifth wheel",
+        "uncoupling"
+      ],
+      "text": "Prosedur coupling (menyambung) tractor head dengan trailer menggunakan fifth wheel sesuai manual resmi: PRA-COUPLING: (1) Pastikan fifth wheel dalam kondisi terbuka (unlocked) dan sudah dilumasi dengan grease; (2) Periksa kondisi kingpin trailer — tidak bengkok, tidak aus berlebih; (3) Sesuaikan ketinggian trailer agar sedikit lebih rendah dari fifth wheel. PROSES COUPLING: (1) Mundurkan tractor head perlahan ke arah kingpin trailer; (2) Saat kingpin masuk fifth wheel, akan terdengar bunyi 'klik' — tanda terkunci; (3) JANGAN langsung jalan — verifikasi dulu: tarik maju perlahan dengan rem trailer terpasang untuk memastikan coupling terkunci benar; (4) Sambungkan semua selang udara rem dan kabel listrik trailer; (5) Naikkan kingpin trailer dan amankan. POST-COUPLING: Periksa visual: apakah slider/jaws fifth wheel sudah menutup sempurna, apakah ada celah antara pelat fifth wheel dan trailer."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_009",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "fifth_wheel_perawatan",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 216,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "fifth wheel perawatan",
+        "coupling pin",
+        "lower bush",
+        "vertical play",
+        "support ring",
+        "funnel lock",
+        "pelumasan fifth wheel",
+        "NLGI Grade 2",
+        "grease fifth wheel",
+        "20000 km fifth wheel",
+        "inspeksi fifth wheel"
+      ],
+      "text": "Perawatan fifth wheel Quester sesuai manual resmi: INSPEKSI RUTIN (setiap 20.000 km atau setelah 500 jam operasi): (1) Periksa coupling pin — ukur diameter, ganti jika aus melebihi batas; (2) Periksa lower bush — ganti jika aus atau retak; (3) Periksa coupling vertical play — celah vertikal yang berlebihan mengindikasikan komponen aus; (4) Periksa support ring — pastikan tidak retak; (5) Periksa check funnel lock — pastikan mekanisme pengunci berfungsi. PELUMASAN: Oleskan grease NLGI Grade 2 secara merata pada seluruh permukaan pelat fifth wheel (sliding plate) setiap 20.000 km atau setiap servis berkala. Fifth wheel yang kering menyebabkan keausan cepat dan gerakan tidak normal. Spesifikasi grease resmi: NLGI Grade 2 multi-purpose lithium grease."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_010",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "rotasi_posisi_ban",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 166,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "rotasi ban",
+        "tyre rotation",
+        "keausan merata",
+        "pola rotasi",
+        "40000 km rotasi",
+        "ban depan kemudi",
+        "ban cadangan",
+        "masa pakai ban",
+        "6x4 rotasi",
+        "tractor head rotasi"
+      ],
+      "text": "Rotasi posisi ban (tyre rotation) pada Quester penting untuk memastikan keausan ban yang merata dan memaksimalkan masa pakai ban. Pola rotasi yang direkomendasikan berbeda berdasarkan konfigurasi: Untuk Quester 6x4 Rigid (CWE): rotasi dari roda depan ke roda belakang dalam posisi silang untuk distribusi keausan merata. Untuk Quester Tractor Head (GWE/GKE): rotasi melibatkan roda tractor saja — ban trailer dikelola terpisah. Interval rotasi yang disarankan: setiap 40.000 km atau saat terdeteksi keausan tidak merata pada inspeksi. Catatan penting: selalu pasang ban dengan kondisi terbaik di posisi roda depan (kemudi) — ban depan memiliki peran kritis dalam pengendalian kendaraan. Ban cadangan harus dirotasi masuk ke siklus rotasi secara berkala."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_011",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "pemasangan_ban_prosedur",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 172,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "pemasangan ban",
+        "tyre installation",
+        "wheel nut torsi",
+        "650 Nm",
+        "pola silang",
+        "cross pattern",
+        "torque wrench",
+        "wheel stud",
+        "over-torque",
+        "check ulang 100 km",
+        "hub bersih"
+      ],
+      "text": "Prosedur pemasangan ban Quester sesuai manual resmi: (1) Bersihkan permukaan flange roda dan hub dari karat, kotoran, dan grease lama; (2) Pastikan wheel stud dalam kondisi baik — tidak cross-thread, tidak bengkok; (3) Pasang ban ke hub dengan benar — pastikan lubang baut sejajar; (4) Pasang semua wheel nut dengan tangan dulu sebelum dikencangkan dengan kunci; (5) Kencangkan wheel nut dengan pola silang (cross pattern) secara bertahap — ini memastikan pelat roda terpasang rata; (6) Torsi akhir: 650 ± 75 N.m (66.28 ± 7.64 kgf.m) — gunakan torque wrench; (7) Setelah berkendara 50–100 km, cek ulang torsi semua wheel nut — ada kemungkinan kendur setelah pertama kali. PENTING: Jangan gunakan impact wrench tanpa torque check akhir — over-torque merusak wheel stud."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_012",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "jackup_titik_angkat",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 175,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "titik jack up",
+        "angkat kendaraan",
+        "axle housing",
+        "spring bracket",
+        "jackstand",
+        "wheel chock",
+        "larangan jack",
+        "keselamatan jack",
+        "frame rail",
+        "prosedur angkat truk"
+      ],
+      "text": "Titik jack up (titik angkat) yang benar dan aman pada Quester sesuai manual resmi: TITIK YANG DIIZINKAN untuk floor jack: (1) Axle housing depan (front axle beam) — titik solid di tengah axle; (2) Spring bracket belakang (rear spring hanger) — titik kuat di sasis dekat suspensi belakang; (3) Sasis frame rail utama — hanya pada titik yang ditandai atau dikuatkan. TITIK YANG DILARANG: Jangan jack di bawah: bak oli, oil pan, muffler/knalpot, tangki BBM, tangki AdBlue, panel body, atau di bawah trafo/komponen listrik. PROSEDUR KESELAMATAN: (1) Selalu gunakan jackstand setelah mengangkat — jangan andalkan jack saja; (2) Pastikan permukaan datar dan keras; (3) Aktifkan rem parkir dan pasang wheel chock sebelum jack; (4) Jangan masuk di bawah kendaraan tanpa jackstand terpasang."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_013",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "perawatan_baterai",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 165,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "perawatan baterai",
+        "battery maintenance",
+        "24V",
+        "dua baterai 12V",
+        "level elektrolit",
+        "terminal korosi",
+        "klem terminal",
+        "pengisian baterai",
+        "penggantian baterai",
+        "kabel negatif dulu",
+        "air suling"
+      ],
+      "text": "Perawatan baterai Quester (sistem 24V — dua baterai 12V seri): INSPEKSI RUTIN: (1) Periksa level elektrolit — pastikan di atas plat sel (add air suling jika kurang); (2) Bersihkan terminal dari oksidasi/korosi putih — gunakan baking soda + air, lalu bilas; (3) Kencangkan klem terminal; (4) Periksa fisik baterai — tidak retak, tidak bocor, tidak kembung. PENGISIAN (CHARGING): Gunakan charger yang kompatibel dengan sistem 24V; jangan charge cepat (fast charge) secara rutin — merusak sel baterai; charge di tempat berventilasi (gas hidrogen dari baterai). PENGGANTIAN: Saat mengganti baterai, lepaskan kabel negatif (-) LEBIH DULU baru positif (+); pasang positif (+) LEBIH DULU saat memasang yang baru. Quester menggunakan sistem 24V — pastikan kendaraan donor untuk jump start juga 24V."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_014",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "drive_belt_tension",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "1 Introduction and Safety",
+      "page": 31,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "drive belt",
+        "v-belt",
+        "tegangan belt",
+        "belt tension",
+        "defleksi 10-15 mm",
+        "alternator",
+        "water pump",
+        "kompresor AC",
+        "belt kendur",
+        "belt mencicit",
+        "belt retak",
+        "ganti belt"
+      ],
+      "text": "Inspeksi tegangan drive belt (v-belt) pada Quester yang menghubungkan mesin ke alternator, kompresor AC, dan water pump: CARA PERIKSA: Tekan belt di tengah-tengah antara dua pulley dengan tekanan ibu jari ±10 kg — defleksi normal adalah 10–15 mm. Belt terlalu kendur (defleksi > 15 mm): slip, alternator tidak mengisi maksimal, AC tidak dingin. Belt terlalu kencang (defleksi < 10 mm): beban berlebih pada bearing alternator/water pump, bisa putus mendadak. TANDA BELT AKAN RUSAK: suara mencicit saat mesin start atau AC dinyalakan, sisi belt retak-retak atau berbulu. INTERVAL INSPEKSI: setiap 20.000 km atau bersamaan dengan servis filter. Segera ganti jika ada tanda kerusakan — belt putus di jalan menyebabkan mesin overheat (water pump mati) dan aki tidak terisi."
+    },
+    {
+      "chunk_id": "QST_OPERATION_004",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "cab_tilting_prosedur",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "1 Introduction and Safety",
+      "page": 26,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "cab tilting",
+        "miringkan kabin",
+        "akses mesin",
+        "pompa hidraulik kabin",
+        "latch kabin",
+        "safety catch",
+        "prosedur kabin",
+        "cab tilt manual",
+        "kompartemen mesin",
+        "keselamatan cab tilt"
+      ],
+      "text": "Prosedur memiringkan kabin (cab tilting) Quester untuk akses kompartemen mesin: PERSIAPAN: (1) Pastikan kendaraan di permukaan datar dan stabil; (2) Aktifkan rem parkir; (3) Lepaskan semua perlengkapan di dashboard yang bisa jatuh; (4) Pastikan pintu kabin tertutup. CARA MEMIRINGKAN: (1) Buka latch pengunci kabin; (2) Gunakan pompa hidraulik manual atau mekanisme tilt yang tersedia — jangan paksa secara manual; (3) Miringkan hingga posisi terbuka penuh dan kunci di posisi terbuka dengan safety catch. SETELAH SELESAI: (1) Turunkan kabin perlahan; (2) Pastikan latch pengunci kabin terkunci sempurna sebelum menggerakkan kendaraan; (3) Periksa tidak ada tools yang tertinggal di kompartemen mesin. BAHAYA: Jangan memiringkan kabin di tanjakan atau angin kencang tanpa pengaman tambahan."
+    },
+    {
+      "chunk_id": "QST_OPERATION_005",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "penyesuaian_kursi_pengemudi",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "2 Getting in and out of the Cab",
+      "page": 45,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "kursi pengemudi",
+        "driver seat",
+        "mechanical suspension seat",
+        "air suspension seat",
+        "backrest adjustment",
+        "seat height",
+        "longitudinal adjustment",
+        "suspension height",
+        "ergonomi berkendara",
+        "50-120 kg",
+        "kelelahan pengemudi"
+      ],
+      "text": "Penyesuaian kursi pengemudi Quester untuk ergonomi berkendara optimal: Quester menawarkan dua varian kursi: (1) Mechanical Suspension Seat — kursi dengan suspensi mekanikal pegas; penyesuaian: backrest angle (sandaran), seat tilt, seat height, longitudinal position (maju-mundur), dan suspension height sesuai berat badan pengemudi (range 50–120 kg). (2) Air Suspension Seat — kursi premium dengan suspensi udara pneumatik; lebih nyaman di jalan berbatu/bergelombang; penyesuaian tambahan: tekanan suspensi udara via tombol. CARA SESUAIKAN: selalu sesuaikan kursi sebelum berkendara — pengemudi harus bisa menekan pedal kopling/rem penuh tanpa berdiri; lutut sedikit menekuk saat pedal penuh. Kursi yang tidak disesuaikan benar menyebabkan kelelahan pengemudi lebih cepat dan reaksi darurat lebih lambat."
+    },
+    {
+      "chunk_id": "QST_DRIVING_012",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "metode_pemuatan_muatan",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "7 Correct Driving Operation",
+      "page": 143,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "metode pemuatan",
+        "loading methods",
+        "distribusi beban",
+        "center of gravity",
+        "titik berat",
+        "pengikatan muatan",
+        "strapping belt",
+        "ratchet strap",
+        "batas GVW",
+        "overload",
+        "distribusi axle",
+        "stabilitas muatan"
+      ],
+      "text": "Panduan metode pemuatan yang benar pada truk Quester sesuai manual resmi: (1) DISTRIBUSI BEBAN: Bagi muatan merata di seluruh bak — jangan tumpuk semua di satu sisi atau ujung bak; distribusi tidak merata meningkatkan risiko terguling dan merusak suspensi. (2) TITIK BERAT (CENTER OF GRAVITY): Muatan berat diletakkan di bagian bawah dan tengah bak — titik berat rendah meningkatkan stabilitas. Jangan letakkan muatan berat di atap atau pojok belakang. (3) PENGIKATAN MUATAN: Semua muatan harus diikat dengan strapping belt atau ratchet strap yang sesuai kapasitas; muatan yang bergerak saat berkendara sangat berbahaya. (4) BATAS GVW: JANGAN melebihi GVW yang tertera di plat kendaraan — overload merusak ban, rem, suspensi, dan sasis serta melanggar hukum. (5) DISTRIBUSI AXLE: Pastikan distribusi beban tidak melebihi kapasitas per axle."
+    },
+    {
+      "chunk_id": "QST_DRIVING_013",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "overloading_bahaya",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "7 Correct Driving Operation",
+      "page": 142,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "overloading",
+        "kelebihan muatan",
+        "bahaya overload",
+        "jarak pengereman",
+        "brake fade",
+        "pecah ban overload",
+        "suspensi rusak",
+        "sasis fatigue",
+        "hukum overloading",
+        "jembatan timbang",
+        "GVW dilanggar"
+      ],
+      "text": "Bahaya overloading (kelebihan muatan) pada truk Quester menurut manual resmi: DAMPAK TEKNIS: (1) Rem — jarak pengereman meningkat drastis karena momentum lebih besar; rem juga lebih cepat panas dan mengalami brake fade; (2) Ban — tekanan berlebih menyebabkan pecah ban terutama saat panas; (3) Suspensi — per dan shock absorber cepat rusak karena beban melebihi desain; (4) Kemudi — handling kendaraan memburuk, understeer meningkat di tikungan; (5) Sasis dan rangka — fatigue dan retak lebih awal; (6) Mesin dan transmisi — beban kerja berlebih mempercepat keausan. DAMPAK HUKUM: overloading adalah pelanggaran lalu lintas serius di Indonesia — kendaraan bisa ditahan, pengemudi dan perusahaan dikenai denda besar. Selalu gunakan jembatan timbang untuk verifikasi sebelum berangkat."
+    },
+    {
+      "chunk_id": "QST_DRIVING_014",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "mengemudi_hujan",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "7 Correct Driving Operation",
+      "page": 146,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "mengemudi hujan",
+        "jalan basah",
+        "aquaplaning",
+        "jarak aman hujan",
+        "rem di hujan",
+        "genangan air",
+        "wiper",
+        "lampu hujan",
+        "banjir",
+        "kondisi khusus hujan"
+      ],
+      "text": "Panduan mengemudi dalam kondisi hujan dengan truk Quester sesuai manual resmi: (1) Kurangi kecepatan — jarak pengereman di jalan basah meningkat signifikan; (2) Tambah jarak aman dengan kendaraan di depan — setidaknya 3x jarak normal; (3) Hindari pengereman mendadak dan akselerasi tiba-tiba — risiko aquaplaning (roda mengambang di atas air) meningkat; (4) Hati-hati di genangan air dalam — tidak diketahui kedalamannya, bisa merusak rem dan komponen listrik; (5) Wiper harus berfungsi optimal — ganti wiper blade yang sudah tidak efektif (streak/bergaris); (6) Lampu depan wajib dinyalakan saat hujan deras meskipun siang hari; (7) Hindari jalur rendah yang berpotensi banjir — truk lebih rentan terhadap arus banjir karena berat dan tinggi."
+    },
+    {
+      "chunk_id": "QST_DRIVING_015",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "jarak_aman_antar_kendaraan",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "7 Correct Driving Operation",
+      "page": 141,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "jarak aman",
+        "inter-vehicular distance",
+        "jarak pengereman truk",
+        "100 meter",
+        "satu detik 10 km/jam",
+        "jarak hujan",
+        "turun bukit jarak",
+        "brake fade",
+        "kecelakaan truk",
+        "keselamatan jalan"
+      ],
+      "text": "Panduan jarak aman antar kendaraan (inter-vehicular distance) untuk truk Quester: Truk berat memiliki jarak pengereman yang jauh lebih panjang dibanding kendaraan ringan karena massa yang besar. Jarak aman minimum yang direkomendasikan: kondisi normal (jalan kering, kecepatan 80 km/jam): minimal 100 meter; kondisi hujan/basah: minimal 150–200 meter; kondisi turun bukit: tambah jarak lebih jauh. Formula praktis: 'satu detik per 10 km/jam kecepatan' sebagai minimum — misalnya di 80 km/jam, butuh minimal 8 detik. Faktor yang mempengaruhi jarak pengereman: berat muatan (lebih berat = jarak lebih jauh), kondisi ban (tekanan dan keausan), kondisi rem (panas = brake fade), kondisi jalan (basah, licin, turun). Pengemudi yang tidak menjaga jarak aman adalah penyebab utama kecelakaan truk."
+    },
+    {
+      "chunk_id": "QST_EMERGENCY_006",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "emergency",
+      "sub_category": "prosedur_towing",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "10 Emergency Procedures",
+      "page": 228,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "towing",
+        "menderek",
+        "tow bar",
+        "rigid tow",
+        "titik towing",
+        "30 km/jam",
+        "kecepatan towing",
+        "spring brake towing",
+        "manual release",
+        "24H technical assistance",
+        "prosedur towing Quester"
+      ],
+      "text": "Prosedur towing (menderek) Quester yang rusak sesuai manual resmi: KONDISI YANG DIIZINKAN TOWING: kendaraan tidak bisa bergerak sendiri karena kerusakan mesin atau transmisi. METODE TOW BRACE (rigid tow bar): (1) Pasang tow bar pada titik towing yang ditentukan di sasis depan dan belakang; (2) Hubungkan tow bar ke kendaraan derek; (3) Pastikan koneksi kuat dan tidak ada slack berlebih; (4) Pengemudi tetap di dalam kendaraan yang diderek untuk kontrol rem dan kemudi. BATAS TOWING: kecepatan maksimal saat towing: 30 km/jam; jarak maksimal direkomendasikan: secepatnya ke bengkel terdekat. PERHATIAN: Jika mesin mati dan sistem rem udara kehilangan tekanan, rem parkir akan aktif otomatis (spring brake) — selesaikan dulu prosedur manual release rem parkir sebelum ditowing. Selalu hubungi 24H Technical Assistance untuk panduan."
+    },
+    {
+      "chunk_id": "QST_OPERATION_006",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "sistem_elektrikal_24v",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "11 Service Data",
+      "page": 242,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "sistem elektrikal 24V",
+        "bohlam lampu",
+        "head lamp H4",
+        "stop lamp",
+        "direction indicator",
+        "fog lamp",
+        "spesifikasi bohlam",
+        "75W 70W",
+        "PY21W",
+        "W5W",
+        "penggantian bohlam",
+        "wattage bohlam"
+      ],
+      "text": "Spesifikasi sistem elektrikal Quester Series: Sistem tegangan: 24 Volt DC (menggunakan dua baterai 12V dihubung seri). Spesifikasi bohlam/lampu resmi: Head lamp: H4 (75/70W); Front direction indicator: PY21W (21W); Front position lamp: W5W (5W); Front fog lamp: H3 (70W); Side marker lamp: R5W (5W); Rear position lamp: P21/5W (21/5W); Stop lamp: P21/5W (21/5W); Rear direction lamp: PY21W (21W); Reversing lamp: P21W (21W); Rear fog lamp: P21W (21W); Shelf lamp: C5W (5W); Cabin interior lamp: R10W (10W); Work lamp: H370W (70W). Catatan: selalu ganti bohlam dengan spesifikasi yang sama persis — perbedaan wattage bisa merusak fuse atau kabel."
+    },
+    {
+      "chunk_id": "QST_OPERATION_007",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "fuse_relay_penggantian",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "3 Equipment Description and Operation",
+      "page": 72,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "fuse",
+        "sekering",
+        "relay",
+        "fuse box",
+        "penggantian fuse",
+        "nilai ampere",
+        "fuse putus",
+        "korsleting",
+        "blade fuse",
+        "ATC ATO",
+        "fuse puller",
+        "jangan naikkan fuse"
+      ],
+      "text": "Panduan fuse (sekering) dan relay Quester sesuai manual resmi: LOKASI FUSE BOX: Kotak fuse utama terletak di dalam kabin (sisi dashboard) dan di kompartemen mesin (dekat baterai). PENGGANTIAN FUSE: (1) Identifikasi fuse yang putus — cari fuse dengan kawat di dalamnya putus atau gosong; (2) Gunakan fuse puller (tang pencabut fuse) bukan tangan langsung; (3) Ganti dengan fuse NILAI AMPERE YANG SAMA PERSIS — jangan pernah ganti fuse dengan nilai lebih tinggi untuk 'mengatasi' masalah; (4) Jika fuse putus lagi setelah diganti, ada korsleting di sirkuit tersebut — jangan terus ganti fuse, segera cari sumber masalah di bengkel. JENIS FUSE yang digunakan: blade type (ATC/ATO), sesuai ukuran slot. RELAY: relay yang rusak tidak bisa diganti sendiri — bawa ke bengkel untuk diagnostik."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_015",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "penyimpanan_kendaraan_lama",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 218,
+      "fault_code": null,
+      "user_role": [
+        "fleet_manager",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "penyimpanan kendaraan",
+        "vehicle storage",
+        "idle jangka panjang",
+        "penyimpanan truk",
+        "tangki BBM penuh",
+        "baterai disimpan",
+        "charger baterai",
+        "jackstand ban",
+        "jalankan mesin 2 minggu",
+        "reaktivasi truk",
+        "undercarriage cuci"
+      ],
+      "text": "Prosedur penyimpanan kendaraan Quester jangka panjang (>1 bulan) sesuai manual resmi: PRA-PENYIMPANAN: (1) Cuci bersih seluruh kendaraan termasuk undercarriage; (2) Lakukan servis penuh: ganti oli mesin, filter, dan periksa semua fluida; (3) Isi tangki BBM penuh untuk mencegah kondensasi di dalam tangki; (4) Isi tangki AdBlue; (5) Lumasi semua nipel grease; (6) Sambungkan ke charger baterai otomatis atau lepaskan kabel baterai. SELAMA PENYIMPANAN: (1) Simpan di tempat teduh dan berventilasi — hindari paparan langsung sinar matahari dan hujan; (2) Naikkan kendaraan di atas jackstand untuk mengurangi beban ban (penyimpanan >3 bulan); (3) Jalankan mesin 10–15 menit setiap 2 minggu untuk menjaga sirkulasi oli. REAKTIVASI setelah penyimpanan: periksa semua fluida, cek tekanan ban, periksa rem sebelum operasi penuh."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_016",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "greasing_titik_pelumasan",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 219,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "greasing",
+        "titik pelumasan",
+        "nipple pelumas",
+        "propeller shaft",
+        "king pin steering",
+        "spring shackle",
+        "slack adjuster",
+        "steering drag link",
+        "NLGI Grade 2",
+        "grease gun",
+        "20000 km greasing",
+        "bunyi berderak"
+      ],
+      "text": "Titik-titik pelumasan (greasing nipple) pada Quester yang harus dilumasi secara berkala: INTERVAL: setiap 20.000 km atau 6 bulan (mana yang lebih dulu). TITIK PELUMASAN WAJIB: (1) Propeller shaft — semua yoke dan cross joint (universal joint); (2) King pin steering — kanan dan kiri; (3) Spring shackle pin — semua shackle suspensi depan dan belakang; (4) Slack adjuster rem belakang — automatic slack adjuster; (5) Steering drag link dan tie rod end; (6) Fifth wheel (untuk tractor head) — sliding plate; (7) Cab tilt hinge — engsel kabin. GREASE YANG DIGUNAKAN: NLGI Grade 2 multi-purpose grease untuk semua titik. Gunakan grease gun (nipple gun) bertekanan untuk memastikan grease masuk ke semua bagian bearing. Tanda kekurangan grease: bunyi berbunyi/berderak pada komponen, keausan cepat pada pin dan bushing."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_017",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "air_cleaner_inspeksi_ganti",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 152,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "filter udara",
+        "air cleaner",
+        "primary element",
+        "secondary element",
+        "restriction indicator",
+        "60000 km filter udara",
+        "120000 km secondary",
+        "compressed air filter",
+        "turbocharger rusak",
+        "reset indicator",
+        "ganti filter udara",
+        "5x pembersihan"
+      ],
+      "text": "Prosedur inspeksi dan penggantian filter udara (air cleaner) Quester sesuai manual resmi: KOMPONEN: Filter udara Quester terdiri dari Primary Element (filter utama) dan Secondary Element (safety filter). INDIKATOR KOTOR: Di dashboard terdapat Air Filter Restriction Indicator — jika menyala (kuning/merah), filter udara sudah penuh dan perlu perhatian segera; jangan hanya padam lampu tanpa ganti filter. PEMBERSIHAN Primary Element: bisa dibersihkan dengan compressed air dari dalam ke luar (jangan dari luar ke dalam — kotoran masuk ke dalam); maksimal 5x pembersihan sebelum harus diganti dengan yang baru. PENGGANTIAN: Primary Element: setiap 60.000 km (lihat juga indikator restriction); Secondary Element: setiap 120.000 km atau SETIAP KALI Primary diganti 5x — secondary jangan pernah dicuci/dibersihkan, langsung ganti. SETELAH GANTI: reset restriction indicator. Operasi dengan filter udara kotor menyebabkan konsumsi BBM meningkat dan kerusakan turbocharger."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_018",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "brake_drum_lining_check",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 192,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "kampas rem",
+        "brake lining",
+        "drum rem",
+        "clearance lining",
+        "slack adjuster",
+        "ketebalan lining",
+        "rem parkir test",
+        "decit rem",
+        "pedal dalam",
+        "jarak rem panjang",
+        "inspeksi bulanan rem",
+        "drum retak"
+      ],
+      "text": "Pemeriksaan clearance kampas rem (brake lining) dan drum Quester: INTERVAL: setiap bulan (monthly). CARA PERIKSA clearance lining-drum: (1) Roda harus dilepas untuk akses penuh; (2) Ukur ketebalan lining yang tersisa — minimum ketebalan sebelum ganti ditentukan pabrikan ban; (3) Periksa kondisi drum — tidak retak, tidak ada groove dalam; (4) Periksa slack adjuster — pastikan gap antara lining dan drum tidak terlalu besar (sering otomatis pada Quester); (5) Uji efektivitas rem parkir: tarik tuas rem parkir, truk tidak boleh bergerak meskipun didorong. TANDA KAMPAS REM PERLU GANTI: bunyi gesekan/decit saat rem diinjak, pedal rem terasa dalam/soft, truk membutuhkan jarak lebih panjang untuk berhenti, rem terasa tidak seimbang (menarik ke satu sisi). Jangan menunda penggantian kampas rem — komponen keselamatan kritis."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_019",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "transmisi_oil_ganti_prosedur",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 201,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "ganti oli transmisi",
+        "transmission oil change",
+        "5000 km pertama",
+        "60000 km transmisi",
+        "drain plug transmisi",
+        "lubang level transmisi",
+        "API GL-4",
+        "SAE 80W-90",
+        "12 liter 9-speed",
+        "16 liter 12-speed",
+        "break-in oil",
+        "interval pertama transmisi"
+      ],
+      "text": "Prosedur penggantian oli transmisi Quester sesuai manual resmi: INTERVAL PERTAMA: setelah 4 minggu atau 5.000 km (mana lebih dulu) — ini adalah oli break-in yang wajib diganti lebih awal karena mengandung partikel dari proses break-in komponen baru. INTERVAL SELANJUTNYA: setiap 60.000 km atau 12 bulan. PROSEDUR: (1) Hangatkan transmisi dengan berkendara singkat; (2) Pasang drip pan di bawah transmisi; (3) Buka drain plug transmisi (bagian bawah) dan biarkan mengalir habis; (4) Pasang kembali drain plug dengan torsi sesuai spesifikasi; (5) Isi oli baru melalui lubang pengisian level di sisi transmisi — isi hingga oli mengalir keluar dari lubang level; (6) Pasang kembali baut level. Kapasitas: ±12 liter (9-speed) atau ±16 liter (12-speed). Spesifikasi oli: API GL-4, SAE 80W-90. Jangan melebihi level — oli berlebih bisa menyebabkan tekanan berlebih di seal."
+    },
+    {
+      "chunk_id": "QST_MAINTENANCE_020",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "maintenance",
+      "sub_category": "differential_oil_ganti",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 203,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "oli diferensial",
+        "differential gear oil",
+        "40000 km diferensial",
+        "5000 km pertama diferensial",
+        "dua axle belakang",
+        "drain plug diferensial",
+        "filler plug",
+        "API GL-5",
+        "SAE 80W-90",
+        "12 liter per axle",
+        "oli hitam diferensial"
+      ],
+      "text": "Prosedur penggantian oli diferensial Quester sesuai manual resmi: INTERVAL PERTAMA: 5.000 km (bersamaan dengan ganti oli transmisi). INTERVAL SELANJUTNYA: setiap 40.000 km atau 12 bulan. Quester 6x4 memiliki DUA axle diferensial belakang — keduanya harus diganti bersamaan. PROSEDUR per axle: (1) Buka drain plug di bagian bawah housing diferensial; (2) Buka filler plug di sisi housing sebagai ventilasi; (3) Biarkan oli lama mengalir habis (±10 menit); (4) Tutup drain plug; (5) Isi oli baru melalui filler plug sampai oli mengalir keluar dari lubang level; (6) Pasang filler plug kembali. Kapasitas per axle: ±12 liter. Spesifikasi oli: API GL-5, SAE 80W-90. Oli diferensial yang sudah hitam dan berbau terbakar adalah tanda sudah harus diganti — jangan tunggu interval jika kondisi seperti ini."
+    },
+    {
+      "chunk_id": "QST_SERVICE_DATA_004",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "service_data",
+      "sub_category": "sae_viscosity_rekomendasi",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "11 Service Data",
+      "page": 237,
+      "fault_code": null,
+      "user_role": [
+        "mekanik",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "SAE viscosity",
+        "15W-40",
+        "10W-30",
+        "5W-30",
+        "80W-90",
+        "85W-140",
+        "iklim tropis",
+        "rekomendasi oli Indonesia",
+        "suhu operasi oli",
+        "ATF Dexron II",
+        "viscosity number"
+      ],
+      "text": "Rekomendasi SAE viscosity number untuk Quester berdasarkan suhu operasi: OLI MESIN: SAE 15W-40 — direkomendasikan untuk iklim tropis Indonesia (suhu 0°C hingga +45°C); SAE 10W-30 — jika suhu sangat ekstrem panas (di atas 40°C terus menerus); SAE 5W-30 — untuk iklim dingin (jarang diperlukan di Indonesia). OLI TRANSMISI: SAE 80W-90 — standar untuk iklim tropis; tidak perlu ganti viscosity untuk Indonesia. OLI DIFERENSIAL: SAE 80W-90 — standar tropis; untuk aplikasi heavy duty pertambangan bisa dipertimbangkan SAE 85W-140 (konsultasikan dengan dealer). POWER STEERING: ATF Dexron II atau setara — tidak perlu disesuaikan dengan suhu. Catatan: di Indonesia umumnya SAE 15W-40 untuk oli mesin sudah optimal untuk semua kondisi sepanjang tahun."
+    },
+    {
+      "chunk_id": "QST_SERVICE_DATA_005",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "service_data",
+      "sub_category": "diesel_fuel_spesifikasi",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "11 Service Data",
+      "page": 239,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "fleet_manager"
+      ],
+      "language": "id",
+      "keywords": [
+        "bahan bakar diesel",
+        "low sulfur diesel",
+        "ultra low sulfur",
+        "Pertamina Dex",
+        "Solar DEX",
+        "Bio Solar",
+        "kandungan sulfur",
+        "injector common rail",
+        "katalis SCR",
+        "diesel booster",
+        "kualitas BBM",
+        "DPF filter"
+      ],
+      "text": "Spesifikasi bahan bakar diesel yang direkomendasikan untuk Quester Euro 5: Quester Euro 5 dirancang untuk menggunakan solar berkualitas tinggi dengan kandungan sulfur rendah (Low Sulfur Diesel/Ultra Low Sulfur Diesel). Di Indonesia: gunakan Pertamina Dex atau Solar DEX — bukan Solar biasa (Bio Solar) yang kandungan sulfurnya lebih tinggi. Alasan penting: sistem injeksi common rail dan katalis SCR/DPF sangat sensitif terhadap kualitas BBM; sulfur tinggi merusak katalis SCR, menyumbat injector, dan mengurangi masa pakai filter DPF secara drastis. Penambahan diesel booster: boleh digunakan dengan syarat kompatibel dengan sistem common rail — konsultasikan dengan dealer. JANGAN gunakan solar campuran atau BBM yang tidak jelas kualitasnya — risiko kerusakan injector dan sistem emisi sangat tinggi."
+    },
+    {
+      "chunk_id": "QST_SERVICE_DATA_006",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "service_data",
+      "sub_category": "torque_tightening_intervals",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "9 Maintenance Schedule",
+      "page": 224,
+      "fault_code": null,
+      "user_role": [
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "torque tightening",
+        "torsi pengencangan",
+        "baut roda 650 Nm",
+        "axle shaft bolt",
+        "coupling fifth wheel baut",
+        "propeller shaft baut",
+        "U-bolt suspensi",
+        "torque wrench",
+        "fastener berkala",
+        "interval torsi",
+        "baut kendur getaran"
+      ],
+      "text": "Interval pemeriksaan torsi pengencangan (torque tightening) pada Quester yang wajib dilakukan berkala oleh mekanik bersertifikat: Semua fastener (baut dan mur) pada sistem kritis perlu dicek torsinya secara berkala karena getaran dan beban operasi bisa melonggarkan fastener. Area kritis yang wajib dicek torsinya: (1) Baut roda (wheel nuts): 650 ± 75 N.m — cek setelah 50-100 km pertama setelah pemasangan ban; (2) Baut axle shaft: cek setiap 3 bulan; (3) Baut coupling fifth wheel: setiap 20.000 km; (4) Baut propeller shaft: setiap 20.000 km; (5) Baut spring U-bolt suspensi: setiap 3 bulan atau setelah operasi berat. Alat yang diperlukan: torque wrench terkalibrasi. Gunakan only bengkel resmi UD Trucks yang memiliki torque wrench terkalibrasi untuk pekerjaan ini."
+    },
+    {
+      "chunk_id": "QST_OPERATION_008",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "operation",
+      "sub_category": "mencuci_kendaraan_prosedur",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "8 Inspection and Maintenance",
+      "page": 211,
+      "fault_code": null,
+      "user_role": [
+        "driver",
+        "mekanik"
+      ],
+      "language": "id",
+      "keywords": [
+        "mencuci kendaraan",
+        "washing vehicle",
+        "semprotan air tekanan tinggi",
+        "sensor elektronik",
+        "alternator cuci",
+        "silencer panas",
+        "undercarriage cuci",
+        "rem basah",
+        "kebocoran setelah cuci",
+        "wiper setelah cuci",
+        "prosedur cuci truk"
+      ],
+      "text": "Panduan mencuci kendaraan Quester sesuai manual resmi: AREA YANG HARUS DIPERHATIKAN: (1) Jangan semprotkan air bertekanan tinggi langsung ke: sensor-sensor elektronik, connector wiring harness, alternator, motor starter, dan komponen elektrikal lainnya — kerusakan permanen; (2) Saat mencuci area silencer/muffler dan sistem SCR: gunakan air rendah tekanan dan jangan langsung ke katalis — silencer yang panas dan terkena air dingin bisa retak; (3) Saat mencuci undercarriage: periksa juga kebocoran oli, kebocoran coolant, dan kondisi selang-selang. SETELAH MENCUCI: (1) Jalankan rem beberapa kali setelah mencuci untuk mengeringkan drum rem — rem basah efektivitasnya berkurang drastis; (2) Periksa semua lampu eksterior berfungsi setelah cuci."
+    },
+    {
+      "chunk_id": "QST_DRIVING_016",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "operasi_trailer_brake",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "7 Correct Driving Operation",
+      "page": 139,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "trailer brake",
+        "rem trailer",
+        "glad hands",
+        "service brake",
+        "trailer parking brake",
+        "jackknife",
+        "jackknifing",
+        "trailer swing",
+        "rem tractor trailer",
+        "keseimbangan rem",
+        "pengereman tractor head"
+      ],
+      "text": "Panduan penggunaan rem trailer pada Quester Tractor Head sesuai manual resmi: Sistem rem trailer terhubung ke tractor head melalui selang udara rem (glad hands). Ada dua tipe rem pada kombinasi tractor-trailer: (1) Service Brake — rem utama yang aktif saat pedal rem diinjak; otomatis menyertakan rem trailer; (2) Trailer Parking Brake — rem parkir khusus trailer yang dikontrol via tombol/tuas terpisah. OPERASI YANG BENAR: Saat mengerem normal, pedal rem tractor juga mengaktifkan rem trailer secara otomatis melalui sistem pneumatik. Hindari 'trailer swing' saat pengereman mendadak di kondisi licin — trailer bisa meleset ke sisi tractor (jackknifing). Untuk menghindari jackknifing: rem bertahap dan halus, jaga lurus kendaraan. Jika trailer rem lebih kuat dari tractor, bisa terjadi jackknife — pastikan penyesuaian rem tractor dan trailer seimbang."
+    },
+    {
+      "chunk_id": "QST_DRIVING_017",
+      "series": "quester",
+      "applies_to": "quester_series",
+      "category": "driving",
+      "sub_category": "operasi_gearshift_manual",
+      "source_type": "owner_manual",
+      "source_doc": "UD Trucks QUESTER Series Owner's Manual",
+      "chapter": "7 Correct Driving Operation",
+      "page": 140,
+      "fault_code": null,
+      "user_role": [
+        "driver"
+      ],
+      "language": "id",
+      "keywords": [
+        "gearshift lever",
+        "tuas gigi",
+        "9-speed manual",
+        "12-speed manual",
+        "range selection",
+        "high range",
+        "low range",
+        "range change",
+        "overdrive",
+        "STO2009",
+        "STO2012",
+        "transmisi manual Quester"
+      ],
+      "text": "Panduan operasi tuas gigi (gearshift lever) pada Quester transmisi manual sesuai manual resmi: Quester 9-speed dan 12-speed menggunakan range selection (high/low range) di samping perpindahan gigi biasa. Cara menggunakan range: Range LOW (L) digunakan untuk gigi 1-5 (kecepatan rendah, muatan berat, tanjakan); Range HIGH (H) digunakan untuk gigi 6-9/12 (kecepatan jalan). Cara pindah range: geser toggle switch range ke H atau L — perpindahan range hanya bisa dilakukan saat kendaraan bergerak dengan kecepatan tepat untuk range change. Range change preventive function: sistem mencegah range change di kecepatan yang tidak tepat untuk melindungi transmisi. Overdrive gearbox (STO2009/STO2012): posisi overdrive (OD) memungkinkan berkendara di RPM lebih rendah di kecepatan tinggi — hemat BBM dan kebisingan lebih rendah."
+    }
+  ]
+}
