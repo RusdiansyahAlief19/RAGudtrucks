@@ -56,6 +56,17 @@ function Dashboard({ onNav, onSelectTruck }) {
   const { summary, trucks, alerts } = data;
   const tableTrucks = trucks.slice(0, 5);
   
+  // Bug 2 Fix: Calculate dynamic bounds for the chart
+  const trendMin = Math.max(0, Math.floor(Math.min(...FLEET_TREND)) - 3);
+  const trendMax = Math.min(100, Math.ceil(Math.max(...FLEET_TREND)) + 3);
+  
+  // Bug 3 Fix: Sort alerts to prioritize 'danger' (kritis) first
+  const sortedAlerts = [...alerts].sort((a, b) => {
+    if (a.tone === "danger" && b.tone !== "danger") return -1;
+    if (a.tone !== "danger" && b.tone === "danger") return 1;
+    return 0;
+  });
+  
   return (
     <div className="screen-enter" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
       {/* Scenario Banner & Toggle */}
@@ -86,7 +97,7 @@ function Dashboard({ onNav, onSelectTruck }) {
       {/* Metric row */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
         <MetricCard icon="truck" iconTone="primary" value={summary.activeTrucks} label="Truk Aktif" trend={{ dir: "up", val: "Online" }} />
-        <MetricCard icon="alert" iconTone={summary.criticalTrucks > 0 ? "danger" : "success"} value={summary.criticalTrucks} label="Perlu Perhatian" trend={summary.criticalTrucks > 0 ? { dir: "down", val: "Cek!" } : null} onClick={() => onNav("predictive")} />
+        <MetricCard icon="alert" iconTone={summary.criticalTrucks > 0 ? "danger" : "success"} value={summary.criticalTrucks} label="Perlu Tindakan" trend={summary.criticalTrucks > 0 ? { dir: "down", val: "Cek!" } : null} onClick={() => onNav("predictive")} />
         <MetricCard icon="shield" iconTone={scoreTone(summary.avgScore)} value={`${summary.avgScore}/100`} label="Skor Armada Rata-rata" trend={{ dir: "up", val: "Live" }} />
         <MetricCard icon="droplet" iconTone="success" value="Rp 14,2 Jt" label="Estimasi Hemat BBM Bulan Ini" trend={{ dir: "up", val: "+8%" }} />
       </div>
@@ -99,7 +110,7 @@ function Dashboard({ onNav, onSelectTruck }) {
             <Badge tone="success" dot>Stabil</Badge>
           </div>
           <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-            <LineChart data={FLEET_TREND} yMin={70} yMax={95} height={240} xLabels={FLEET_LABELS} />
+            <LineChart data={FLEET_TREND} yMin={trendMin} yMax={trendMax} height={200} xLabels={FLEET_LABELS} />
           </div>
         </Card>
 
@@ -108,10 +119,10 @@ function Dashboard({ onNav, onSelectTruck }) {
             <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>Peringatan Terbaru</h2>
             <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text-2)" }}>{alerts.length} item</span>
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            {alerts.length === 0 ? (
+          <div style={{ display: "flex", flexDirection: "column", maxHeight: 400, overflowY: "auto" }}>
+            {sortedAlerts.length === 0 ? (
               <div style={{ padding: 20, textAlign: "center", color: "var(--text-3)", fontSize: 13 }}>Semua komponen aman! Tidak ada peringatan.</div>
-            ) : alerts.map((a, i) => (
+            ) : sortedAlerts.map((a, i) => (
               <button key={i} onClick={() => { onSelectTruck && onSelectTruck(a.truckId); onNav("predictive"); }}
                 style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "13px 20px", border: "none",
                   borderBottom: i < alerts.length - 1 ? "1px solid var(--border-2)" : "none", background: "transparent",
