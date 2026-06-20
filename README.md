@@ -8,25 +8,34 @@ Fleet Intelligence Platform adalah asisten kecerdasan buatan (AI Assistant) ting
 2. **Anti-Halusinasi Terjamin**: Didukung oleh LLM canggih Google **Gemini 2.5 Flash**, AI dikunci (di-*grounding*) hanya untuk menjawab dari dataset yang disediakan.
 3. **Conversational TCO**: Jika ditanya seputar "harga" atau "rekomendasi truk", AI secara otomatis menyertakan kisaran harga investasi dasar.
 4. **Interactive TCO Calculator**: Dilengkapi antarmuka kalkulator interaktif visual untuk menghitung *Total Cost of Ownership* (Estimasi BBM, Servis & Ban per tahun) secara *real-time*.
-5. **Premium UI/UX**: Tampilan *frontend* berbasis *Vanilla Web* dengan estetika mewah (*Dark Mode*, *Glassmorphism*, dan animasi yang mulus).
+5. **Premium UI/UX**: Tampilan *frontend* berbasis *Vanilla Web* dan *React.js* dengan estetika mewah (*Dark Mode*, *Glassmorphism*, dan animasi yang mulus).
+
+## 📊 Predictive Maintenance Dashboard (FleetSight)
+Selain fitur *Virtual Mechanic* berbasis RAG, platform ini juga dilengkapi dengan *Dashboard FleetSight* untuk memantau kesehatan armada secara prediktif:
+- **Weakest-Link Status**: Penentuan status truk secara keseluruhan (Aman/Perhatian/Kritis) ditentukan oleh komponen terlemah (Rem, Ban, atau Aki).
+- **Threshold Persentil Dinamis**: Batas status tidak di-*hardcode* secara statis, melainkan dikalkulasi secara dinamis pada saat *startup* berdasarkan distribusi data menggunakan *Percentile* (15% terbawah = Kritis, 15-50% = Perhatian). Hal ini menjamin ketahanan terhadap anomali skala data.
+- **Toggle Snapshot Simulasi**: Mendemonstrasikan secara interaktif progresi keausan (*wear-and-tear*) armada tanpa *preventive maintenance* pada titik waktu spesifik (Hari ke-90, 180, dan 365).
+- **API Endpoint**: Data prediktif diolah di backend melalui *endpoint* `/api/dashboard/data?day=X` yang mendukung kalkulasi jarak kumulatif dan *rolling features* secara dinamis.
 
 ## 🚀 Teknologi yang Digunakan
-- **Backend:** Python, FastAPI, Uvicorn
+- **Backend:** Python, FastAPI, Uvicorn, Pandas
+- **Machine Learning (Predictive):** Scikit-Learn (Linear Regression + Polynomial Features), Pickle (`model_rem.pkl`, `model_ban.pkl`, `model_aki.pkl`)
 - **AI / LLM:** Google Gemini 2.5 Flash (`google-genai`), HuggingFace Embeddings (`all-MiniLM-L6-v2`)
 - **Vector Store & Indexing:** FAISS-CPU, rank_bm25, LangChain
-- **Frontend:** HTML5, CSS3, Vanilla JavaScript
+- **Frontend:** HTML5, CSS3, React.js (via Babel/CDN)
 
 ## 📦 Struktur Proyek
 ```text
 /
 ├── backend/
-│   ├── main.py        # Server FastAPI dan endpoint REST API
+│   ├── main.py        # Server FastAPI (Endpoint RAG & Predictive Dashboard)
+│   ├── models/        # Model ML tersimpan (model_rem.pkl, model_ban.pkl, model_aki.pkl)
 │   ├── ingest.py      # Skrip untuk membaca dataset JSON dan mem-build Vector DB & BM25
 │   └── rag_engine.py  # Logika utama Hybrid Search dan pemanggilan Gemini API
-├── frontend/
-│   ├── index.html     # Layout UI Chatbot & TCO Modal
-│   ├── style.css      # Styling premium (Glassmorphism)
-│   └── script.js      # Logika asinkron chat & kalkulasi matematika TCO
+├── UD TRUCKS/
+│   ├── UD FleetSight.html  # Main entry point UI React app
+│   └── app/screens/        # React components (Dashboard.js, Predictive.js, dsb.)
+├── data_dummy_fleetsight_FINAL.csv # Dataset simulasi telematika armada
 ├── astra_ud_trucks_rag_dataset.json # Knowledge Base mentah
 ├── requirements.txt   # Dependensi Python
 ├── .env.example       # Contoh environment variable untuk API Keys
