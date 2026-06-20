@@ -165,7 +165,7 @@ def predict_rem(request: RemRequest):
         return {"error": str(e)}
 
 @app.get("/api/dashboard/data")
-def get_dashboard_data():
+def get_dashboard_data(day: int = None):
     try:
         df = pd.read_csv('../data_dummy_fleetsight_FINAL.csv')
     except Exception as e:
@@ -174,35 +174,48 @@ def get_dashboard_data():
     trucks = []
     alerts = []
     
-    # Get the latest row for each plat
-    latest_indices = df.groupby('plat')['hari'].idxmax()
-    latest_data = df.loc[latest_indices]
-    
-    for _, row in latest_data.iterrows():
-        plat = row['plat']
+    # Group by plat to calculate cumulative values
+    for plat, group in df.groupby('plat'):
+        if day is not None:
+            # Filter up to the specified day
+            subgroup = group[group['hari'] <= day]
+            if subgroup.empty:
+                continue # Skip if no data for this day
+            row = subgroup.iloc[-1]
+            group_to_calc = subgroup
+        else:
+            row = group.loc[group['hari'].idxmax()]
+            group_to_calc = group
+            
+        # Calculate real cumulative_km and rolling features if missing
+        real_cumulative_km = group_to_calc['jarak_km'].sum()
+        real_jarak_roll7 = group_to_calc.tail(7)['jarak_km'].mean() if len(group_to_calc) >= 7 else row['jarak_km']
+        real_hard_brake_roll7 = group_to_calc.tail(7)['hard_brake'].mean() if len(group_to_calc) >= 7 else row['hard_brake']
+        real_hard_brake_std7 = group_to_calc.tail(7)['hard_brake'].std() if len(group_to_calc) >= 7 else 0
+        real_suhu_mesin_roll7 = group_to_calc.tail(7)['suhu_mesin'].mean() if len(group_to_calc) >= 7 else row['suhu_mesin']
         
         # Prepare inputs
         X_rem = np.array([[
             norm(row['hard_brake'], 'hard_brake'),
             norm(row['jarak_km'], 'jarak_km'),
             norm(row['overspeed'], 'overspeed'),
-            norm(row.get('hard_brake_roll7', 5), 'hard_brake'),
-            norm(row.get('cumulative_km', 15000), 'cumulative_km'),
-            norm(row.get('hard_brake_std7', 2), 'hard_brake')
+            norm(real_hard_brake_roll7, 'hard_brake'),
+            norm(real_cumulative_km, 'cumulative_km'),
+            norm(real_hard_brake_std7, 'hard_brake')
         ]])
         X_ban = np.array([[
             norm(row['jarak_km'], 'jarak_km'),
             norm(row['muatan_ton'], 'muatan_ton'),
             norm(row['overspeed'], 'overspeed'),
-            norm(row.get('jarak_km_roll7', 150), 'jarak_km'),
-            norm(row.get('cumulative_km', 15000), 'cumulative_km')
+            norm(real_jarak_roll7, 'jarak_km'),
+            norm(real_cumulative_km, 'cumulative_km')
         ]])
         X_aki = np.array([[
             norm(row['jarak_km'], 'jarak_km'),
             norm(row['suhu_mesin'], 'suhu_mesin'),
             norm(row['idle_minutes'], 'idle_minutes'),
-            norm(row.get('suhu_mesin_roll7', 85), 'suhu_mesin'),
-            norm(row.get('cumulative_km', 15000), 'cumulative_km')
+            norm(real_suhu_mesin_roll7, 'suhu_mesin'),
+            norm(real_cumulative_km, 'cumulative_km')
         ]])
         
         # Predict raw values
@@ -249,6 +262,7 @@ def get_dashboard_data():
             "driver": row.get('sopir', 'Driver'),
             "score": truck_score,
             "status": truck_status,
+            "cumulative_km": round(real_cumulative_km, 1),
             "components": [
                 {"key": "rem", "name": "Kampas Rem", "value": rem_score, "raw": f"{rem_mm:.1f} mm"},
                 {"key": "ban", "name": "Set Ban", "value": ban_pct, "raw": f"{ban_pct:.1f} %"},

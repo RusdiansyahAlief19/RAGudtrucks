@@ -33,9 +33,11 @@ function Dashboard({ onNav, onSelectTruck }) {
   const { useState, useEffect } = React;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedDay, setSelectedDay] = useState(365);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/dashboard/data')
+    setLoading(true);
+    fetch(`http://127.0.0.1:8000/api/dashboard/data?day=${selectedDay}`)
       .then(r => r.json())
       .then(res => {
         setData(res);
@@ -45,7 +47,7 @@ function Dashboard({ onNav, onSelectTruck }) {
         console.error("Failed to load dashboard data", err);
         setLoading(false);
       });
-  }, []);
+  }, [selectedDay]);
 
   if (loading || !data) {
     return <div style={{ padding: 40, textAlign: "center", color: "var(--text-2)" }}>Loading live data from AI...</div>;
@@ -56,6 +58,31 @@ function Dashboard({ onNav, onSelectTruck }) {
   
   return (
     <div className="screen-enter" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      {/* Scenario Banner & Toggle */}
+      <Card pad={16} style={{ background: "var(--bg-2)", border: "1px solid var(--border-2)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+          <div style={{ marginTop: 2, color: "var(--primary)" }}>
+            <Icon name="info" size={20} />
+          </div>
+          <div style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.5 }}>
+            <strong>Skenario Simulasi:</strong> Kondisi armada setelah <strong>{selectedDay} hari</strong> beroperasi TANPA jadwal servis preventif.<br/>
+            <span style={{ color: "var(--text-2)" }}>Data ini mendemonstrasikan bagaimana FleetSight mendeteksi akumulasi keausan yang luput dari pemantauan manual.</span>
+          </div>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <span style={{ fontSize: 13, fontWeight: 600, color: "var(--text-2)", whiteSpace: "nowrap" }}>Snapshot Hari:</span>
+          <select 
+            value={selectedDay} 
+            onChange={(e) => setSelectedDay(Number(e.target.value))}
+            style={{ padding: "6px 12px", borderRadius: 6, background: "var(--bg)", border: "1px solid var(--border-2)", color: "var(--text)", fontSize: 13, fontWeight: 600, cursor: "pointer", outline: "none" }}
+          >
+            <option value={90}>Hari ke-90</option>
+            <option value={180}>Hari ke-180</option>
+            <option value={365}>Hari ke-365 (Akhir Simulasi)</option>
+          </select>
+        </div>
+      </Card>
+
       {/* Metric row */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
         <MetricCard icon="truck" iconTone="primary" value={summary.activeTrucks} label="Truk Aktif" trend={{ dir: "up", val: "Online" }} />
