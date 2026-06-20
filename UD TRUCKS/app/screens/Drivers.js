@@ -26,8 +26,7 @@ function Drivers({ onNav, onSelectTruck }) {
       });
   }, []);
 
-  const sel = drivers.find((d) => d.id === selId);
-  const medal = { 1: "🥇", 2: "🥈", 3: "🥉" };
+  const medal = { 1: "1st", 2: "2nd", 3: "3rd" };
 
   if (loading) {
     return <div style={{ padding: 40, textAlign: "center", color: "var(--text-2)" }}>Menganalisis performa 20 supir secara Live...</div>;
@@ -93,9 +92,9 @@ function Drivers({ onNav, onSelectTruck }) {
                       <StatusDot tone={scoreTone(d.score)} size={8} />
                     </span>
                   </td>
-                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.hard_brake < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.hard_brake}×<span style={{ fontSize: 10, color: "var(--text-3)" }}>/hr</span></td>
+                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.hard_brake < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.hard_brake}x<span style={{ fontSize: 10, color: "var(--text-3)" }}>/hr</span></td>
                   <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.idle < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.idle}<span style={{ fontSize: 10, color: "var(--text-3)" }}>m</span></td>
-                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.overspeed < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.overspeed}×</td>
+                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.overspeed < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.overspeed}x</td>
                 </tr>
               ))}
             </tbody>
@@ -111,7 +110,7 @@ function Drivers({ onNav, onSelectTruck }) {
             </div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 17, fontWeight: 700 }}>Detail: {sel.name}</div>
-              <div style={{ fontSize: 12.5, color: "var(--text-2)" }}><span className="plate">{sel.plate}</span> · Data 7 hari terakhir</div>
+              <div style={{ fontSize: 12.5, color: "var(--text-2)" }}><span className="plate">{sel.plate}</span> - Data 7 hari terakhir</div>
             </div>
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 30, fontWeight: 800, fontFamily: "var(--mono)", color: scoreColor(sel.score), lineHeight: 1 }}>{sel.score}</div>
@@ -122,9 +121,9 @@ function Drivers({ onNav, onSelectTruck }) {
           <SectionLabel style={{ marginBottom: 12 }}>Metrik 7 hari terakhir</SectionLabel>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
             {[
-              { t: "Hard Braking", d: [sel.raw.hard_brake, sel.raw.hard_brake*1.1, sel.raw.hard_brake*0.8, sel.raw.hard_brake], c: "var(--danger)", s: "×" },
+              { t: "Hard Braking", d: [sel.raw.hard_brake, sel.raw.hard_brake*1.1, sel.raw.hard_brake*0.8, sel.raw.hard_brake], c: "var(--danger)", s: "x" },
               { t: "Idling", d: [sel.raw.idle, sel.raw.idle*0.9, sel.raw.idle*1.1, sel.raw.idle], c: "var(--warning)", s: "m" },
-              { t: "Ngebut", d: [sel.raw.overspeed, sel.raw.overspeed*0.8, sel.raw.overspeed*1.2, sel.raw.overspeed], c: "var(--primary-light)", s: "×" },
+              { t: "Ngebut", d: [sel.raw.overspeed, sel.raw.overspeed*0.8, sel.raw.overspeed*1.2, sel.raw.overspeed], c: "var(--primary-light)", s: "x" },
             ].map((m) => (
               <div key={m.t}>
                 <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--text-2)", marginBottom: 6 }}>{m.t}</div>
@@ -140,7 +139,7 @@ function Drivers({ onNav, onSelectTruck }) {
               <Icon name="alert" size={17} style={{ color: "var(--danger)", flex: "none", marginTop: 1 }} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 12.5, lineHeight: 1.55, color: "var(--text)" }}>
-                  <strong>Catatan:</strong> Hard braking Rahmat <strong>2× lipat</strong> rata-rata armada → berkontribusi langsung pada keausan rem <span className="plate">KT 9012 AB</span> yang saat ini dalam kondisi kritis <strong style={{ color: "var(--danger)" }}>(18%)</strong>. Perlu coaching segera.
+                  <strong>Catatan:</strong> Hard braking Rahmat <strong>2x lipat</strong> rata-rata armada -> berkontribusi langsung pada keausan rem <span className="plate">KT 9012 AB</span> yang saat ini dalam kondisi kritis <strong style={{ color: "var(--danger)" }}>(18%)</strong>. Perlu coaching segera.
                 </div>
                 <div style={{ fontSize: 11.5, fontWeight: 700, color: "var(--danger)", marginTop: 7, display: "inline-flex", alignItems: "center", gap: 4 }}>
                   Lihat dampak di Predictive Maintenance <Icon name="arrowRight" size={13} />
