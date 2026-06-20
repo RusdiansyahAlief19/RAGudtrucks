@@ -160,8 +160,117 @@ function Predictive({ selectedId, onSelectTruck }) {
             ))}
           </div>
         </Card>
+
+        {/* Telematics Simulator */}
+        <TelematicsSimulator />
       </div>
     </div>
+  );
+}
+
+function TelematicsSimulator() {
+  const [comp, setComp] = React.useState("aki");
+  const [params, setParams] = React.useState({});
+  const [result, setResult] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
+
+  const COMP_FIELDS = {
+    aki: [
+      { id: "jarak_km", label: "Jarak Tempuh Harian", min: 0, max: 600, unit: "KM", def: 150 },
+      { id: "suhu_mesin", label: "Suhu Mesin", min: 60, max: 120, unit: "°C", def: 85 },
+      { id: "idle_minutes", label: "Idle Minutes", min: 0, max: 120, unit: "Menit", def: 15 },
+      { id: "suhu_mesin_r7", label: "Suhu Mesin (Rata-rata 7 Hari)", min: 60, max: 120, unit: "°C", def: 85 },
+      { id: "cumulative_km", label: "Total Odometer", min: 0, max: 100000, unit: "KM", def: 20000 },
+    ],
+    ban: [
+      { id: "jarak_km", label: "Jarak Tempuh Harian", min: 0, max: 600, unit: "KM", def: 150 },
+      { id: "muatan_ton", label: "Muatan", min: 0, max: 35, unit: "Ton", def: 10 },
+      { id: "overspeed", label: "Overspeed", min: 0, max: 30, unit: "Kali", def: 2 },
+      { id: "jarak_km_r7", label: "Jarak KM (Rata-rata 7 Hari)", min: 0, max: 600, unit: "KM", def: 150 },
+      { id: "cumulative_km", label: "Total Odometer", min: 0, max: 100000, unit: "KM", def: 20000 },
+    ],
+    rem: [
+      { id: "hard_brake", label: "Pengereman Mendadak", min: 0, max: 40, unit: "Kali", def: 4 },
+      { id: "jarak_km", label: "Jarak Tempuh Harian", min: 0, max: 600, unit: "KM", def: 150 },
+      { id: "overspeed", label: "Overspeed", min: 0, max: 30, unit: "Kali", def: 2 },
+      { id: "hard_brake_r7", label: "Hard Brake (Rata-rata 7 Hari)", min: 0, max: 40, unit: "Kali", def: 4 },
+      { id: "cumulative_km", label: "Total Odometer", min: 0, max: 100000, unit: "KM", def: 20000 },
+      { id: "hard_brake_std", label: "Fluktuasi Hard Brake (Std Dev)", min: 0, max: 15, unit: "Var", def: 2 },
+    ]
+  };
+
+  const handlePredict = async () => {
+    setLoading(true);
+    try {
+      const payload = {};
+      COMP_FIELDS[comp].forEach(f => {
+        const val = params[f.id] === undefined ? f.def : params[f.id];
+        let norm = (val - f.min) / (f.max - f.min);
+        if (norm < 0) norm = 0;
+        if (norm > 1) norm = 1;
+        payload[f.id] = norm;
+      });
+
+      const res = await fetch(`http://127.0.0.1:8000/predict/${comp}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (data.prediction !== undefined) setResult(data.prediction);
+      else alert("Error: " + data.error);
+    } catch (err) {
+      alert("Gagal menghubungi model AI: " + err.message);
+    }
+    setLoading(false);
+  };
+
+  return (
+    <Card pad={24} style={{ marginTop: 20 }}>
+      <h3 style={{ margin: "0 0 18px", fontSize: 16, fontWeight: 700, display: "flex", gap: 10, alignItems: "center", color: "var(--text)" }}>
+        <Icon name="cpu" size={20} /> Telematics Simulator
+      </h3>
+      <div style={{ display: "flex", gap: 12, marginBottom: 24 }}>
+        {["aki", "ban", "rem"].map(c => (
+          <button key={c} onClick={() => { setComp(c); setResult(null); setParams({}); }}
+            style={{ flex: 1, padding: "10px", borderRadius: 8, border: "1px solid var(--border)",
+              background: comp === c ? "var(--primary)" : "transparent", color: comp === c ? "#fff" : "var(--text-2)", fontWeight: 700, cursor: "pointer", textTransform: "capitalize", transition: "all .15s" }}>
+            {c}
+          </button>
+        ))}
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 24px" }}>
+        {COMP_FIELDS[comp].map(f => (
+          <div key={f.id}>
+            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 8, fontWeight: 600, color: "var(--text-2)" }}>
+              <span>{f.label}</span>
+              <span style={{ fontFamily: "var(--mono)", color: "var(--text)" }}>{params[f.id] === undefined ? f.def : params[f.id]} {f.unit}</span>
+            </div>
+            <input type="range" min={f.min} max={f.max} value={params[f.id] === undefined ? f.def : params[f.id]}
+              onChange={e => setParams({...params, [f.id]: parseInt(e.target.value)})}
+              style={{ width: "100%", cursor: "pointer" }} />
+          </div>
+        ))}
+      </div>
+
+      <div style={{ display: "flex", gap: 16, marginTop: 28, alignItems: "center" }}>
+        <button onClick={handlePredict} disabled={loading}
+          style={{ background: "var(--primary)", color: "#fff", padding: "12px 28px", borderRadius: 8, fontWeight: 800, border: "none", cursor: "pointer", fontSize: 14 }}>
+          {loading ? "Memprediksi..." : "Prediksi Kerusakan"}
+        </button>
+        {result !== null && (
+          <div style={{ flex: 1, textAlign: "right" }}>
+            <div style={{ fontSize: 12, color: "var(--text-3)", fontWeight: 500, marginBottom: 2 }}>
+              {comp === 'rem' ? 'Ketebalan Kampas Rem' : 'Kondisi Aktual Diprediksi'}
+            </div>
+            <div style={{ fontSize: 28, fontWeight: 800, fontFamily: "var(--mono)", color: (comp === 'rem' ? result < 7 : result < 70) ? "#e74c3c" : (comp === 'rem' ? result < 8 : result < 80) ? "#f39c12" : "#2ecc71", lineHeight: 1 }}>
+              {result.toFixed(1)}{comp === 'rem' ? ' mm' : '%'} <span style={{ fontSize: 14, fontFamily: "var(--sans)", opacity: 0.8, fontWeight: 600 }}>{(comp === 'rem' ? result < 7 : result < 70) ? "(Kritis)" : (comp === 'rem' ? result < 8 : result < 80) ? "(Perhatian)" : "(Aman)"}</span>
+            </div>
+          </div>
+        )}
+      </div>
+    </Card>
   );
 }
 

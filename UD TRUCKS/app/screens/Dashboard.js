@@ -30,14 +30,37 @@ function MetricCard({ icon, iconTone, value, label, trend, onClick }) {
 }
 
 function Dashboard({ onNav, onSelectTruck }) {
-  const tableTrucks = TRUCKS.slice(0, 5);
+  const { useState, useEffect } = React;
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/dashboard/data')
+      .then(r => r.json())
+      .then(res => {
+        setData(res);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Failed to load dashboard data", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading || !data) {
+    return <div style={{ padding: 40, textAlign: "center", color: "var(--text-2)" }}>Loading live data from AI...</div>;
+  }
+
+  const { summary, trucks, alerts } = data;
+  const tableTrucks = trucks.slice(0, 5);
+  
   return (
     <div className="screen-enter" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
       {/* Metric row */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
-        <MetricCard icon="truck" iconTone="primary" value="24" label="Truk Aktif" trend={{ dir: "up", val: "+2" }} />
-        <MetricCard icon="alert" iconTone="danger" value="3" label="Perlu Perhatian" trend={{ dir: "down", val: "+1" }} onClick={() => onNav("predictive")} />
-        <MetricCard icon="shield" iconTone="success" value="82/100" label="Skor Armada Rata-rata" trend={{ dir: "down", val: "-3%" }} />
+        <MetricCard icon="truck" iconTone="primary" value={summary.activeTrucks} label="Truk Aktif" trend={{ dir: "up", val: "Online" }} />
+        <MetricCard icon="alert" iconTone={summary.criticalTrucks > 0 ? "danger" : "success"} value={summary.criticalTrucks} label="Perlu Perhatian" trend={summary.criticalTrucks > 0 ? { dir: "down", val: "Cek!" } : null} onClick={() => onNav("predictive")} />
+        <MetricCard icon="shield" iconTone={scoreTone(summary.avgScore)} value={`${summary.avgScore}/100`} label="Skor Armada Rata-rata" trend={{ dir: "up", val: "Live" }} />
         <MetricCard icon="droplet" iconTone="success" value="Rp 14,2 Jt" label="Estimasi Hemat BBM Bulan Ini" trend={{ dir: "up", val: "+8%" }} />
       </div>
 
@@ -56,13 +79,15 @@ function Dashboard({ onNav, onSelectTruck }) {
         <Card pad={0} style={{ display: "flex", flexDirection: "column", overflow: "hidden" }}>
           <div style={{ padding: "18px 20px 14px", borderBottom: "1px solid var(--border-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>Peringatan Terbaru</h2>
-            <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text-2)" }}>{ALERTS.length} item</span>
+            <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text-2)" }}>{alerts.length} item</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            {ALERTS.map((a, i) => (
+            {alerts.length === 0 ? (
+              <div style={{ padding: 20, textAlign: "center", color: "var(--text-3)", fontSize: 13 }}>Semua komponen aman! Tidak ada peringatan.</div>
+            ) : alerts.map((a, i) => (
               <button key={i} onClick={() => { onSelectTruck && onSelectTruck(a.truckId); onNav("predictive"); }}
                 style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "13px 20px", border: "none",
-                  borderBottom: i < ALERTS.length - 1 ? "1px solid var(--border-2)" : "none", background: "transparent",
+                  borderBottom: i < alerts.length - 1 ? "1px solid var(--border-2)" : "none", background: "transparent",
                   textAlign: "left", transition: "background .14s" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "var(--bg)"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}>
@@ -120,7 +145,9 @@ function Dashboard({ onNav, onSelectTruck }) {
                           <div key={c.key} style={{ flex: 1 }}><CompBar value={c.value} /></div>
                         ))}
                       </div>
-                      <Badge tone={compTone(worst)}>{worst < 30 ? "Kritis" : worst < 60 ? "Perhatian" : "Sehat"}</Badge>
+                      <Badge tone={t.status === 'kritis' ? 'danger' : t.status === 'perhatian' ? 'warning' : 'success'}>
+                        {t.status === 'kritis' ? "Kritis" : t.status === 'perhatian' ? "Perhatian" : "Aman"}
+                      </Badge>
                     </div>
                   </td>
                   <td style={{ padding: "13px 22px", textAlign: "right" }}><Icon name="chevronRight" size={16} style={{ color: "var(--text-3)" }} /></td>
