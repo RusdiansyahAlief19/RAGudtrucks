@@ -4,10 +4,10 @@ const COMP_ICON = { rem: "disc", aki: "battery", ban: "disc", filter: "filter" }
 function TruckListCard({ t, active, onClick }) {
   return (
     <button onClick={onClick}
-      style={{ width: "100%", textAlign: "left", border: active ? "1.5px solid var(--primary-light)" : t.critical ? "1px solid rgba(230,57,70,.35)" : "1px solid var(--border)",
+      style={{ width: "100%", textAlign: "left", border: active ? "1.5px solid var(--primary-light)" : t.status === 'kritis' ? "1px solid rgba(230,57,70,.35)" : "1px solid var(--border)",
         borderRadius: 11, background: active ? "#F4F8FE" : "var(--surface)", padding: 14, cursor: "pointer",
         boxShadow: active ? "0 0 0 3px rgba(30,91,184,.1)" : "var(--shadow-sm)", transition: "all .15s", position: "relative" }}>
-      {t.critical && <span style={{ position: "absolute", top: 12, right: 12 }}><Badge tone="danger">Kritis</Badge></span>}
+      {t.status === 'kritis' && <span style={{ position: "absolute", top: 12, right: 12 }}><Badge tone="danger">Kritis</Badge></span>}
       <div className="plate" style={{ fontSize: 15, color: "var(--primary)", fontWeight: 700 }}>{t.plate}</div>
       <div style={{ fontSize: 11.5, color: "var(--text-2)", marginTop: 2, marginBottom: 12 }}>{t.model} · {t.driver}</div>
       <div style={{ display: "flex", gap: 10 }}>
@@ -15,7 +15,7 @@ function TruckListCard({ t, active, onClick }) {
           <div key={c.key} style={{ flex: 1 }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
               <span style={{ fontSize: 10.5, color: "var(--text-2)", fontWeight: 600, textTransform: "capitalize" }}>{c.key}</span>
-              <span style={{ fontSize: 10.5, fontFamily: "var(--mono)", fontWeight: 700, color: compColor(c.value) }}>{c.value}%</span>
+              <span style={{ fontSize: 10.5, fontFamily: "var(--mono)", fontWeight: 700, color: compColor(c.value) }}>{Math.round(c.value)}%</span>
             </div>
             <CompBar value={c.value} height={5} />
           </div>
@@ -28,16 +28,70 @@ function TruckListCard({ t, active, onClick }) {
 function Predictive({ selectedId, onSelectTruck }) {
   const [sort, setSort] = React.useState("Paling Kritis");
   const [query, setQuery] = React.useState("");
+  
+  const [trucksList, setTrucksList] = React.useState([]);
+  const [truckDetail, setTruckDetail] = React.useState(null);
+  const [loadingList, setLoadingList] = React.useState(true);
+  const [loadingDetail, setLoadingDetail] = React.useState(true);
+
+  React.useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/dashboard/data')
+      .then(r => r.json())
+      .then(res => {
+        if (res.error) console.error("Predictive: Failed to fetch data", res.error);
+        setTrucksList(res.trucks || []);
+        setLoadingList(false);
+      })
+      .catch(err => {
+        console.error("Predictive: Network error /data", err);
+        setLoadingList(false);
+      });
+  }, []);
+
+  React.useEffect(() => {
+    if (!selectedId) return;
+    setLoadingDetail(true);
+    fetch(`http://127.0.0.1:8000/api/dashboard/truck/${selectedId}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) console.error("Predictive: Failed to fetch truck", selectedId, data.error);
+        setTruckDetail(data);
+        setLoadingDetail(false);
+      })
+      .catch(err => {
+        console.error("Predictive: Network error", err);
+        setTruckDetail({ error: err.message });
+        setLoadingDetail(false);
+      });
+  }, [selectedId]);
+
   const list = React.useMemo(() => {
-    let l = TRUCKS.filter((t) => t.plate.toLowerCase().includes(query.toLowerCase()) || t.driver.toLowerCase().includes(query.toLowerCase()));
+    let l = trucksList.filter((t) => t.plate.toLowerCase().includes(query.toLowerCase()) || t.driver.toLowerCase().includes(query.toLowerCase()));
     if (sort === "Paling Kritis") l = [...l].sort((a, b) => a.score - b.score);
     else l = [...l].sort((a, b) => b.score - a.score);
     return l;
-  }, [sort, query]);
+  }, [sort, query, trucksList]);
 
-  const truck = TRUCKS.find((t) => t.id === selectedId) || TRUCKS[0];
-  const primary = truck.components[0]; // brake pad is the headline
-  const isHero = truck.id === "kt9012";
+  if (loadingList || loadingDetail) {
+    return <div style={{ padding: 40, textAlign: "center", color: "var(--text-2)" }}>Menganalisis performa prediktif truk secara Live...</div>;
+  }
+
+  if (!truckDetail || truckDetail.error) {
+    return (
+      <div style={{ padding: 60, textAlign: "center", color: "var(--danger)" }}>
+        <Icon name="alert" size={48} style={{ marginBottom: 16, opacity: 0.8 }} />
+        <h3 style={{ margin: "0 0 8px", fontSize: 18 }}>Data truk gagal dimuat</h3>
+        <p style={{ margin: "0 0 24px", color: "var(--text-2)", fontSize: 14 }}>{truckDetail?.error || "Truk tidak ditemukan di sistem."}</p>
+        <button onClick={() => onSelectTruck("kt9012ab")} 
+          style={{ padding: "10px 20px", borderRadius: 8, background: "var(--primary)", color: "#fff", border: "none", fontWeight: 600, cursor: "pointer", boxShadow: "var(--shadow-sm)" }}>
+          Coba muat truk utama
+        </button>
+      </div>
+    );
+  }
+
+  const truck = truckDetail;
+  const primary = truck.components.find(c => c.key === "rem") || truck.components[0];
 
   return (
     <div className="screen-enter" style={{ display: "grid", gridTemplateColumns: "minmax(300px, 35%) 1fr", gap: 16, height: "100%" }}>
@@ -69,15 +123,15 @@ function Predictive({ selectedId, onSelectTruck }) {
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span className="plate" style={{ fontSize: 28, fontWeight: 800, color: "var(--primary)", letterSpacing: "-.01em" }}>{truck.plate}</span>
-                {truck.critical && <Badge tone="danger" dot>Perlu Servis</Badge>}
+                {truck.status === 'kritis' && <Badge tone="danger" dot>Perlu Servis</Badge>}
               </div>
-              <div style={{ fontSize: 13.5, color: "var(--text-2)", marginTop: 5 }}>{truck.model} · {truck.driver} · {truck.odo.toLocaleString("id-ID")} km</div>
+              <div style={{ fontSize: 13.5, color: "var(--text-2)", marginTop: 5 }}>{truck.model} · {truck.driver} · {truck.cumulative_km.toLocaleString("id-ID")} km</div>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
               <div style={{ width: 62, height: 62, borderRadius: 14, background: TONE_MAP[scoreTone(truck.score)].bg, color: scoreColor(truck.score), display: "grid", placeItems: "center", fontSize: 26, fontWeight: 800, fontFamily: "var(--mono)" }}>{truck.score}</div>
               <div style={{ lineHeight: 1.3 }}>
                 <div style={{ fontSize: 13, color: "var(--text-2)", fontWeight: 500 }}>Skor Kesehatan</div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: scoreColor(truck.score) }}>{truck.critical ? "Kritis" : truck.score >= 80 ? "Sehat" : "Perhatian"}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: scoreColor(truck.score), textTransform: "capitalize" }}>{truck.status}</div>
               </div>
             </div>
           </div>
@@ -108,8 +162,8 @@ function Predictive({ selectedId, onSelectTruck }) {
 
           <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 11, padding: "16px 18px", marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14, lineHeight: 1.65, color: "var(--text)" }}>
-              Diprediksi mencapai batas aus dalam <strong style={{ color: "var(--danger)" }}>{primary.eta}</strong> (estimasi {primary.km}).
-              {isHero && <> Penyebab utama: <strong>frekuensi hard braking tinggi</strong> (rata-rata 14×/hari, 2× lipat rata-rata armada).</>}
+              Kalkulasi Machine Learning menunjukkan komponen <strong>{primary.name}</strong> saat ini berada di level <strong>{primary.value < 30 ? "KRITIS" : primary.value < 60 ? "PERHATIAN" : "SEHAT"}</strong> dengan ketebalan fisik terprediksi {primary.raw}.
+              Mohon jadwalkan inspeksi visual untuk memvalidasi angka ini.
             </p>
           </div>
 
@@ -125,17 +179,15 @@ function Predictive({ selectedId, onSelectTruck }) {
         {/* Degradation chart — separate card */}
         <Card pad={24}>
           <div style={{ marginBottom: 10 }}>
-            <h3 style={{ margin: 0, fontSize: 15, fontWeight: 700 }}>Tren Penurunan Kampas Rem</h3>
+            <h3 style={{ margin: 0, fontSize: 15, fontWeight: 700 }}>Histori Penurunan Kampas Rem</h3>
             <div style={{ fontSize: 12, color: "var(--text-2)", marginTop: 3, display: "flex", alignItems: "center", gap: 7 }}>
-              <span style={{ display: "inline-block", width: 18, borderTop: "2.5px dashed var(--danger)" }} />
-              Garis putus-putus = proyeksi prediktif (% sisa umur)
+              <span style={{ display: "inline-block", width: 18, borderTop: "2.5px solid var(--primary-light)" }} />
+              Skor historis (Prediksi AI)
             </div>
           </div>
-          <LineChart data={isHero ? BRAKE_HISTORY : [primary.value + 34, primary.value + 27, primary.value + 20, primary.value + 14, primary.value + 8, primary.value + 3, primary.value].map((v) => Math.min(98, Math.max(6, v)))}
-            projection={isHero ? BRAKE_PROJECTION : null}
-            threshold={isHero ? BRAKE_THRESHOLD : null}
-            xLabels={isHero ? BRAKE_LABELS : ["1 Apr", "20 Apr", "1 Mei", "10 Mei", "20 Mei", "28 Mei", "6 Jun"]}
-            yMin={0} yMax={80} color="var(--primary-light)" height={220}
+          <LineChart data={truck.history.rem}
+            xLabels={truck.history.labels}
+            yMin={0} yMax={100} color="var(--primary-light)" height={220}
             valueFmt={(v) => Math.round(v) + "%"} />
         </Card>
 

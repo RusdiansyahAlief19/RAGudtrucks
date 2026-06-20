@@ -1,7 +1,7 @@
 // ===== Main App =====
 function App() {
   const [screen, setScreen] = React.useState("dashboard");
-  const [truckId, setTruckId] = React.useState("kt9012");
+  const [truckId, setTruckId] = React.useState("kt9012ab");
   const [contentKey, setContentKey] = React.useState(0);
 
   const nav = (s) => { setScreen(s); setContentKey((k) => k + 1); };

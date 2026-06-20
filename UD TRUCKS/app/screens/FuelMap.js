@@ -11,10 +11,15 @@ function FuelMap() {
     <div className="screen-enter" style={{ display: "grid", gridTemplateColumns: "1fr minmax(300px, 32%)", gap: 16, height: "100%" }}>
       {/* MAP */}
       <Card pad={0} style={{ overflow: "hidden", position: "relative", display: "flex", flexDirection: "column" }}>
-        <div style={{ position: "absolute", top: 16, left: 16, zIndex: 3, background: "rgba(255,255,255,.92)", backdropFilter: "blur(6px)",
-          borderRadius: 10, padding: "10px 14px", boxShadow: "var(--shadow-md)" }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: "var(--text-3)", letterSpacing: ".06em", textTransform: "uppercase" }}>Rute Aktif</div>
-          <div style={{ fontSize: 15, fontWeight: 700, marginTop: 2 }}>Balikpapan → Samarinda</div>
+        <div style={{ position: "absolute", top: 16, left: 16, zIndex: 3, display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ background: "rgba(230, 57, 70, 0.95)", color: "white", padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 800, textTransform: "uppercase", boxShadow: "var(--shadow-sm)", display: "flex", alignItems: "center" }}>
+            <Icon name="info" size={16} style={{ marginRight: 6 }} />
+            Data Ilustrasi / Simulasi
+          </div>
+          <div style={{ background: "rgba(255,255,255,.92)", backdropFilter: "blur(6px)", borderRadius: 10, padding: "10px 14px", boxShadow: "var(--shadow-md)" }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "var(--text-3)", letterSpacing: ".06em", textTransform: "uppercase" }}>Rute Aktif</div>
+            <div style={{ fontSize: 15, fontWeight: 700, marginTop: 2 }}>Balikpapan → Samarinda</div>
+          </div>
         </div>
         {/* Legend */}
         <div style={{ position: "absolute", bottom: 16, left: 16, zIndex: 3, background: "rgba(255,255,255,.92)", backdropFilter: "blur(6px)",

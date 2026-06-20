@@ -5,3 +5,23 @@ __pycache__/
 backend/faiss_index/
 backend/bm25_index.pkl
 .DS_Store
+
+# Node/JS (kalau ada di frontend)
+node_modules/
+*.log
+npm-debug.log*
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+
+# Backend tambahan
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+
+# backend/models/*.pkl

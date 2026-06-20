@@ -17,6 +17,11 @@ Selain fitur *Virtual Mechanic* berbasis RAG, platform ini juga dilengkapi denga
 - **Toggle Snapshot Simulasi**: Mendemonstrasikan secara interaktif progresi keausan (*wear-and-tear*) armada tanpa *preventive maintenance* pada titik waktu spesifik (Hari ke-90, 180, dan 365).
 - **API Endpoint**: Data prediktif diolah di backend melalui *endpoint* `/api/dashboard/data?day=X` yang mendukung kalkulasi jarak kumulatif dan *rolling features* secara dinamis.
 
+## 👤 Driver Behavior Scoring
+- Skor performa 20 supir dihitung menggunakan **Z-score Linear Mapping** berdasarkan distribusi aktual (mean & std deviasi) dari 3 metrik: hard_brake, overspeed, idle_minutes.
+- Rentang skor dipetakan ke [20, 98] dari z_min/z_max aktual populasi - bukan hardcode, otomatis adaptif terhadap data.
+- Endpoint: `GET /api/dashboard/drivers`
+
 ## 🚀 Teknologi yang Digunakan
 - **Backend:** Python, FastAPI, Uvicorn, Pandas
 - **Machine Learning (Predictive):** Scikit-Learn (Linear Regression + Polynomial Features), Pickle (`model_rem.pkl`, `model_ban.pkl`, `model_aki.pkl`)
@@ -31,14 +36,17 @@ Selain fitur *Virtual Mechanic* berbasis RAG, platform ini juga dilengkapi denga
 │   ├── main.py        # Server FastAPI (Endpoint RAG & Predictive Dashboard)
 │   ├── models/        # Model ML tersimpan (model_rem.pkl, model_ban.pkl, model_aki.pkl)
 │   ├── ingest.py      # Skrip untuk membaca dataset JSON dan mem-build Vector DB & BM25
-│   └── rag_engine.py  # Logika utama Hybrid Search dan pemanggilan Gemini API
+│   ├── rag_engine.py  # Logika utama Hybrid Search dan pemanggilan Gemini API
+│   └── requirements.txt # Dependensi Python backend
+├── docs/
+│   └── legacy-scripts/ # Skrip development lama (pre-migration) untuk histori
 ├── UD TRUCKS/
 │   ├── UD FleetSight.html  # Main entry point UI React app
 │   └── app/screens/        # React components (Dashboard.js, Predictive.js, dsb.)
 ├── data_dummy_fleetsight_FINAL.csv # Dataset simulasi telematika armada
-├── astra_ud_trucks_rag_dataset.json # Knowledge Base mentah
-├── requirements.txt   # Dependensi Python
+├── astra_ud_trucks_rag_dataset.json # Knowledge Base (Dataset Final Termigrasi)
 ├── .env.example       # Contoh environment variable untuk API Keys
+├── .gitignore         # File pengecualian Git
 └── README.md
 ```
 
@@ -54,7 +62,7 @@ python -m venv venv
 .\venv\Scripts\Activate.ps1
 
 # Install dependensi
-pip install -r requirements.txt
+pip install -r backend\requirements.txt
 ```
 
 ### 2. Setup API Key
@@ -91,3 +99,6 @@ Karena UI terbaru (*Virtual Mechanic*) menggunakan React.js dan Babel secara din
 
 ---
 *Proyek ini dikembangkan dalam rangka presentasi inovasi AI (Pre-sales & Post-sales Assistant).*
+
+## ⚠️ Catatan Keterbatasan Data (Transparansi)
+Dataset yang digunakan (`data_dummy_fleetsight_FINAL.csv`) bersifat simulasi untuk keperluan prototyping Gate 1. Threshold status komponen (Kritis/Perhatian/Aman) dikalkulasi berbasis persentil distribusi dataset ini, BUKAN spesifikasi teknis resmi pabrikan. Pada implementasi produksi dengan data sensor riil, threshold akan dikalibrasi ulang sesuai spesifikasi resmi UD Trucks per komponen.

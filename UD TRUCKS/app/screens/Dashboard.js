@@ -49,8 +49,18 @@ function Dashboard({ onNav, onSelectTruck }) {
       });
   }, [selectedDay]);
 
-  if (loading || !data) {
+  if (loading) {
     return <div style={{ padding: 40, textAlign: "center", color: "var(--text-2)" }}>Loading live data from AI...</div>;
+  }
+
+  if (!data || data.error) {
+    return (
+      <div style={{ padding: 60, textAlign: "center", color: "var(--danger)" }}>
+        <Icon name="alert" size={48} style={{ marginBottom: 16, opacity: 0.8 }} />
+        <h3 style={{ margin: "0 0 8px", fontSize: 18 }}>Data Dashboard gagal dimuat</h3>
+        <p style={{ margin: 0, color: "var(--text-2)", fontSize: 14 }}>{data?.error || "Koneksi ke backend terputus atau bermasalah."}</p>
+      </div>
+    );
   }
 
   const { summary, trucks, alerts } = data;
@@ -97,7 +107,7 @@ function Dashboard({ onNav, onSelectTruck }) {
       {/* Metric row */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
         <MetricCard icon="truck" iconTone="primary" value={summary.activeTrucks} label="Truk Aktif" trend={{ dir: "up", val: "Online" }} />
-        <MetricCard icon="alert" iconTone={summary.criticalTrucks > 0 ? "danger" : "success"} value={summary.criticalTrucks} label="Perlu Tindakan" trend={summary.criticalTrucks > 0 ? { dir: "down", val: "Cek!" } : null} onClick={() => onNav("predictive")} />
+        <MetricCard icon="alert" iconTone={summary.criticalTrucks > 0 ? "danger" : "success"} value={summary.criticalTrucks} label="Kritis" trend={summary.criticalTrucks > 0 ? { dir: "down", val: "Cek!" } : null} onClick={() => onNav("predictive")} />
         <MetricCard icon="shield" iconTone={scoreTone(summary.avgScore)} value={`${summary.avgScore}/100`} label="Skor Armada Rata-rata" trend={{ dir: "up", val: "Live" }} />
         <MetricCard icon="droplet" iconTone="success" value="Rp 14,2 Jt" label="Estimasi Hemat BBM Bulan Ini" trend={{ dir: "up", val: "+8%" }} />
       </div>
