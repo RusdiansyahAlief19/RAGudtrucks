@@ -114,15 +114,22 @@ function Mechanic() {
       if (data.error) {
         setMsgs((m) => [...m, { role: "ai", text: "**Error**: " + data.error, warn: true }]);
       } else {
-        // Hapus duplikasi sumber agar UI rapi
+        // Hapus duplikasi sumber agar UI rapi dan mapping fields dari backend ke UI
         const uniqueSources = [];
         const seen = new Set();
         if (data.sources) {
             data.sources.forEach(s => {
-                const key = s.doc + '|' + s.loc;
+                const docName = s.source_doc || "Manual Resmi";
+                let locArr = [];
+                if (s.chapter) locArr.push(s.chapter);
+                if (s.page) locArr.push(`hal. ${s.page}`);
+                if (s.fault_code) locArr.push(`Kode: ${s.fault_code}`);
+                const locName = locArr.length > 0 ? locArr.join(" — ") : (s.category || "Referensi Umum");
+                
+                const key = docName + '|' + locName;
                 if(!seen.has(key)) {
                     seen.add(key);
-                    uniqueSources.push(s);
+                    uniqueSources.push({ doc: docName, loc: locName });
                 }
             });
         }
