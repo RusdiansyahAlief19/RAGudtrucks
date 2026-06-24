@@ -29,86 +29,15 @@ function MetricCard({ icon, iconTone, value, label, trend, onClick }) {
   );
 }
 
-function Dashboard({ onNav, onSelectTruck, filter }) {
-  const { useState, useEffect } = React;
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [selectedDay, setSelectedDay] = useState(365);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`http://127.0.0.1:8000/api/dashboard/data?day=${selectedDay}&model=${encodeURIComponent(filter || "")}`)
-      .then(r => r.json())
-      .then(res => {
-        setData(res);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Failed to load dashboard data", err);
-        setLoading(false);
-      });
-  }, [selectedDay, filter]);
-
-  if (loading) {
-    return <div style={{ padding: 40, textAlign: "center", color: "var(--text-2)" }}>Loading live data from AI...</div>;
-  }
-
-  if (!data || data.error) {
-    return (
-      <div style={{ padding: 60, textAlign: "center", color: "var(--danger)" }}>
-        <Icon name="alert" size={48} style={{ marginBottom: 16, opacity: 0.8 }} />
-        <h3 style={{ margin: "0 0 8px", fontSize: 18 }}>Data Dashboard gagal dimuat</h3>
-        <p style={{ margin: 0, color: "var(--text-2)", fontSize: 14 }}>{data?.error || "Koneksi ke backend terputus atau bermasalah."}</p>
-      </div>
-    );
-  }
-
-  const { summary, trucks, alerts } = data;
-  const tableTrucks = trucks.slice(0, 5);
-  
-  // Bug 2 Fix: Calculate dynamic bounds for the chart
-  const trendMin = Math.max(0, Math.floor(Math.min(...FLEET_TREND)) - 3);
-  const trendMax = Math.min(100, Math.ceil(Math.max(...FLEET_TREND)) + 3);
-  
-  // Bug 3 Fix: Sort alerts to prioritize 'danger' (kritis) first
-  const sortedAlerts = [...alerts].sort((a, b) => {
-    if (a.tone === "danger" && b.tone !== "danger") return -1;
-    if (a.tone !== "danger" && b.tone === "danger") return 1;
-    return 0;
-  });
-  
+function Dashboard({ onNav, onSelectTruck }) {
+  const tableTrucks = TRUCKS.slice(0, 5);
   return (
     <div className="screen-enter" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-      {/* Scenario Banner & Toggle */}
-      <Card pad={16} style={{ background: "var(--bg-2)", border: "1px solid var(--border-2)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-          <div style={{ marginTop: 2, color: "var(--primary)" }}>
-            <Icon name="info" size={20} />
-          </div>
-          <div style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.5 }}>
-            <strong>Skenario Simulasi:</strong> Kondisi armada setelah <strong>{selectedDay} hari</strong> beroperasi TANPA jadwal servis preventif.<br/>
-            <span style={{ color: "var(--text-2)" }}>Data ini mendemonstrasikan bagaimana FleetSight mendeteksi akumulasi keausan yang luput dari pemantauan manual.</span>
-          </div>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontSize: 13, fontWeight: 600, color: "var(--text-2)", whiteSpace: "nowrap" }}>Snapshot Hari:</span>
-          <select 
-            value={selectedDay} 
-            onChange={(e) => setSelectedDay(Number(e.target.value))}
-            style={{ padding: "6px 12px", borderRadius: 6, background: "var(--bg)", border: "1px solid var(--border-2)", color: "var(--text)", fontSize: 13, fontWeight: 600, cursor: "pointer", outline: "none" }}
-          >
-            <option value={90}>Hari ke-90</option>
-            <option value={180}>Hari ke-180</option>
-            <option value={365}>Hari ke-365 (Akhir Simulasi)</option>
-          </select>
-        </div>
-      </Card>
-
       {/* Metric row */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
-        <MetricCard icon="truck" iconTone="primary" value={summary.activeTrucks} label="Truk Aktif" trend={{ dir: "up", val: "Online" }} />
-        <MetricCard icon="alert" iconTone={summary.criticalTrucks > 0 ? "danger" : "success"} value={summary.criticalTrucks} label="Kritis" trend={summary.criticalTrucks > 0 ? { dir: "down", val: "Cek!" } : null} onClick={() => onNav("predictive")} />
-        <MetricCard icon="shield" iconTone={scoreTone(summary.avgScore)} value={`${summary.avgScore}/100`} label="Skor Armada Rata-rata" trend={{ dir: "up", val: "Live" }} />
+        <MetricCard icon="truck" iconTone="primary" value="24" label="Truk Aktif" trend={{ dir: "up", val: "+2" }} />
+        <MetricCard icon="alert" iconTone="danger" value="3" label="Perlu Perhatian" trend={{ dir: "down", val: "+1" }} onClick={() => onNav("predictive")} />
+        <MetricCard icon="shield" iconTone="success" value="82/100" label="Skor Armada Rata-rata" trend={{ dir: "down", val: "-3%" }} />
         <MetricCard icon="droplet" iconTone="success" value="Rp 14,2 Jt" label="Estimasi Hemat BBM Bulan Ini" trend={{ dir: "up", val: "+8%" }} />
       </div>
 
@@ -120,22 +49,20 @@ function Dashboard({ onNav, onSelectTruck, filter }) {
             <Badge tone="success" dot>Stabil</Badge>
           </div>
           <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-            <LineChart data={FLEET_TREND} yMin={trendMin} yMax={trendMax} height={200} xLabels={FLEET_LABELS} />
+            <LineChart data={FLEET_TREND} yMin={70} yMax={95} height={240} xLabels={FLEET_LABELS} />
           </div>
         </Card>
 
         <Card pad={0} style={{ display: "flex", flexDirection: "column", overflow: "hidden" }}>
           <div style={{ padding: "18px 20px 14px", borderBottom: "1px solid var(--border-2)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>Peringatan Terbaru</h2>
-            <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text-2)" }}>{alerts.length} item</span>
+            <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text-2)" }}>{ALERTS.length} item</span>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", maxHeight: 400, overflowY: "auto" }}>
-            {sortedAlerts.length === 0 ? (
-              <div style={{ padding: 20, textAlign: "center", color: "var(--text-3)", fontSize: 13 }}>Semua komponen aman! Tidak ada peringatan.</div>
-            ) : sortedAlerts.map((a, i) => (
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {ALERTS.map((a, i) => (
               <button key={i} onClick={() => { onSelectTruck && onSelectTruck(a.truckId); onNav("predictive"); }}
                 style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "13px 20px", border: "none",
-                  borderBottom: i < alerts.length - 1 ? "1px solid var(--border-2)" : "none", background: "transparent",
+                  borderBottom: i < ALERTS.length - 1 ? "1px solid var(--border-2)" : "none", background: "transparent",
                   textAlign: "left", transition: "background .14s" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "var(--bg)"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}>
@@ -193,9 +120,7 @@ function Dashboard({ onNav, onSelectTruck, filter }) {
                           <div key={c.key} style={{ flex: 1 }}><CompBar value={c.value} /></div>
                         ))}
                       </div>
-                      <Badge tone={t.status === 'kritis' ? 'danger' : t.status === 'perhatian' ? 'warning' : 'success'}>
-                        {t.status === 'kritis' ? "Kritis" : t.status === 'perhatian' ? "Perhatian" : "Aman"}
-                      </Badge>
+                      <Badge tone={compTone(worst)}>{worst < 30 ? "Kritis" : worst < 60 ? "Perhatian" : "Sehat"}</Badge>
                     </div>
                   </td>
                   <td style={{ padding: "13px 22px", textAlign: "right" }}><Icon name="chevronRight" size={16} style={{ color: "var(--text-3)" }} /></td>

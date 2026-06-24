@@ -1,49 +1,8 @@
 // ===== Screen 3: Driver Behavior Scoring =====
-function Drivers({ onNav, onSelectTruck, filter }) {
-  const [drivers, setDrivers] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
-  const [selId, setSelId] = React.useState("");
-
-  React.useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/dashboard/drivers?model=${encodeURIComponent(filter || "")}`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.error) {
-          console.error("Drivers: Failed to load", data.error);
-          setDrivers({ error: data.error });
-          setLoading(false);
-          return;
-        }
-        const ranked = data.map((d, i) => ({ ...d, id: d.name.toLowerCase().replace(/ /g, ""), rank: i + 1 }));
-        setDrivers(ranked);
-        if (ranked.length > 0) setSelId(ranked[0].id);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Drivers: Network error", err);
-        setDrivers({ error: err.message });
-        setLoading(false);
-      });
-  }, [filter]);
-
-  const medal = { 1: "1st", 2: "2nd", 3: "3rd" };
-
-  if (loading) {
-    return <div style={{ padding: 40, textAlign: "center", color: "var(--text-2)" }}>Menganalisis performa 20 supir secara Live...</div>;
-  }
-
-  if (drivers.error || !Array.isArray(drivers) || drivers.length === 0) {
-    return (
-      <div style={{ padding: 60, textAlign: "center", color: "var(--danger)" }}>
-        <Icon name="alert" size={48} style={{ marginBottom: 16, opacity: 0.8 }} />
-        <h3 style={{ margin: "0 0 8px", fontSize: 18 }}>Data Pengemudi gagal dimuat</h3>
-        <p style={{ margin: 0, color: "var(--text-2)", fontSize: 14 }}>{drivers.error || "Tidak ada data pengemudi."}</p>
-      </div>
-    );
-  }
-
-  const sel = drivers.find((d) => d.id === selId);
-  if (!sel) return null;
+function Drivers({ onNav, onSelectTruck }) {
+  const [selId, setSelId] = React.useState("rahmat");
+  const sel = DRIVERS.find((d) => d.id === selId);
+  const medal = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
   return (
     <div className="screen-enter" style={{ display: "flex", flexDirection: "column", gap: 18 }}>
@@ -75,7 +34,7 @@ function Drivers({ onNav, onSelectTruck, filter }) {
               </tr>
             </thead>
             <tbody>
-              {drivers.map((d) => (
+              {DRIVERS.map((d) => (
                 <tr key={d.id} onClick={() => setSelId(d.id)}
                   style={{ borderTop: "1px solid var(--border-2)", cursor: "pointer",
                     background: selId === d.id ? "#F4F8FE" : "transparent", transition: "background .14s" }}
@@ -92,9 +51,9 @@ function Drivers({ onNav, onSelectTruck, filter }) {
                       <StatusDot tone={scoreTone(d.score)} size={8} />
                     </span>
                   </td>
-                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.hard_brake < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.hard_brake}x<span style={{ fontSize: 10, color: "var(--text-3)" }}>/hr</span></td>
-                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.idle < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.idle}<span style={{ fontSize: 10, color: "var(--text-3)" }}>m</span></td>
-                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.breakdown.overspeed < 50 ? "var(--danger)" : "var(--text-2)" }}>{d.raw.overspeed}x</td>
+                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.hb > 10 ? "var(--danger)" : "var(--text-2)" }}>{d.hb}×<span style={{ fontSize: 10, color: "var(--text-3)" }}>/hr</span></td>
+                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.idling > 25 ? "var(--danger)" : "var(--text-2)" }}>{d.idling}<span style={{ fontSize: 10, color: "var(--text-3)" }}>m</span></td>
+                  <td style={{ padding: "13px 16px", textAlign: "center", fontFamily: "var(--mono)", color: d.speed > 3 ? "var(--danger)" : "var(--text-2)" }}>{d.speed}×</td>
                 </tr>
               ))}
             </tbody>
@@ -110,7 +69,7 @@ function Drivers({ onNav, onSelectTruck, filter }) {
             </div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 17, fontWeight: 700 }}>Detail: {sel.name}</div>
-              <div style={{ fontSize: 12.5, color: "var(--text-2)" }}><span className="plate">{sel.plate}</span> - Data 7 hari terakhir</div>
+              <div style={{ fontSize: 12.5, color: "var(--text-2)" }}><span className="plate">{sel.plate}</span> · Data 7 hari terakhir</div>
             </div>
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 30, fontWeight: 800, fontFamily: "var(--mono)", color: scoreColor(sel.score), lineHeight: 1 }}>{sel.score}</div>
@@ -121,9 +80,9 @@ function Drivers({ onNav, onSelectTruck, filter }) {
           <SectionLabel style={{ marginBottom: 12 }}>Metrik 7 hari terakhir</SectionLabel>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
             {[
-              { t: "Hard Braking", d: [sel.raw.hard_brake, sel.raw.hard_brake*1.1, sel.raw.hard_brake*0.8, sel.raw.hard_brake], c: "var(--danger)", s: "x" },
-              { t: "Idling", d: [sel.raw.idle, sel.raw.idle*0.9, sel.raw.idle*1.1, sel.raw.idle], c: "var(--warning)", s: "m" },
-              { t: "Ngebut", d: [sel.raw.overspeed, sel.raw.overspeed*0.8, sel.raw.overspeed*1.2, sel.raw.overspeed], c: "var(--primary-light)", s: "x" },
+              { t: "Hard Braking", d: sel.hb7, c: "var(--danger)", s: "×" },
+              { t: "Idling", d: sel.idle7, c: "var(--warning)", s: "m" },
+              { t: "Ngebut", d: sel.spd7, c: "var(--primary-light)", s: "×" },
             ].map((m) => (
               <div key={m.t}>
                 <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--text-2)", marginBottom: 6 }}>{m.t}</div>
@@ -132,14 +91,14 @@ function Drivers({ onNav, onSelectTruck, filter }) {
             ))}
           </div>
 
-          {sel.id === "rahmathidayat" && (
+          {sel.id === "rahmat" && (
             <button onClick={() => { onSelectTruck("kt9012"); onNav("predictive"); }}
               style={{ marginTop: 18, width: "100%", textAlign: "left", display: "flex", gap: 12, alignItems: "flex-start",
                 background: "var(--danger-bg)", border: "1px solid rgba(230,57,70,.2)", borderRadius: 10, padding: "14px 16px", cursor: "pointer" }}>
               <Icon name="alert" size={17} style={{ color: "var(--danger)", flex: "none", marginTop: 1 }} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 12.5, lineHeight: 1.55, color: "var(--text)" }}>
-                  <strong>Catatan:</strong> Hard braking Rahmat <strong>2x lipat</strong> rata-rata armada -> berkontribusi langsung pada keausan rem <span className="plate">KT 9012 AB</span> yang saat ini dalam kondisi kritis <strong style={{ color: "var(--danger)" }}>(18%)</strong>. Perlu coaching segera.
+                  <strong>Catatan:</strong> Hard braking Rahmat <strong>2× lipat</strong> rata-rata armada → berkontribusi langsung pada keausan rem <span className="plate">KT 9012 AB</span> yang saat ini dalam kondisi kritis <strong style={{ color: "var(--danger)" }}>(18%)</strong>. Perlu coaching segera.
                 </div>
                 <div style={{ fontSize: 11.5, fontWeight: 700, color: "var(--danger)", marginTop: 7, display: "inline-flex", alignItems: "center", gap: 4 }}>
                   Lihat dampak di Predictive Maintenance <Icon name="arrowRight" size={13} />
@@ -147,7 +106,7 @@ function Drivers({ onNav, onSelectTruck, filter }) {
               </div>
             </button>
           )}
-          {sel.id !== "rahmathidayat" && (
+          {sel.id !== "rahmat" && (
             <div style={{ marginTop: 18, background: "var(--bg)", borderRadius: 10, padding: "13px 15px", fontSize: 12.5, color: "var(--text-2)", lineHeight: 1.5 }}>
               {sel.score >= 80
                 ? <>Perilaku berkendara <strong style={{ color: "var(--success)" }}>efisien</strong> — keausan komponen di bawah rata-rata armada.</>

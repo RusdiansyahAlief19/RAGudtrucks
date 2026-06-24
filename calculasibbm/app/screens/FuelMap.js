@@ -63,10 +63,10 @@ function OutputRow({ label, value, tone, big, sub }) {
   );
 }
 
-function FuelMap({ filter }) {
-  const [api, setApi] = React.useState(null);
-  const [jumlahTruk, setJumlahTruk] = React.useState(20);
+function FuelMap() {
+  const [api, setApi] = React.useState(null);          // hasil fetchFleetBBM
   const [hargaBBM, setHargaBBM] = React.useState(6800);
+  const [jumlahTruk, setJumlahTruk] = React.useState(20);
   const [targetEff, setTargetEff] = React.useState(3.19);
   const [jarakHarian, setJarakHarian] = React.useState(342.5);
   const [result, setResult] = React.useState(null);
@@ -75,26 +75,20 @@ function FuelMap({ filter }) {
   // Section A: auto-load baseline dari "API" saat mount
   React.useEffect(() => {
     let alive = true;
-    fetch(`http://127.0.0.1:8000/api/dashboard/bbm?model=${encodeURIComponent(filter || "")}`).then(r => r.json()).then((data) => {
+    fetchFleetBBM().then((data) => {
       if (!alive) return;
-      if (data.error) {
-         console.error("FuelMap: API Error", data.error);
-         return;
-      }
       setApi(data);
       // Default kalkulator dari data API (bukan hardcode)
-      setHargaBBM(data.baseline_harga_bbm || 6800);
-      setJumlahTruk(data.fleet_stats?.total_trucks || 0);
-      if (data.fleet_stats?.avg_km_per_liter) {
-          setTargetEff(Number((data.fleet_stats.avg_km_per_liter * 1.20).toFixed(2)));
-          setJarakHarian(data.fleet_stats.avg_jarak_harian_km);
-      }
+      setHargaBBM(data.baseline_harga_bbm);
+      setJumlahTruk(data.fleet_stats.total_trucks);
+      setTargetEff(data.fleet_stats.avg_km_per_liter);
+      setJarakHarian(data.fleet_stats.avg_jarak_harian_km);
     });
     return () => { alive = false; };
-  }, [filter]);
+  }, []);
 
   const baselineEff = api ? api.fleet_stats.avg_km_per_liter : 3.19;
-  const langgananPerTruk = (api && api.langganan_per_truk) ? api.langganan_per_truk : 120000;
+  const langgananPerTruk = api ? api.langganan_per_truk : 120000;
 
   const hitung = () => {
     setCalculating(true);

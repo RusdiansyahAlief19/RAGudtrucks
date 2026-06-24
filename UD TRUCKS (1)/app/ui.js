@@ -4,7 +4,7 @@ const NAV = [
   { id: "dashboard", label: "Dashboard", icon: "dashboard" },
   { id: "predictive", label: "Predictive Maintenance", icon: "wrench" },
   { id: "drivers", label: "Driver Scoring", icon: "gauge" },
-  { id: "fuelmap", label: "Kalkulator BBM", icon: "fuel" },
+  { id: "fuelmap", label: "Peta Efisiensi", icon: "map" },
   { id: "mechanic", label: "Virtual Mechanic", icon: "chat" },
 ];
 
@@ -12,7 +12,7 @@ const SCREEN_TITLES = {
   dashboard: "Dashboard Ringkasan",
   predictive: "Predictive Maintenance",
   drivers: "Driver Behavior Scoring",
-  fuelmap: "Kalkulator Estimasi Biaya BBM",
+  fuelmap: "Peta Efisiensi BBM",
   mechanic: "Virtual Mechanic",
 };
 
@@ -59,7 +59,7 @@ function Sidebar({ active, onNav }) {
   );
 }
 
-function TopBar({ screen, notifCount = 3, onNav, filter, setFilter }) {
+function TopBar({ screen, notifCount = 3, onNav }) {
   const [open, setOpen] = React.useState(false);
   return (
     <header style={{ height: 64, flex: "0 0 64px", background: "var(--surface)", borderBottom: "1px solid var(--border)",
@@ -67,26 +67,13 @@ function TopBar({ screen, notifCount = 3, onNav, filter, setFilter }) {
       <h1 style={{ margin: 0, fontSize: 21, fontWeight: 800, letterSpacing: "-.02em", color: "var(--text)" }}>{SCREEN_TITLES[screen]}</h1>
       <div style={{ flex: 1 }} />
 
-      <div style={{ position: "relative" }}>
-        <button onClick={() => setOpen(!open)}
-          style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 13px", borderRadius: 9,
-            border: open ? "1px solid var(--primary-light)" : "1px solid var(--border)", background: open ? "#F4F8FE" : "var(--surface)", color: "var(--text)", fontSize: 13, fontWeight: 600, cursor: "pointer", transition: "all .15s" }}>
-          <Icon name="truck" size={15} style={{ color: open ? "var(--primary)" : "var(--text-2)" }} />
-          {filter}
-          <Icon name="chevronDown" size={14} style={{ color: "var(--text-2)", transform: open ? "rotate(180deg)" : "none", transition: "transform .2s" }} />
-        </button>
-        {open && (
-          <div style={{ position: "absolute", top: "100%", right: 0, marginTop: 8, width: 220, background: "#fff", border: "1px solid var(--border)", borderRadius: 10, boxShadow: "0 10px 30px rgba(0,0,0,0.12)", zIndex: 10, padding: 6, animation: "slideDown .2s" }}>
-            <div style={{ padding: "6px 10px 10px", fontSize: 11, fontWeight: 700, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: ".05em" }}>Filter Berdasarkan Model</div>
-            {["Semua Armada", "UD Quester GWE 280", "UD Quester CWE", "UD Quester CKE", "UD Kuzer RKE 150"].map(f => (
-              <button key={f} onClick={() => { setFilter(f); setOpen(false); }}
-                style={{ display: "block", width: "100%", textAlign: "left", padding: "10px 12px", border: "none", borderRadius: 6, background: f === filter ? "var(--bg)" : "transparent", fontSize: 13, color: f === filter ? "var(--primary)" : "var(--text)", fontWeight: f === filter ? 700 : 500, cursor: "pointer" }}>
-                {f}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
+      <button onClick={() => setOpen(!open)}
+        style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 13px", borderRadius: 9,
+          border: "1px solid var(--border)", background: "var(--surface)", color: "var(--text)", fontSize: 13, fontWeight: 600 }}>
+        <Icon name="truck" size={15} style={{ color: "var(--text-2)" }} />
+        Semua Armada
+        <Icon name="chevronDown" size={14} style={{ color: "var(--text-2)" }} />
+      </button>
 
       <button title="Notifikasi" style={{ position: "relative", width: 40, height: 40, borderRadius: 9,
         border: "1px solid var(--border)", background: "var(--surface)", color: "var(--text-2)", display: "grid", placeItems: "center" }}>

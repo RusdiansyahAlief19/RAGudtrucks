@@ -109,7 +109,7 @@ def startup_event():
     global engine, model_aki, model_ban, model_rem, THRESHOLDS
     
     try:
-        df = pd.read_csv('../data_dummy_fleetsight_FINAL.csv')
+        df = pd.read_csv('../data_dummy_fleetsight_FINAL_v2.csv')
         THRESHOLDS['rem_p15'] = df['tebal_rem_mm'].quantile(0.15)
         THRESHOLDS['rem_p50'] = df['tebal_rem_mm'].quantile(0.50)
         THRESHOLDS['ban_p15'] = df['kondisi_ban_pct'].quantile(0.15)
@@ -202,9 +202,11 @@ def predict_rem(request: RemRequest):
         return {"error": str(e)}
 
 @app.get("/api/dashboard/drivers")
-def get_dashboard_drivers():
+def get_dashboard_drivers(model: str = None):
     try:
-        df = pd.read_csv('../data_dummy_fleetsight_FINAL.csv')
+        df = pd.read_csv('../data_dummy_fleetsight_FINAL_v2.csv')
+        if model and model != 'Semua Armada':
+            df = df[df['model'] == model]
     except Exception as e:
         return {"error": f"Failed to read CSV: {str(e)}"}
         
@@ -310,7 +312,7 @@ def calculate_truck_state(plat, group_to_calc, row):
 @app.get("/api/dashboard/truck/{plat_id}")
 def get_truck_detail(plat_id: str, day: int = 365):
     try:
-        df = pd.read_csv('../data_dummy_fleetsight_FINAL.csv')
+        df = pd.read_csv('../data_dummy_fleetsight_FINAL_v2.csv')
     except Exception as e:
         return {"error": f"Failed to read CSV: {str(e)}"}
         
@@ -379,9 +381,11 @@ def get_truck_detail(plat_id: str, day: int = 365):
     }
 
 @app.get("/api/dashboard/data")
-def get_dashboard_data(day: int = None):
+def get_dashboard_data(day: int = None, model: str = None):
     try:
-        df = pd.read_csv('../data_dummy_fleetsight_FINAL.csv')
+        df = pd.read_csv('../data_dummy_fleetsight_FINAL_v2.csv')
+        if model and model != 'Semua Armada':
+            df = df[df['model'] == model]
     except Exception as e:
         return {"error": f"Failed to read CSV: {str(e)}"}
     
@@ -453,6 +457,58 @@ def get_dashboard_data(day: int = None):
         },
         "trucks": sorted(trucks, key=lambda x: x['score']),
         "alerts": alerts
+    }
+
+@app.get("/api/dashboard/bbm")
+def get_dashboard_bbm(model: str = None):
+    try:
+        df = pd.read_csv('../data_dummy_fleetsight_FINAL_v2.csv')
+        if model and model != 'Semua Armada':
+            df = df[df['model'] == model]
+    except Exception as e:
+        return {"error": f"Failed to read CSV: {str(e)}"}
+        
+    total_trucks = df['plat'].nunique()
+    total_jarak = df['jarak_km'].sum()
+    total_bbm = df['konsumsi_bbm_liter'].sum()
+    
+    avg_km_per_liter = total_jarak / total_bbm if total_bbm > 0 else 0
+    
+    avg_jarak_harian_km = df['jarak_km'].mean()
+    avg_idle_minutes = df['idle_minutes'].mean()
+    
+    max_days = df['hari'].nunique()
+    total_konsumsi_liter_per_hari = total_bbm / max_days if max_days > 0 else 0
+    
+    truck_stats = []
+    for plat, group in df.groupby('plat'):
+        t_jarak = group['jarak_km'].sum()
+        t_bbm = group['konsumsi_bbm_liter'].sum()
+        driver = group['sopir'].iloc[0]
+        kpl = t_jarak / t_bbm if t_bbm > 0 else 0
+        truck_stats.append({
+            "plate": plat,
+            "driver": driver,
+            "km_per_liter": round(kpl, 2)
+        })
+        
+    truck_stats.sort(key=lambda x: x['km_per_liter'])
+    worst_trucks = truck_stats[:3]
+    best_trucks = truck_stats[-3:]
+    best_trucks.reverse()
+    
+    return {
+        "fleet_stats": {
+            "total_trucks": int(total_trucks),
+            "avg_km_per_liter": round(avg_km_per_liter, 2),
+            "avg_jarak_harian_km": round(avg_jarak_harian_km, 1),
+            "avg_idle_minutes": round(avg_idle_minutes, 1),
+            "total_konsumsi_liter_per_hari": round(total_konsumsi_liter_per_hari, 1)
+        },
+        "baseline_harga_bbm": 6800,
+        "langganan_per_truk": 120000,
+        "worst_trucks": worst_trucks,
+        "best_trucks": best_trucks
     }
 
 if __name__ == "__main__":

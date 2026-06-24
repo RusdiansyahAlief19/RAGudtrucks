@@ -25,9 +25,10 @@ function TruckListCard({ t, active, onClick }) {
   );
 }
 
-function Predictive({ selectedId, onSelectTruck }) {
+function Predictive({ selectedId, onSelectTruck, filter }) {
   const [sort, setSort] = React.useState("Paling Kritis");
   const [query, setQuery] = React.useState("");
+  const [showServiceModal, setShowServiceModal] = React.useState(false);
   
   const [trucksList, setTrucksList] = React.useState([]);
   const [truckDetail, setTruckDetail] = React.useState(null);
@@ -35,7 +36,7 @@ function Predictive({ selectedId, onSelectTruck }) {
   const [loadingDetail, setLoadingDetail] = React.useState(true);
 
   React.useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/dashboard/data')
+    fetch(`http://127.0.0.1:8000/api/dashboard/data?model=${encodeURIComponent(filter || "")}`)
       .then(r => r.json())
       .then(res => {
         if (res.error) console.error("Predictive: Failed to fetch data", res.error);
@@ -43,10 +44,10 @@ function Predictive({ selectedId, onSelectTruck }) {
         setLoadingList(false);
       })
       .catch(err => {
-        console.error("Predictive: Network error /data", err);
+        console.error("Predictive: Network error", err);
         setLoadingList(false);
       });
-  }, []);
+  }, [filter]);
 
   React.useEffect(() => {
     if (!selectedId) return;
@@ -168,10 +169,11 @@ function Predictive({ selectedId, onSelectTruck }) {
           </div>
 
           <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-            <button style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "var(--primary)", color: "#fff",
-              border: "none", borderRadius: 10, padding: "12px 18px", fontSize: 13.5, fontWeight: 700, boxShadow: "var(--shadow-md)" }}>
-              <Icon name="calendar" size={16} /> Jadwalkan Servis
-              <span style={{ fontSize: 10.5, fontWeight: 700, background: "rgba(255,255,255,.18)", padding: "3px 8px", borderRadius: 99 }}>fitur pengembangan</span>
+            <button onClick={() => setShowServiceModal(true)}
+              style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "var(--primary)", color: "#fff",
+              border: "none", borderRadius: 10, padding: "12px 18px", fontSize: 13.5, fontWeight: 700, boxShadow: "var(--shadow-md)", cursor: "pointer" }}>
+              <Icon name="calendar" size={16} /> Jadwalkan Servis Astra
+              <Icon name="external-link" size={14} style={{ opacity: 0.8 }} />
             </button>
           </div>
         </Card>
@@ -216,6 +218,47 @@ function Predictive({ selectedId, onSelectTruck }) {
         {/* Telematics Simulator */}
         <TelematicsSimulator />
       </div>
+
+      {/* Service Modal */}
+      {showServiceModal && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.5)", backdropFilter: "blur(4px)", animation: "fadeIn .2s" }}>
+          <div style={{ width: 480, background: "#fff", borderRadius: 16, overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.2)", animation: "slideUp .3s" }}>
+            <div style={{ padding: "18px 24px", background: "var(--primary)", color: "#fff", display: "flex", alignItems: "center", gap: 12 }}>
+              <Icon name="wrench" size={22} />
+              <h2 style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>24H Technical Assistance</h2>
+            </div>
+            <div style={{ padding: 24 }}>
+              <p style={{ margin: "0 0 18px", fontSize: 13.5, color: "var(--text)", lineHeight: 1.6 }}>
+                Anda akan diarahkan ke portal resmi layanan <strong>24 Jam Astra UD Trucks</strong> untuk menjadwalkan servis unit kendaraan.
+              </p>
+              <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 10, padding: 16, marginBottom: 24 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
+                  <span style={{ fontSize: 12, color: "var(--text-2)", fontWeight: 600 }}>Plat Nomor</span>
+                  <span style={{ fontSize: 14, fontWeight: 700, color: "var(--primary)" }} className="plate">{truck.plate}</span>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
+                  <span style={{ fontSize: 12, color: "var(--text-2)", fontWeight: 600 }}>Tipe Kerusakan</span>
+                  <span style={{ fontSize: 13, fontWeight: 600 }}>Perawatan {primary.name}</span>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ fontSize: 12, color: "var(--text-2)", fontWeight: 600 }}>Tingkat Keparahan</span>
+                  <span style={{ fontSize: 13, fontWeight: 800, color: compColor(primary.value) }}>{primary.value < 30 ? "KRITIS" : "PERHATIAN"}</span>
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: 12, justifyContent: "flex-end" }}>
+                <button onClick={() => setShowServiceModal(false)}
+                  style={{ padding: "10px 18px", borderRadius: 10, border: "1.5px solid var(--border-2)", background: "transparent", color: "var(--text)", fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>
+                  Batal
+                </button>
+                <button onClick={() => { setShowServiceModal(false); window.open("https://astraudtrucks.org/hubungi-kami/24h-technical-assistance/", "_blank"); }}
+                  style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", borderRadius: 10, border: "none", background: "var(--success)", color: "#fff", fontSize: 13.5, fontWeight: 700, cursor: "pointer", boxShadow: "0 4px 10px rgba(31,169,113,.2)" }}>
+                  Lanjutkan ke Astra <Icon name="external-link" size={14} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
