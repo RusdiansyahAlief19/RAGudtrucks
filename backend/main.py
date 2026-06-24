@@ -65,7 +65,7 @@ class RemRequest(BaseModel):
     hard_brake_std: float
 
 # Threshold berbasis persentil dataset dummy (BUKAN spesifikasi pabrikan
-# resmi), dihitung otomatis saat startup dari data_dummy_fleetsight_FINAL.csv.
+# resmi), dihitung otomatis saat startup dari data_dummy_fleetsight_FINAL_v2.csv.
 #
 # Alasan: dataset ini adalah simulasi untuk keperluan prototyping Gate 1,
 # bukan data sensor riil. Beberapa kolom punya rentang yang tidak
